@@ -183,7 +183,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your Full Name"
-                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
                     />
                   </div>
 
@@ -197,7 +197,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 63779 35958"
-                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none font-mono"
+                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none font-mono"
                     />
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
                     >
                       <option value="Wardrobe">Wardrobe / अलमारी</option>
                       <option value="Bed">Bed / बेड</option>
@@ -235,7 +235,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       placeholder="e.g. Alwar, UP"
-                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                      className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
                     />
                   </div>
                 </div>
@@ -250,7 +250,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us what you want to build, room dimensions or style preferences..."
-                    className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
+                    className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
                   />
                 </div>
 

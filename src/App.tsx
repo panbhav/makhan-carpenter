@@ -19,6 +19,7 @@ import { QuoteWizard } from './components/QuoteWizard';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { MobileQuickBar } from './components/MobileQuickBar';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { QuoteModal } from './components/QuoteModal';
 import type { Project, Language } from './types';
@@ -41,7 +42,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0a09] text-[#ede5d8] selection:bg-[#c5a059]/30 selection:text-[#FBF9F5]">
+    <div className="min-h-screen bg-[#0c0a09] text-[#ede5d8] selection:bg-[#c5a059]/30 selection:text-[#FBF9F5] pb-16 sm:pb-0">
       
       {/* 1. Global Navigation Bar with Language Switcher */}
       <Navbar
@@ -154,8 +155,14 @@ export function App() {
         onOpenQuoteModal={() => handleOpenQuoteModal()}
       />
 
-      {/* 20. Floating 24/7 WhatsApp Action Button */}
+      {/* 20. Floating 24/7 WhatsApp Action Button for Tablet/Desktop */}
       <WhatsAppFloat language={language} />
+
+      {/* 21. Mobile Bottom Action Bar (Call, WhatsApp, Quote for Phones) */}
+      <MobileQuickBar
+        language={language}
+        onOpenQuoteModal={() => handleOpenQuoteModal()}
+      />
 
       {/* Project Detail Lightbox Modal */}
       <ProjectDetailModal

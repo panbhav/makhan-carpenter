@@ -44,8 +44,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language, onOpenQuot
               <div className="absolute inset-0 bg-gradient-to-t from-[#090706] via-transparent to-transparent opacity-80" />
             </div>
 
-            {/* Floating Experience & Projects Badge */}
-            <div className="absolute -bottom-6 -right-3 sm:right-6 bg-[#16120e] border border-[#c5a059]/40 p-4 sm:p-5 rounded-sm shadow-2xl backdrop-blur-md max-w-[260px]">
+            {/* Experience & Projects Badge */}
+            <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:right-6 bg-[#16120e] border border-[#c5a059]/40 p-4 sm:p-5 rounded-sm shadow-2xl backdrop-blur-md w-full sm:max-w-[260px]">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-sm bg-[#c5a059] text-[#0e0c0a] flex items-center justify-center font-serif font-bold text-xl shrink-0 shadow-md">
                   20+

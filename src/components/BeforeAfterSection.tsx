@@ -90,8 +90,13 @@ export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({ language
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
               onMouseMove={handleMouseMove}
+              onTouchStart={(e) => {
+                if (e.touches.length > 0) {
+                  handleMove(e.touches[0].clientX);
+                }
+              }}
               onTouchMove={handleTouchMove}
-              className="relative h-[340px] sm:h-[460px] md:h-[500px] rounded-sm overflow-hidden border border-[#c5a059]/30 shadow-2xl select-none cursor-ew-resize bg-black"
+              className="relative h-[300px] sm:h-[460px] md:h-[500px] rounded-sm overflow-hidden border border-[#c5a059]/30 shadow-2xl select-none cursor-ew-resize bg-black touch-none"
             >
               {/* After Image */}
               <img

@@ -17,7 +17,7 @@ export const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ language = 'en' })
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2 pointer-events-auto">
+    <div className="hidden sm:flex fixed bottom-6 right-6 z-40 flex-col items-end gap-2 pointer-events-auto">
       
       {/* Friendly Popup Tooltip */}
       {showTooltip && (

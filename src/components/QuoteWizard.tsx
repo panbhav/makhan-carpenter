@@ -96,7 +96,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="e.g. Ramesh Kumar"
-                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               />
             </div>
 
@@ -110,7 +110,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="e.g. +91 63779 35958"
-                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none font-mono"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none font-mono"
               />
             </div>
           </div>
@@ -123,7 +123,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               <select
                 value={selectedFurniture}
                 onChange={(e) => setSelectedFurniture(e.target.value)}
-                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               >
                 {FURNITURE_OPTIONS.map((opt) => (
                   <option key={opt.id} value={opt.id} className="bg-[#14100d] text-[#ede5d8]">
@@ -142,7 +142,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Rath Nagar Alwar, Lucknow, Noida"
-                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               />
             </div>
           </div>
@@ -157,7 +157,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               value={requirementDetails}
               onChange={(e) => setRequirementDetails(e.target.value)}
               placeholder="e.g. Need a 4-door wardrobe with fluted finish and soft lighting, or 8-seater dining table..."
-              className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
+              className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
             />
           </div>
 
