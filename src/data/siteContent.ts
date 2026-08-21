@@ -22,7 +22,7 @@ export const siteConfig = {
   projectsCompleted: '500+',
   
   location: {
-    address: 'Rath Nagar, Alwar, Rajasthan, India',
+    address: 'Raath Nagar, Alwar, Rajasthan, India',
     city: 'Alwar',
     state: 'Rajasthan',
     country: 'India',
@@ -456,7 +456,7 @@ export const featuredProjects: Project[] = [
     materials: ['Charcoal Velvet Upholstery', 'CNC Acrylic Lattice', 'Seasoned Teak Frame', 'Marine Grade Plywood'],
     finish: 'Natural Matte Walnut Lacquer & Soft Velvet',
     dimensions: 'King Size (78 in × 72 in)',
-    location: 'Rath Nagar, Alwar',
+    location: 'Raath Nagar, Alwar',
     year: '2025',
     featured: true,
   },
@@ -543,7 +543,7 @@ export const featuredProjects: Project[] = [
     materials: ['Walnut Grain Textured Laminate', 'Matte Cream Laminate', 'IS:710 Marine Calibrated Plywood'],
     finish: 'Silky Matte Laminate Finish',
     dimensions: '13 ft (W) × 9.5 ft (H)',
-    location: 'Rath Nagar, Alwar',
+    location: 'Raath Nagar, Alwar',
     year: '2024',
     featured: true,
   },
@@ -630,7 +630,7 @@ export const featuredProjects: Project[] = [
     materials: ['Seasoned Teak Timber & Veneer', 'Belgian Mirror Glass', 'Frosted Glass Shutter'],
     finish: 'Warm Teak Satin Lacquer',
     dimensions: '3.5 ft (W) × 7 ft (H) × 18 in (D)',
-    location: 'Rath Nagar, Alwar',
+    location: 'Raath Nagar, Alwar',
     year: '2024',
     featured: false,
   },
@@ -804,7 +804,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: 't-1',
     name: '[Customer Name - Alwar Residence]',
-    location: 'Rath Nagar, Alwar (Rajasthan)',
+    location: 'Raath Nagar, Alwar (Rajasthan)',
     projectType: 'Custom Wardrobes & Modular Kitchen',
     quote: '[Customer Review: "Makhan Carpenter completed our complete home woodwork on time with great precision and smooth finishing."]',
     quoteHi: '[ग्राहक समीक्षा: "माखन कारपेंटर ने हमारे घर का पूरा फर्नीचर समय पर और बहुत ही सुंदर फिनिशिंग के साथ तैयार किया।"]',
@@ -849,7 +849,7 @@ export const galleryImages = [
     title: 'Designer Backlit CNC Jali King Bed',
     titleHi: 'बैक-लिट सीएनसी जाली किंग बेड',
     category: 'Bedroom',
-    location: 'Rath Nagar, Alwar'
+    location: 'Raath Nagar, Alwar'
   },
   {
     url: getAssetUrl('projects/tufted-wooden-bed.jpg'),
@@ -870,7 +870,7 @@ export const galleryImages = [
     title: 'Integrated Walnut Study Desk & Wardrobe Suite',
     titleHi: 'स्टडी डेस्क व वॉर्डरोब कॉम्बो',
     category: 'Wardrobes',
-    location: 'Rath Nagar, Alwar'
+    location: 'Raath Nagar, Alwar'
   },
   {
     url: getAssetUrl('projects/modular-kitchen-white.jpg'),
@@ -891,7 +891,7 @@ export const galleryImages = [
     title: 'Solid Wood Dressing Table with Full Mirror',
     titleHi: 'सॉलिड वुड ड्रेसिंग टेबल व फुल मिरर',
     category: 'Custom Furniture',
-    location: 'Rath Nagar, Alwar'
+    location: 'Raath Nagar, Alwar'
   },
   {
     url: getAssetUrl('projects/bookshelf-storage-tower.jpg'),
@@ -905,7 +905,7 @@ export const galleryImages = [
     title: 'Crafted Teak Bedside Table Cabinet',
     titleHi: 'सागवान वुडन बेडसाइड टेबल',
     category: 'Custom Furniture',
-    location: 'Rath Nagar, Alwar'
+    location: 'Raath Nagar, Alwar'
   }
 ];
 

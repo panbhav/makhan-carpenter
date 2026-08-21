@@ -38,7 +38,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language, onOpenQuot
             <div className="relative rounded-sm overflow-hidden border border-[#c5a059]/30 shadow-2xl group bg-black">
               <img
                 src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=85"
-                alt="Makhan Carpenter at work in Rath Nagar, Alwar"
+                alt="Makhan Carpenter at work in Raath Nagar, Alwar"
                 className="w-full h-[440px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#090706] via-transparent to-transparent opacity-80" />
@@ -52,7 +52,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language, onOpenQuot
                 </div>
                 <div>
                   <span className="text-xs font-bold text-[#FBF9F5] block font-serif">Years • 500+ Projects</span>
-                  <span className="text-[10px] text-[#c5a059] block">Rath Nagar, Alwar (Rajasthan)</span>
+                  <span className="text-[10px] text-[#c5a059] block">Raath Nagar, Alwar (Rajasthan)</span>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language, onOpenQuot
             <div className="bg-[#14100d] border-l-2 border-[#c5a059] p-4 rounded-r-sm space-y-1">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#c5a059]">
                 <MapPin className="w-4 h-4" />
-                <span>Rath Nagar, Alwar, Rajasthan</span>
+                <span>Raath Nagar, Alwar, Rajasthan</span>
               </div>
               <p className="text-xs text-[#a99c8f]">
                 {t.about.locationNote}

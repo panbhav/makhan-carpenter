@@ -141,7 +141,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="e.g. Rath Nagar Alwar, Lucknow, Noida"
+                placeholder="e.g. Raath Nagar Alwar, Lucknow, Noida"
                 className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               />
             </div>

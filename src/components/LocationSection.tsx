@@ -48,7 +48,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ language }) =>
             </div>
 
             <p className="text-xs sm:text-sm text-[#a99c8f] leading-relaxed">
-              Our central carpentry atelier and workshop is located at Rath Nagar, Alwar. We personally inspect materials and build custom furniture for local residences and villas.
+              Our central carpentry atelier and workshop is located at Raath Nagar, Alwar. We personally inspect materials and build custom furniture for local residences and villas.
             </p>
 
             <div className="pt-2 border-t border-[#c5a059]/15">

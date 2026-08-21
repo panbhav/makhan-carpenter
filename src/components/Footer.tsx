@@ -176,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenQuoteModal }) =>
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Rath Nagar, Alwar (Rajasthan) • Uttar Pradesh (UP)</span>
+            <span>Raath Nagar, Alwar (Rajasthan) • Uttar Pradesh (UP)</span>
             
             <button
               onClick={scrollToTop}

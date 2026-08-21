@@ -27,7 +27,7 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
     titleHi: `${r.roomNameHi} कस्टम फर्नीचर`,
     category: r.roomName,
     caption: r.description,
-    location: 'Rath Nagar, Alwar & UP',
+    location: 'Raath Nagar, Alwar & UP',
   }));
 
   const handleOpenRoomPhoto = () => {

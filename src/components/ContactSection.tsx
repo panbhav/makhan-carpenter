@@ -14,7 +14,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
     name: '',
     phone: '',
     projectType: 'Wardrobe',
-    location: 'Rath Nagar, Alwar',
+    location: 'Raath Nagar, Alwar',
     message: '',
     preferredContact: 'WhatsApp'
   });

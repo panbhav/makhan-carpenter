@@ -48,7 +48,7 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ language }) => {
             <p className="text-sm sm:text-base leading-relaxed text-[#a99c8f]">
               {language === 'en' ? (
                 <>
-                  For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners and architects across <strong>Uttar Pradesh</strong> and <strong>Rath Nagar, Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
+                  For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners and architects across <strong>Uttar Pradesh</strong> and <strong>Raath Nagar, Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
                 </>
               ) : (
                 <>
