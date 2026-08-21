@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-charcoal-950: #090807;
+  --color-charcoal-900: #12100e;
+  --color-charcoal-850: #181512;
+  --color-charcoal-800: #201c18;
+  --color-charcoal-700: #2d2822;
+
+  --color-walnut-900: #1a120b;
+  --color-walnut-800: #271a10;
+  --color-walnut-700: #3b2819;
+  --color-walnut-600: #4e3522;
+  --color-walnut-500: #6b4a30;
+  --color-walnut-400: #8f6745;
+  --color-walnut-300: #b58d68;
+  --color-walnut-200: #d5b597;
+  --color-walnut-100: #ebd9c8;
+
+  --color-bronze-300: #dfc185;
+  --color-bronze-400: #d1ad65;
+  --color-bronze-500: #c5a059;
+  --color-bronze-600: #a7823f;
+  --color-bronze-700: #83642d;
+
+  --color-ivory-50: #fdfbf7;
+  --color-ivory-100: #f7f3eb;
+  --color-ivory-200: #ede5d8;
+  --color-ivory-300: #dfd3c1;
+  --color-ivory-400: #c7b69f;
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0c0a09;
+  color: #ede5d8;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0c0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a221b;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+/* Glassmorphism & Luxury Cards */
+.luxury-glass {
+  background: rgba(20, 17, 14, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.12);
+}
+
+.luxury-glass-card {
+  background: linear-gradient(135deg, rgba(28, 23, 19, 0.8) 0%, rgba(18, 15, 12, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.14);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.luxury-glass-card:hover {
+  border-color: rgba(197, 160, 89, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.08);
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f7f1e4 0%, #c5a059 50%, #e2c88f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wood-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #ede5d8 60%, #c7b69f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer Effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 20px rgba(197, 160, 89, 0.25);
+}
