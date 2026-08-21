@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { MessageSquare, X } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import type { Language } from '../types';
 
-export const WhatsAppFloat: React.FC = () => {
+interface WhatsAppFloatProps {
+  language?: Language;
+}
+
+export const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ language = 'en' }) => {
   const [showTooltip, setShowTooltip] = useState(true);
 
-  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappRaw}?text=${encodeURIComponent(siteConfig.whatsappDefaultMessage)}`;
+  const message = language === 'en'
+    ? siteConfig.whatsappMessages.en
+    : siteConfig.whatsappMessages.hi;
+
+  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${encodeURIComponent(message)}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2 pointer-events-auto">
@@ -24,9 +33,13 @@ export const WhatsAppFloat: React.FC = () => {
           <div className="flex items-start gap-2.5 pr-3">
             <span className="w-2 h-2 rounded-full bg-[#25D366] shrink-0 mt-1 animate-ping" />
             <div>
-              <span className="font-serif font-bold text-[#25D366] block">Chat with Makhan</span>
+              <span className="font-serif font-bold text-[#25D366] block">
+                {language === 'en' ? 'Chat with Makhan' : 'माखन कारपेंटर से चैट करें'}
+              </span>
               <p className="text-[11px] text-[#a99c8f] mt-0.5">
-                Share photos or floor plans directly on WhatsApp.
+                {language === 'en'
+                  ? 'Send photo references or floor plans directly.'
+                  : 'फोटो या डिज़ाइन WhatsApp पर भेजें।'}
               </p>
             </div>
           </div>

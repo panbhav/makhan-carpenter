@@ -1,13 +1,20 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Sparkles, MoveHorizontal } from 'lucide-react';
 import { beforeAfterCases } from '../data/siteContent';
+import { translations } from '../data/translations';
+import type { Language } from '../types';
 
-export const BeforeAfterSection: React.FC = () => {
+interface BeforeAfterSectionProps {
+  language: Language;
+}
+
+export const BeforeAfterSection: React.FC<BeforeAfterSectionProps> = ({ language }) => {
   const [activeCaseIndex, setActiveCaseIndex] = useState(0);
-  const [sliderPosition, setSliderPosition] = useState(50); // percentage 0 to 100
+  const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  const t = translations[language];
   const currentCase = beforeAfterCases[activeCaseIndex];
 
   const handleMove = useCallback((clientX: number) => {
@@ -35,20 +42,20 @@ export const BeforeAfterSection: React.FC = () => {
   };
 
   return (
-    <section id="before-after" className="py-28 bg-[#0e0c0a] relative border-t border-[#c5a059]/10">
+    <section id="before-after" className="py-24 bg-[#0e0c0a] relative border-t border-[#c5a059]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 text-[#c5a059] text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Interactive Real Transformations</span>
+            <span>{t.beforeAfter.tag}</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#FBF9F5] font-normal tracking-tight mb-4">
-            See the Transformation
+            {t.beforeAfter.heading}
           </h2>
           <p className="text-sm sm:text-base text-[#d4cbbf] font-light leading-relaxed">
-            Drag the central slider left and right to witness how raw civil spaces and untreated timber turn into refined bespoke woodwork.
+            {t.beforeAfter.subheading}
           </p>
         </div>
 
@@ -75,7 +82,7 @@ export const BeforeAfterSection: React.FC = () => {
         {/* Interactive Comparison Slider Box */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Slider Container (Col 8) */}
+          {/* Slider Box (Col 8) */}
           <div className="lg:col-span-8">
             <div
               ref={containerRef}
@@ -84,9 +91,9 @@ export const BeforeAfterSection: React.FC = () => {
               onMouseLeave={handleMouseUp}
               onMouseMove={handleMouseMove}
               onTouchMove={handleTouchMove}
-              className="relative h-[340px] sm:h-[460px] md:h-[520px] rounded-sm overflow-hidden border border-[#c5a059]/30 shadow-2xl select-none cursor-ew-resize bg-black"
+              className="relative h-[340px] sm:h-[460px] md:h-[500px] rounded-sm overflow-hidden border border-[#c5a059]/30 shadow-2xl select-none cursor-ew-resize bg-black"
             >
-              {/* After Image (Full background) */}
+              {/* After Image */}
               <img
                 src={currentCase.afterImage}
                 alt={currentCase.afterLabel || 'Finished result'}
@@ -119,7 +126,7 @@ export const BeforeAfterSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Labels Badge Overlays */}
+              {/* Badges */}
               <div className="absolute top-4 left-4 bg-black/80 px-3 py-1 rounded-sm border border-white/20 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#d4cbbf] pointer-events-none backdrop-blur-sm">
                 Before: {currentCase.beforeLabel}
               </div>
@@ -127,9 +134,9 @@ export const BeforeAfterSection: React.FC = () => {
                 After: {currentCase.afterLabel}
               </div>
 
-              {/* Instruction Hint */}
+              {/* Drag Hint */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 px-3 py-1 rounded-full text-[10px] text-[#dfc185] pointer-events-none border border-[#c5a059]/20 backdrop-blur-sm">
-                ◀ Drag slider left / right ▶
+                {t.beforeAfter.dragHint}
               </div>
             </div>
           </div>
@@ -138,20 +145,20 @@ export const BeforeAfterSection: React.FC = () => {
           <div className="lg:col-span-4 bg-[#14100d] border border-[#c5a059]/25 rounded-sm p-6 sm:p-8 space-y-6 shadow-xl">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-widest bg-[#c5a059]/15 text-[#c5a059] px-2.5 py-1 rounded-sm border border-[#c5a059]/20 inline-block mb-3">
-                {currentCase.category} Project
+                {currentCase.category} Transformation
               </span>
               <h3 className="font-serif text-2xl text-[#FBF9F5] font-normal leading-snug">
-                {currentCase.title}
+                {language === 'en' ? currentCase.title : (currentCase.titleHi || currentCase.title)}
               </h3>
             </div>
 
             <p className="text-xs sm:text-sm text-[#d4cbbf] leading-relaxed">
-              {currentCase.description}
+              {language === 'en' ? currentCase.description : (currentCase.descriptionHi || currentCase.description)}
             </p>
 
             <div className="p-4 bg-[#1a1410] border-l-2 border-[#c5a059] rounded-r-sm space-y-1">
               <span className="text-[11px] uppercase tracking-wider text-[#a99c8f] font-semibold block">
-                Impact Achieved
+                Result Achieved
               </span>
               <span className="text-xs text-[#dfc185]">
                 {currentCase.resultSummary}
@@ -159,7 +166,7 @@ export const BeforeAfterSection: React.FC = () => {
             </div>
 
             <div className="pt-2 flex items-center justify-between text-xs text-[#a99c8f]">
-              <span>Location:</span>
+              <span>Project Location:</span>
               <span className="text-[#ede5d8] font-medium">{currentCase.location}</span>
             </div>
           </div>

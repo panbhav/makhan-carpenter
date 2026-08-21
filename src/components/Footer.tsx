@@ -1,45 +1,48 @@
 import React from 'react';
-import { Phone, MessageSquare, Mail, MapPin, ArrowUp } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, ArrowUp, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import { BrandLogo } from './BrandLogo';
+import { translations } from '../data/translations';
+import type { Language } from '../types';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  language: Language;
+  onOpenQuoteModal: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ language, onOpenQuoteModal }) => {
+  const t = translations[language];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#080605] text-[#d4cbbf] border-t border-[#c5a059]/20 pt-20 pb-12 relative">
+    <footer className="bg-[#070504] text-[#d4cbbf] border-t border-[#c5a059]/25 pt-20 pb-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[#c5a059]/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[#c5a059]/15">
           
           {/* Brand Column (Col 4) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-sm bg-[#1a1410] border border-[#c5a059]/40 flex items-center justify-center text-[#c5a059]">
-                <span className="font-serif font-bold text-xl">M</span>
-              </div>
-              <div>
-                <span className="font-serif text-xl font-bold tracking-[0.2em] text-[#FBF9F5] uppercase block">
-                  MAKHAN
-                </span>
-                <span className="text-[10px] tracking-[0.3em] text-[#c5a059] uppercase font-medium">
-                  CARPENTER
-                </span>
-              </div>
-            </div>
+            <BrandLogo size="lg" />
 
             <p className="font-serif text-base text-[#ede5d8] italic">
-              “Custom Furniture. Crafted with Precision.”
+              “{t.footer.tagline}”
             </p>
 
+            <div className="bg-[#14100d] p-3 rounded-sm border border-[#c5a059]/20 text-xs text-[#dfc185] space-y-1">
+              <span className="font-bold block font-serif">{t.footer.yearsBadge}</span>
+              <span className="text-[11px] text-[#a99c8f] block">{t.footer.serving}</span>
+            </div>
+
             <p className="text-xs text-[#a99c8f] leading-relaxed max-w-sm">
-              Over 20 years of master woodworking excellence delivering bespoke architectural cabinetry, solid wood dining, modular kitchens, and custom residences across Uttar Pradesh & Alwar (Rajasthan).
+              Custom wardrobes, wooden beds, modular kitchens, dining tables, doors, and full interior woodwork tailored to your space.
             </p>
 
             {/* Social Media Links */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-3 pt-1">
               <a
                 href={siteConfig.social.instagram}
                 target="_blank"
@@ -74,41 +77,43 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
             </div>
-
           </div>
 
           {/* Quick Links (Col 2) */}
           <div className="lg:col-span-2 space-y-4">
             <h4 className="font-serif text-sm uppercase tracking-widest text-[#FBF9F5] font-semibold border-b border-[#c5a059]/20 pb-2">
-              Explore
+              Navigation
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#home" className="hover:text-[#c5a059] transition-colors">Home</a></li>
-              <li><a href="#our-work" className="hover:text-[#c5a059] transition-colors">Our Work</a></li>
-              <li><a href="#services" className="hover:text-[#c5a059] transition-colors">Services</a></li>
-              <li><a href="#craftsmanship" className="hover:text-[#c5a059] transition-colors">Craftsmanship</a></li>
-              <li><a href="#before-after" className="hover:text-[#c5a059] transition-colors">Before & After</a></li>
-              <li><a href="#about" className="hover:text-[#c5a059] transition-colors">About Makhan</a></li>
-              <li><a href="#materials" className="hover:text-[#c5a059] transition-colors">Materials Guide</a></li>
-              <li><a href="#gallery" className="hover:text-[#c5a059] transition-colors">Visual Gallery</a></li>
-              <li><a href="#contact" className="hover:text-[#c5a059] transition-colors">Contact Atelier</a></li>
+              <li><a href="#home" className="hover:text-[#c5a059] transition-colors">{t.nav.home}</a></li>
+              <li><a href="#our-work" className="hover:text-[#c5a059] transition-colors">{t.nav.ourWork}</a></li>
+              <li><a href="#services" className="hover:text-[#c5a059] transition-colors">{t.nav.services}</a></li>
+              <li><a href="#we-make-it-your-way" className="hover:text-[#c5a059] transition-colors">{t.nav.weMakeIt}</a></li>
+              <li><a href="#about" className="hover:text-[#c5a059] transition-colors">{t.nav.about}</a></li>
+              <li><a href="#experience" className="hover:text-[#c5a059] transition-colors">{t.nav.craftsmanship}</a></li>
+              <li><a href="#gallery" className="hover:text-[#c5a059] transition-colors">Gallery</a></li>
+              <li><a href="#contact" className="hover:text-[#c5a059] transition-colors">{t.nav.contact}</a></li>
             </ul>
           </div>
 
           {/* Services Index (Col 3) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="font-serif text-sm uppercase tracking-widest text-[#FBF9F5] font-semibold border-b border-[#c5a059]/20 pb-2">
-              Craft Specializations
+              Services
             </h4>
-            <ul className="space-y-2 text-xs text-[#a99c8f]">
-              <li>Bespoke Custom Wardrobes</li>
-              <li>IS:710 Marine Modular Kitchens</li>
-              <li>Handcrafted Solid Teak Dining</li>
-              <li>Floating Platform Beds & Headboards</li>
-              <li>Architectural Pivot Entrance Doors</li>
-              <li>Fluted Wall Paneling & TV Consoles</li>
-              <li>Executive Office Workstations</li>
-              <li>Full Luxury Villa Woodwork</li>
+            <ul className="space-y-1.5 text-xs text-[#a99c8f]">
+              <li>01 — Custom Furniture</li>
+              <li>02 — Wooden Beds</li>
+              <li>03 — Sofas & Seating</li>
+              <li>04 — Custom Wardrobes</li>
+              <li>05 — Modular Kitchens</li>
+              <li>06 — Solid Dining Tables</li>
+              <li>07 — TV Units & Media Walls</li>
+              <li>08 — Office Workstations</li>
+              <li>09 — Wooden Main Doors</li>
+              <li>10 — Interior Woodwork</li>
+              <li>11 — Kids' Play Rooms</li>
+              <li>12 — Other Custom Work</li>
             </ul>
           </div>
 
@@ -119,34 +124,45 @@ export const Footer: React.FC = () => {
             </h4>
             
             <div className="space-y-3 text-xs">
-              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors">
+              <a
+                href={`tel:${siteConfig.contact.phonePrimaryRaw}`}
+                className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors font-mono"
+              >
                 <Phone className="w-4 h-4 text-[#c5a059] shrink-0" />
-                <span>{siteConfig.contact.phoneDisplay}</span>
+                <span>{siteConfig.contact.phonePrimary}</span>
               </a>
 
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${encodeURIComponent(siteConfig.whatsappDefaultMessage)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors"
+                href={`tel:${siteConfig.contact.phoneSecondaryRaw}`}
+                className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors font-mono"
               >
-                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
-                <span>{siteConfig.contact.whatsappDisplay} (WhatsApp)</span>
+                <Phone className="w-4 h-4 text-[#c5a059] shrink-0" />
+                <span>{siteConfig.contact.phoneSecondary}</span>
               </a>
 
-              <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors">
-                <Mail className="w-4 h-4 text-[#c5a059] shrink-0" />
-                <span>{siteConfig.contact.email}</span>
+              <a
+                href={`https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${encodeURIComponent(siteConfig.whatsappMessages.en)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#ede5d8] hover:text-[#c5a059] transition-colors font-mono"
+              >
+                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
+                <span>{siteConfig.contact.whatsappPrimary} (WhatsApp)</span>
               </a>
 
               <div className="flex items-start gap-2 text-[#a99c8f] pt-1">
                 <MapPin className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
-                <span>{siteConfig.contact.workshopAddress}</span>
+                <span>{siteConfig.location.address}</span>
               </div>
 
               <div className="pt-2">
-                <span className="text-[11px] uppercase tracking-wider text-[#c5a059] block font-semibold">Service Regions:</span>
-                <span className="text-xs text-[#a99c8f]">Uttar Pradesh (UP), Alwar (Rajasthan) & NCR</span>
+                <button
+                  onClick={onOpenQuoteModal}
+                  className="w-full py-2.5 px-4 bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-1.5 shadow-md"
+                >
+                  <span>{t.footer.cta}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           </div>
@@ -156,11 +172,11 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8c8073]">
           <div>
-            © 2026 Makhan Carpenter. All Rights Reserved.
+            {t.footer.copyright}
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Craftsmanship • Quality • Precision • Elegance • Trust</span>
+            <span>Rath Nagar, Alwar (Rajasthan) • Uttar Pradesh (UP)</span>
             
             <button
               onClick={scrollToTop}

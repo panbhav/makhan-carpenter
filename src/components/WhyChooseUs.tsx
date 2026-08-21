@@ -32,7 +32,7 @@ export const WhyChooseUs: React.FC = () => {
 
         {/* 6 Core Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {whyChoosePillars.map((pillar, index) => (
+          {whyChoosePillars.map((pillar: { icon: string; title: string; description: string }, index: number) => (
             <div
               key={index}
               className="bg-[#14100d] border border-[#c5a059]/15 hover:border-[#c5a059]/45 rounded-sm p-8 shadow-xl transition-all duration-300 group hover:-translate-y-1 relative flex flex-col justify-between"

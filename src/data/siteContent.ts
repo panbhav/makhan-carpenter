@@ -5,545 +5,681 @@ import type {
   BeforeAfterItem,
   MaterialItem,
   Testimonial,
-  StatItem
+  StatItem,
+  FurnitureStyle,
+  RoomPossibility
 } from '../types';
 
 export const siteConfig = {
-  brandName: 'Makhan Carpenter',
+  brandName: 'MAKHAN CARPENTER',
   brandShortName: 'Makhan',
-  brandSubtitle: 'Bespoke Furniture & Architectural Woodwork',
-  tagline: 'Crafted by Hand. Designed for Life.',
-  subheading: 'Premium custom furniture and expert wood craftsmanship by Makhan Carpenter. Over 20 years of mastery across Uttar Pradesh and Alwar (Rajasthan).',
+  tagline: 'Crafted with Experience. Designed for Your Space.',
+  subheading: 'Custom furniture and premium woodwork made with skill, precision and attention to detail.',
   experienceYears: '20+',
-  locationsServed: 'Alwar (Rajasthan), Uttar Pradesh (UP), Delhi NCR & surrounding regions',
+  projectsCompleted: '500+',
   
+  location: {
+    address: 'Rath Nagar, Alwar, Rajasthan, India',
+    city: 'Alwar',
+    state: 'Rajasthan',
+    country: 'India',
+    serviceAreas: 'Alwar, Rajasthan and Uttar Pradesh (UP)',
+  },
+
   contact: {
-    phoneDisplay: '+91 98765 43210',
-    phoneRaw: '+919876543210',
-    whatsappDisplay: '+91 98765 43210',
-    whatsappRaw: '919876543210',
+    phonePrimary: '+91 6377935958',
+    phonePrimaryRaw: '+916377935958',
+    phoneSecondary: '+91 9310632611',
+    phoneSecondaryRaw: '+919310632611',
+    whatsappPrimary: '+91 6377935958',
+    whatsappPrimaryRaw: '916377935958',
     email: 'contact@makhancarpenter.com',
-    workshopAddress: 'Near Industrial Area, Alwar, Rajasthan - 301001',
-    serviceCoverage: 'On-site measurement and project execution available across UP & Rajasthan',
-    hours: 'Monday - Saturday: 8:30 AM – 7:30 PM (Sunday by Appointment)',
+    hours: 'Monday - Saturday: 8:30 AM – 8:00 PM (Sunday by Appointment)',
+  },
+
+  whatsappMessages: {
+    en: 'Hello Makhan Carpenter, I would like to discuss a custom furniture project.',
+    hi: 'नमस्ते Makhan Carpenter, मुझे अपने फर्नीचर के काम के बारे में जानकारी चाहिए।',
   },
 
   social: {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
     youtube: 'https://youtube.com',
-    pinterest: 'https://pinterest.com',
   },
-
-  whatsappDefaultMessage: 'Hello Makhan Carpenter, I would like to discuss a custom furniture project for my home/office.',
 };
 
-export const featuredProjects: Project[] = [
+export const statisticsData: StatItem[] = [
   {
-    id: 'walnut-fluted-wardrobe',
-    title: 'The Sovereign Fluted Walnut Wardrobe',
-    slug: 'sovereign-fluted-walnut-wardrobe',
-    category: 'Wardrobes',
-    subtitle: 'Floor-to-ceiling custom storage with integrated warm LED profiles and brass handles',
-    shortDescription: 'Custom-designed floor-to-ceiling master wardrobe with fluted American walnut door fronts and soft-close internal organizers.',
-    coverImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Full front perspective with fluted walnut paneling and ambient linear lighting',
-        tag: 'Full View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Interior drawer configuration with velvet-lined jewelry trays and sensor lights',
-        tag: 'Internal Storage'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Milled fluted vertical battens and concealed soft-close German hinges',
-        tag: 'Craftsmanship Detail'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Natural hand-rubbed hardwax matte oil finish highlighting authentic grain',
-        tag: 'Wood Finish'
-      }
-    ],
-    projectStory: 'The client wanted a luxurious, monolithic wardrobe wall for their master suite in Alwar that provided clutter-free organization without overwhelming the room. Makhan Carpenter hand-selected matching walnut veneers and precision-milled over 120 vertical fluted solid wood battens to achieve seamless visual continuity.',
-    clientRequirement: 'Complete floor-to-ceiling wardrobe with integrated sensor lighting, his-and-her sections, lockable compartments, and custom handles.',
-    craftsmanshipHighlight: 'Continuous grain-matched veneer fronts with acoustic dampening backing and custom recessed bronze profile handles.',
-    materials: ['American Black Walnut Veneer', 'BWP Marine Grade Plywood', 'Solid Brass Inset Hardware', 'Hafele Soft-close Runners'],
-    finish: 'Natural Matte Polyurethane & Hand-rubbed Hardwax Oil',
-    dimensions: '14 ft (W) × 9.5 ft (H) × 2 ft (D)',
-    location: 'Alwar, Rajasthan',
-    year: '2025',
-    featured: true,
+    value: '20+',
+    numericValue: 20,
+    suffix: '+',
+    label: 'Years of Experience',
+    labelHi: 'वर्षों का अनुभव',
+    description: 'Two decades of hands-on woodworking mastery in Alwar & UP.',
+    descriptionHi: 'अलवर और उत्तर प्रदेश में दो दशकों से अधिक का लकड़ी कारीगरी का अनुभव।'
   },
   {
-    id: 'solid-teak-live-edge-dining',
-    title: 'Artisanal Teak Ten-Seater Dining Table',
-    slug: 'artisanal-teak-dining-table',
-    category: 'Dining',
-    subtitle: 'Hand-shaped single-slab aesthetic with traditional mortise-and-tenon understructure',
-    shortDescription: 'Monolithic solid Sagwan (Teak) dining table with sculpted chamfered edges and hand-turned solid wood base.',
-    coverImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1400&q=85',
-        caption: '10-seater solid teak centerpiece table with natural undulating grain',
-        tag: 'Full View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Hand-planed top surface revealing natural golden-brown teak medullary rays',
-        tag: 'Grain Detail'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1533090161767-e6ffed986b88?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Double-tenon interlocking leg joints with zero visible mechanical screws',
-        tag: 'Joinery'
-      }
-    ],
-    projectStory: 'Commissioned for a sprawling family villa in Uttar Pradesh, this table was built to serve as a generational heirloom. Makhan Carpenter hand-cured seasoned CP teak wood for optimal moisture equilibrium, followed by seven rounds of progressive hand-sanding down to 2000-grit.',
-    clientRequirement: 'Durable, grand 10-seater dining surface capable of enduring daily family meals while serving as a formal hosting centerpiece.',
-    craftsmanshipHighlight: '100% screwless interlocking carpentry joinery ensuring stability across seasonal moisture variations.',
-    materials: ['First-Quality Seasoned CP Teak (Sagwan)', 'Traditional Mortise & Tenon Joinery', 'Food-safe Heat Resistant Topcoat'],
-    finish: 'Satin Organic Hardwax Oil & Heat-Resistant Protective Sealant',
-    dimensions: '10 ft (L) × 4 ft (W) × 30 in (H)',
-    location: 'Lucknow, Uttar Pradesh',
-    year: '2025',
-    featured: true,
+    value: '500+',
+    numericValue: 500,
+    suffix: '+',
+    label: 'Projects Completed',
+    labelHi: 'पूरे किए गए प्रोजेक्ट्स',
+    description: 'Custom wardrobes, beds, modular kitchens & full home woodwork.',
+    descriptionHi: '500 से अधिक सफल होम, विला और ऑफिस फर्नीचर प्रोजेक्ट्स।'
   },
   {
-    id: 'scandinavian-oak-platform-bed',
-    title: 'Nordic White Oak Floating Platform Bed',
-    slug: 'nordic-white-oak-platform-bed',
-    category: 'Bedroom',
-    subtitle: 'Integrated floating cantilever nightstands and inclined acoustic upholstered headboard',
-    shortDescription: 'Custom European White Oak king-size platform bed with concealed sub-frame support giving an effortless floating illusion.',
-    coverImage: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Minimalist low-profile floating silhouette with integrated soft base illumination',
-        tag: 'Full View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Seamless bedside table with concealed wireless charging doc and soft-glide drawer',
-        tag: 'Nightstand'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Finger-jointed solid oak corner detail demonstrating tight tolerances',
-        tag: 'Corner Joinery'
-      }
-    ],
-    projectStory: 'The homeowner sought a clean, tranquil retreat with serene Nordic aesthetics. Makhan Carpenter engineered a recessed steel-reinforced internal wooden skeleton that supports over 600 kg while keeping the outer oak frame hovering 8 inches above the floor.',
-    clientRequirement: 'Floating platform bed, custom extended headboard wall, and noise-free acoustic bed slats.',
-    craftsmanshipHighlight: 'Precision mitered 45-degree waterfall edges on both cantilevered side tables.',
-    materials: ['European White Oak Solid Timber & Quarter-Cut Veneer', 'Kiln-Dried Hardwood Slats', 'German Hardware'],
-    finish: 'Ultra-Matte Waterborne Polyurethane (Zero Yellowing)',
-    dimensions: 'King Size (78 in × 72 in mattress size) with 11 ft Headboard Paneling',
-    location: 'Noida (NCR / UP)',
-    year: '2024',
-    featured: true,
+    value: '2',
+    numericValue: 2,
+    suffix: '',
+    label: 'Major Service Regions',
+    labelHi: 'प्रमुख सेवा क्षेत्र',
+    description: 'Alwar, Rajasthan and across Uttar Pradesh (UP).',
+    descriptionHi: 'अलवर (राजस्थान) और सम्पूर्ण उत्तर प्रदेश (UP)।'
   },
   {
-    id: 'matte-charcoal-modular-kitchen',
-    title: 'Architectural Charcoal & Warm Oak Kitchen',
-    slug: 'architectural-charcoal-oak-kitchen',
-    category: 'Kitchen',
-    subtitle: 'Bespoke handleless cabinetry with hydraulic bi-fold lift-ups and corner magic carousels',
-    shortDescription: 'High-performance modular kitchen with anti-fingerprint acrylic charcoal base units and natural fluted oak island.',
-    coverImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Open-concept layout showcasing seamless island countertop and fluted bar backing',
-        tag: 'Full Kitchen'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Pantry tall unit with tandem inner pull-outs holding up to 70kg per shelf',
-        tag: 'Pantry System'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Under-cabinet routed micro-channel LED diffusers casting shadowless task light',
-        tag: 'Lighting Detail'
-      }
-    ],
-    projectStory: 'Transforming an outdated kitchen into an ergonomic culinary studio. Makhan Carpenter laser-measured the uneven structural brick walls, engineered custom filler profiles, and installed 100% moisture-proof marine ply carcasses with German Blum motion systems.',
-    clientRequirement: 'Heavy-duty Indian kitchen durability with high-end European aesthetic, spice pullouts, and breakfast island.',
-    craftsmanshipHighlight: '100% boiling-water-proof (BWP 710) internal carcasses with polyurethane edge banding for lifelong moisture seal.',
-    materials: ['IS:710 Marine Grade Plywood', 'Soft-touch Anti-scratch Acrylic', 'Natural Oak Accents', 'Blum Tandembox Runners'],
-    finish: 'Super-Matte Anti-Fingerprint & Natural PU Timber Finish',
-    dimensions: '16 ft × 12 ft L-Shape with 8 ft × 3.5 ft Island',
-    location: 'Alwar, Rajasthan',
-    year: '2025',
-    featured: true,
-  },
-  {
-    id: 'executive-walnut-study',
-    title: 'The Atelier Executive Desk & Library',
-    slug: 'atelier-executive-desk-library',
-    category: 'Office Furniture',
-    subtitle: 'Cantilevered desk with wire management channels and floor-to-ceiling library shelving',
-    shortDescription: 'Custom executive home office suite featuring a solid walnut floating desk, leather writing blotter inlay, and back-lit open shelving.',
-    coverImage: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Full study room panorama showing uninterrupted walnut grain across desk and bookshelf',
-        tag: 'Executive Suite'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Custom hidden magnetic cable channel and integrated flip-up charging ports',
-        tag: 'Smart Detail'
-      }
-    ],
-    projectStory: 'Built for a senior architect who required both functional drafting space and a dignified backdrop for client conferences. Makhan Carpenter engineered custom brass tension rods for the 9-foot shelving units to maintain absolute rigidity under heavy book loads.',
-    clientRequirement: 'Heavy storage capacity, concealed wiring, elegant executive aura with warm wooden presence.',
-    craftsmanshipHighlight: 'Concealed magnetic wire trays and hand-stitched saddle leather writing pad set flush into the walnut desktop.',
-    materials: ['American Black Walnut', 'Vegetable-Tanned Saddle Leather', 'Brushed Brass Accents', 'Hardwood Veneer'],
-    finish: 'Silky Hand-Rubbed Linseed & Wax Polish',
-    dimensions: 'Desk: 7 ft × 3.5 ft | Library Wall: 12 ft × 9 ft',
-    location: 'Agra, Uttar Pradesh',
-    year: '2024',
-    featured: true,
-  },
-  {
-    id: 'carved-teak-pivot-door',
-    title: 'Heritage Monolith Teak Pivot Entrance Door',
-    slug: 'heritage-monolith-teak-pivot-door',
-    category: 'Doors',
-    subtitle: '9-foot oversized heavy pivot door with geometric relief carving and 360-degree weather sealing',
-    shortDescription: 'Grand entrance pivot door handcrafted from seasoned CP Teak with subtle geometric fluting and a heavy brass pull bar.',
-    coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
-        caption: '9-foot entrance with heavy-duty hydraulic floor pivot capable of handling 250kg',
-        tag: 'Entrance View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Subtle hand-carved rhythmic flutes creating dynamic play of sunlight and shadow',
-        tag: 'Carving Detail'
-      }
-    ],
-    projectStory: 'Entrance doors establish the soul of a home. For this modern Haveli-inspired residence, Makhan Carpenter combined traditional Rajasthani woodcarving finesse with contemporary German floor-spring pivot technology.',
-    clientRequirement: 'Monumental entrance door with effortless fingertip operation and extreme durability against exterior weather.',
-    craftsmanshipHighlight: 'Internal anti-warp steel ladder core encapsulated in 45mm solid seasoned teak wood.',
-    materials: ['100% Seasoned CP Teak Wood', 'Heavy-Duty Hydraulic Floor Spring', 'Solid Antiqued Brass 6ft Pull Handle'],
-    finish: 'Exterior UV-Resistant Polyurethane Matt Varnish with Anti-fungal Sealant',
-    dimensions: '9.5 ft (H) × 5 ft (W) × 65 mm (Thickness)',
-    location: 'Alwar, Rajasthan',
-    year: '2025',
-    featured: false,
-  },
-  {
-    id: 'slatted-wood-acoustic-media-unit',
-    title: 'Bespoke Slatted Media Wall & Floating Credenza',
-    slug: 'slatted-acoustic-media-wall',
-    category: 'Living Room',
-    subtitle: 'Acoustically tuned acoustic wooden battens with concealed speaker enclosures and floating console',
-    shortDescription: 'Living room centerpiece with floor-to-ceiling slatted oak acoustic panels and a floating mitered entertainment console.',
-    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Harmonious living room feature wall with warm ambient back-glow',
-        tag: 'Full Living Area'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Mitered 45-degree seamless edges on the 10-foot floating TV console',
-        tag: 'Joinery Detail'
-      }
-    ],
-    projectStory: 'The client wanted an audiophile-grade media room that looked like a boutique art gallery. Makhan Carpenter calculated batten spacing for optimal acoustic diffusion and built concealed fabric speaker niches within the wooden wall.',
-    clientRequirement: 'Hide all messy cables, accommodate a 75-inch display, integrate soundbar and subwoofers cleanly.',
-    craftsmanshipHighlight: 'Push-to-open acoustic fabric-faced wooden doors that permit IR remote signals and audio pass-through.',
-    materials: ['Natural White Oak', 'Acoustic Felt Backing', 'Moisture Resistant High-Density Board', 'Concealed LED Tracks'],
-    finish: 'Natural Matte Hardwax Clear Sealant',
-    dimensions: '14 ft (W) × 10 ft (H)',
-    location: 'Ghaziabad (UP / NCR)',
-    year: '2025',
-    featured: true,
-  },
-  {
-    id: 'bespoke-vanity-dressing-island',
-    title: 'Custom Dressing Room & Jewelry Island',
-    slug: 'custom-dressing-room-island',
-    category: 'Wooden Interiors',
-    subtitle: 'Glass-topped central display island with curved wooden fluted corners and motorized accessory trays',
-    shortDescription: 'Walk-in dressing sanctuary featuring central glass jewelry island, fluted corners, and framed glass-fronted illuminated wardrobes.',
-    coverImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Central accessory island with ultra-clear tempered glass top and fluted wooden radius',
-        tag: 'Island View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Full dressing room perimeter with custom vanity table and mirror frame',
-        tag: 'Dressing Suite'
-      }
-    ],
-    projectStory: 'A private client wanted a luxury boutique walk-in dressing suite. Makhan Carpenter crafted steam-bent curved wood corners for the central island to ensure smooth circulation and zero sharp edges.',
-    clientRequirement: 'High-end dressing room with specialized compartments for watches, jewelry, ties, and handbags.',
-    craftsmanshipHighlight: 'Steam-bent solid hardwood curved corners with precision CNC fluting and velvet inserts.',
-    materials: ['Smoked Ash Veneer', 'Extra-Clear Low Iron Glass', 'Italian Velvet Drawer Lining', 'Solid Brass Trim'],
-    finish: 'Smoked Ash Matte Lacquer',
-    dimensions: 'Island: 5 ft × 3 ft | Dressing Room: 16 ft × 14 ft',
-    location: 'Alwar, Rajasthan',
-    year: '2024',
-    featured: false,
+    value: 'Custom',
+    numericValue: 100,
+    suffix: '',
+    label: 'Furniture & Woodwork',
+    labelHi: 'कस्टम फर्नीचर और वुडवर्क',
+    description: 'Every piece made-to-measure according to your space.',
+    descriptionHi: 'आपकी जगह, नाप और पसंद के अनुसार 100% अनुकूलित।'
   }
 ];
 
 export const servicesData: ServiceItem[] = [
   {
     id: 'custom-furniture',
+    number: '01',
     title: 'Custom Furniture',
-    shortDesc: 'Bespoke, made-to-measure furniture designed and handcrafted to match your space, style, and functional needs perfectly.',
-    fullDesc: 'From unique sculptural credenzas to custom statement accent chairs, we craft one-of-a-kind furniture tailored to your exact architectural space, lifestyle, and aesthetic sensibilities.',
+    titleHi: 'कस्टम फर्नीचर',
+    shortDesc: 'Furniture designed and built according to the customer\'s space and requirements.',
+    shortDescHi: 'ग्राहक की जगह, नाप और आवश्यकतानुसार बनाया जाने वाला विशेष फर्नीचर।',
+    fullDesc: 'We craft bespoke furniture pieces tailored to your exact floor plan, interior theme, and ergonomic requirements with durable joinery and hand-rubbed finishes.',
     image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80',
     features: [
-      '100% Made-to-measure custom dimensions',
-      'Handcrafted solid wood joinery (Sagwan, Walnut, Oak)',
-      '3D ergonomic prototyping & sample wood approval',
-      'Lifelong structural warranty'
+      'Made-to-measure dimensions',
+      'Solid wood joinery (Teak, Walnut, Oak)',
+      'Custom stain & polish options',
+      'Long-lasting structural strength'
     ],
-    suitableFor: 'Living rooms, luxury villas, boutique lounges, executive suites',
-    popularWoods: ['CP Teak (Sagwan)', 'American Walnut', 'White Oak', 'Rosewood (Sheesham)']
+    suitableFor: 'Living rooms, bedrooms, villas, commercial spaces',
+    popularWoods: ['CP Teak (Sagwan)', 'Sheesham', 'American Walnut']
   },
   {
-    id: 'wardrobes',
-    title: 'Wardrobes & Closets',
-    shortDesc: 'Modern sliding, walk-in, and hinged wardrobes with customized storage layouts, sensor lighting, and premium finishes.',
-    fullDesc: 'We design intelligent wardrobe solutions that maximize vertical storage while adding architectural elegance to your bedroom. Incorporating velvet organizers, pull-down hanging rails, and integrated ambient lighting.',
-    image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80',
-    features: [
-      'Floor-to-ceiling seamless configurations',
-      'Fluted wood, tinted glass, or veneer shutters',
-      'Heavy-duty soft-close German sliding/hinge mechanisms',
-      'Smart sensor LED lighting profiles'
-    ],
-    suitableFor: 'Master suites, guest bedrooms, walk-in closets, dressing suites',
-    popularWoods: ['Walnut Veneer', 'BWP Marine Ply', 'Smoked Ash', 'Fluted Teak']
-  },
-  {
-    id: 'modular-kitchens',
-    title: 'Modular Kitchens',
-    shortDesc: 'High-end functional kitchen woodwork engineered with water-resistant marine ply, anti-scratch finishes, and smart organizers.',
-    fullDesc: 'Kitchens built specifically for Indian cooking habits. We use 100% Boiling Water Proof (BWP IS:710) plywood, waterproof PU edge sealing, and smooth Blum/Hafele hardware for decades of effortless cooking.',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
-    features: [
-      'IS:710 Certified 100% Marine Grade Plywood',
-      'Anti-fingerprint acrylic & fluted wooden accents',
-      'Corner magic carousels & heavy tandem pull-outs',
-      'Ergonomic workflow planning (Work Triangle)'
-    ],
-    suitableFor: 'Modern residences, luxury apartments, farmhouses',
-    popularWoods: ['BWP Marine Ply', 'Natural Oak Accents', 'High-Gloss & Matte Acrylic']
-  },
-  {
-    id: 'wooden-beds',
-    title: 'Wooden Beds & Headboards',
-    shortDesc: 'Strong, elegant, and custom-designed wooden beds with floating platforms, storage hydraulic systems, and statement headboards.',
-    fullDesc: 'Experience deep rest on handcrafted wooden beds engineered for zero creaking. From low-slung Japanese platform beds to grand upholstered headboard frames, every piece is built for generational comfort.',
+    id: 'beds',
+    number: '02',
+    title: 'Beds',
+    titleHi: 'लकड़ी के बेड',
+    shortDesc: 'Custom wooden beds in modern, classic and contemporary designs.',
+    shortDescHi: 'मॉडर्न, क्लासिक और स्टोरेज वाले मजबूत लकड़ी के बेड।',
+    fullDesc: 'Handcrafted solid wood beds engineered for zero creaking, featuring custom headboard paneling, hydraulic under-bed storage, and floating platform styles.',
     image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
     features: [
       'Heavy-duty hydraulic lift storage options',
-      'Reinforced internal skeletons with acoustic slats',
-      'Integrated floating nightstands & wireless power slots',
-      'Custom fabric / leatherette upholstered backrests'
+      'Acoustic slat understructure',
+      'Designer cushioned / wooden headboards',
+      'King, Queen & Custom sizes'
     ],
-    suitableFor: 'Master bedrooms, luxury guest suites, vacation homes',
-    popularWoods: ['Solid Teak Wood', 'American Walnut', 'White Oak', 'Steamed Beech']
+    suitableFor: 'Master bedrooms, guest rooms, kids rooms',
+    popularWoods: ['Solid Teak Wood', 'White Oak', 'Hardwood Plywood']
+  },
+  {
+    id: 'sofas',
+    number: '03',
+    title: 'Sofas',
+    titleHi: 'सोफा फ्रेम्स और सेट',
+    shortDesc: 'Custom-designed wooden sofa structures and premium furniture solutions.',
+    shortDescHi: 'मजबूत लकड़ी के सोफा फ्रेम और सुंदर लिविंग रूम सिटिंग।',
+    fullDesc: 'Custom-built solid timber sofa frameworks, L-shaped sectional sofa bases, and contemporary wooden accent seating made for comfort and generational longevity.',
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80',
+    features: [
+      'Heavy-duty solid hardwood inner frame',
+      'L-shape sectional and 3+2+1 configurations',
+      'Integrated armrest storage & cup holders',
+      'Fabric & leatherette compatibility'
+    ],
+    suitableFor: 'Living rooms, drawing rooms, office lounges',
+    popularWoods: ['Seasoned Teak', 'Marandi Hardwood', 'Sal Wood']
+  },
+  {
+    id: 'wardrobes',
+    number: '04',
+    title: 'Wardrobes',
+    titleHi: 'कस्टम अलमारियां',
+    shortDesc: 'Custom wardrobes designed around available space, storage requirements and preferred style.',
+    shortDescHi: 'उपलब्ध जगह और जरूरत के अनुसार बनाई गई फ्लोर-टू-सीलिंग अलमारियां।',
+    fullDesc: 'Floor-to-ceiling sliding, hinged, and walk-in wardrobes with customized drawer organizers, sensor lights, and premium acrylic, veneer, or fluted shutters.',
+    image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80',
+    features: [
+      'Floor-to-ceiling seamless storage',
+      'Smooth soft-close sliding / hinged shutters',
+      'Integrated jewelry trays & tie racks',
+      'Fluted wood, glass, or laminate finishes'
+    ],
+    suitableFor: 'Master bedrooms, dressing areas, walk-in closets',
+    popularWoods: ['BWP Marine Ply', 'Natural Veneer', 'Fluted Teak']
+  },
+  {
+    id: 'modular-kitchens',
+    number: '05',
+    title: 'Modular Kitchens',
+    titleHi: 'मॉड्यूलर किचन',
+    shortDesc: 'Functional and stylish kitchen woodwork designed for individual spaces.',
+    shortDescHi: 'वाटरप्रूफ मरीन प्लाई और आधुनिक फिटिंग्स से बनी मॉड्यूलर किचन।',
+    fullDesc: 'Custom modular kitchens engineered for Indian cooking with 100% boiling-water-proof (IS:710) plywood, soft-close baskets, and corner carousel organizers.',
+    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
+    features: [
+      '100% BWP IS:710 Marine Grade Plywood',
+      'Heavy-duty tandem drawer pull-outs',
+      'Anti-fingerprint matte & acrylic shutters',
+      'Ergonomic storage planning'
+    ],
+    suitableFor: 'Kitchens, pantry rooms, kitchen breakfast islands',
+    popularWoods: ['IS:710 Marine Ply', 'Acrylic Surfaces', 'Solid Oak Trim']
   },
   {
     id: 'dining-tables',
-    title: 'Dining Tables & Seating',
-    shortDesc: 'Handcrafted solid wood dining tables designed for memorable family gatherings and luxury residential spaces.',
-    fullDesc: 'Dining tables are the heart of family memories. We hand-select solid slabs of seasoned Teak and Walnut, sculpting delicate chamfered edges and rock-solid interlocking joinery without flimsy hardware.',
+    number: '06',
+    title: 'Dining Tables',
+    titleHi: 'डाइनिंग टेबल और कुर्सियां',
+    shortDesc: 'Custom dining tables in different sizes, shapes, wood finishes and designs.',
+    shortDescHi: 'ठोस लकड़ी से बनी 6, 8 व 10 सीटर डाइनिंग टेबल।',
+    fullDesc: 'Solid wood 6, 8, 10, and 12-seater dining tables crafted with interlocking carpentry joinery, heat-resistant topcoats, and matching solid timber chairs and benches.',
     image: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=900&q=80',
     features: [
-      '6, 8, 10 & 12-seater custom configurations',
-      'Heat, stain, and water-resistant protective finishes',
-      'Matching solid wood benches and ergonomic chairs',
-      'Live-edge and contemporary rectangular profiles'
+      'Solid CP Teak & Walnut single-slab aesthetic',
+      'Stain & heat-resistant protective clear finish',
+      'Interlocking mortise & tenon leg joinery',
+      'Custom matching seating benches & chairs'
     ],
-    suitableFor: 'Dining rooms, formal banquet spaces, open-plan kitchen diners',
-    popularWoods: ['CP Teak (Sagwan)', 'American Walnut', 'Sheesham', 'Acacia Hardwood']
+    suitableFor: 'Dining rooms, open kitchen-diners, villas',
+    popularWoods: ['CP Teak (Sagwan)', 'American Walnut', 'Sheesham']
+  },
+  {
+    id: 'tv-units',
+    number: '07',
+    title: 'TV Units',
+    titleHi: 'टीवी यूनिट्स और मीडिया वॉल',
+    shortDesc: 'Modern and traditional TV units designed to complement the room.',
+    shortDescHi: 'कमरे की सुंदरता बढ़ाने वाली मॉडर्न और ट्रेडिशनल टीवी यूनिट्स।',
+    fullDesc: 'Floating TV consoles, floor-to-ceiling slatted back paneling, integrated ambient LED channels, and concealed cable routing for a clean living room look.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+    features: [
+      'Concealed wire management channels',
+      'Floating media storage consoles',
+      'Fluted wooden back panels with LED lighting',
+      'Push-to-open soft-close drawers'
+    ],
+    suitableFor: 'Living rooms, master bedrooms, entertainment lounges',
+    popularWoods: ['Oak Veneer', 'Fluted Battens', 'Matte Charcoal Panels']
   },
   {
     id: 'office-furniture',
-    title: 'Office Furniture & Workstations',
-    shortDesc: 'Custom executive desks, conference tables, library shelving, and ergonomic storage solutions.',
-    fullDesc: 'Elevate your workday with bespoke executive desks, floating credenzas, and custom study libraries designed with concealed cable canals and tactile natural timber surfaces.',
+    number: '08',
+    title: 'Office Furniture',
+    titleHi: 'ऑफिस फर्नीचर',
+    shortDesc: 'Custom desks, storage units, cabinets, tables and other office woodwork.',
+    shortDescHi: 'कस्टम एग्जीक्यूटिव डेस्क, बुकशेल्फ और वर्कस्टेशन।',
+    fullDesc: 'Custom executive desks, conference tables, director study tables, and back-lit library display shelves built with clean wire grommets and lockable drawers.',
     image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
     features: [
-      'Concealed magnetic cable management channels',
-      'Floor-to-ceiling library display shelving with back-lighting',
-      'Leather inlay work surfaces & soft-glide drawers',
-      'Custom acoustic wooden paneling for privacy'
+      'Integrated wire management channels',
+      'Lockable drawer units & file organizers',
+      'Floor-to-ceiling library display shelving',
+      'Solid wood & veneer finishes'
     ],
-    suitableFor: 'Home offices, corporate director chambers, legal libraries',
-    popularWoods: ['American Walnut', 'Smoked Oak', 'Rosewood', 'Matte Laminate on Marine Ply']
+    suitableFor: 'Home offices, chambers, corporate conference rooms',
+    popularWoods: ['American Walnut', 'Teak Wood', 'Laminate on Marine Ply']
   },
   {
     id: 'wooden-doors',
-    title: 'Main & Interior Wooden Doors',
-    shortDesc: 'Monumental main pivot doors and interior flush doors with custom carving, fluting, and premium hardware.',
-    fullDesc: 'Make a magnificent first impression. We construct anti-warp solid teak pivot doors and sound-insulating internal doors with hand-carved textures and high-security German locks.',
+    number: '09',
+    title: 'Wooden Doors',
+    titleHi: 'लकड़ी के मुख्य व अंदरूनी दरवाजे',
+    shortDesc: 'Custom wooden doors with different traditional and modern design options.',
+    shortDescHi: 'मजबूत सागवान की मुख्य pivot और अंदरूनी डिजाइनर दरवाजे।',
+    fullDesc: 'Monumental main pivot entrance doors and interior flush doors with solid teak wood construction, carved geometric fluting, and heavy-duty brass pull handles.',
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
     features: [
-      'Heavy pivot doors up to 10-feet tall',
-      'Anti-warp steel reinforced internal cores',
-      '360-degree weather sealing & acoustic gaskets',
-      'Custom brass pull handles and luxury digital lock integration'
+      'Anti-warp heavy solid teak construction',
+      'Heavy-duty hydraulic pivot systems',
+      '360-degree weather sealing',
+      'Custom brass handle & lock integration'
     ],
-    suitableFor: 'Villa main entrances, grand bedroom doors, pooja room doors',
-    popularWoods: ['CP Teak (Sagwan)', 'Solid White Ash', 'Solid Mahogany']
+    suitableFor: 'Main villa entrances, bedroom doors, pooja room doors',
+    popularWoods: ['CP Teak (Sagwan)', 'Solid White Ash', 'Hardwood']
   },
   {
     id: 'interior-woodwork',
-    title: 'Interior Woodwork & Paneling',
-    shortDesc: 'Complete architectural woodwork solutions including fluted wall paneling, ceiling rafters, TV units, and partitions.',
-    fullDesc: 'Transform plain bare walls into warm, luxurious architectural statements with our custom fluted wooden panels, slatted room dividers, concealed jib doors, and suspended timber ceiling baffles.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+    number: '10',
+    title: 'Interior Woodwork',
+    titleHi: 'सम्पूर्ण इंटीरियर वुडवर्क',
+    shortDesc: 'Complete woodwork solutions for homes, offices and other spaces.',
+    shortDescHi: 'घर, ऑफिस और विला के लिए सम्पूर्ण लकड़ी का काम व पैनलिंग।',
+    fullDesc: 'End-to-end architectural woodwork including ceiling rafters, decorative partition jaalis, fluted wall paneling, and concealed doorway paneling.',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80',
     features: [
-      'Precision CNC and hand-crafted fluted battens',
-      'Acoustic felt-backed wooden sound dampening panels',
-      'Seamless invisible jib doors flush with walls',
+      'Precision fluted wooden battens',
+      'Suspended ceiling beams & rafters',
+      'Decorative wooden partitions & jaalis',
       'Integrated LED channel illumination'
     ],
-    suitableFor: 'Living room feature walls, corridors, home theaters, stairwells',
-    popularWoods: ['Natural Wood Veneers', 'Solid Oak Slats', 'Charcoal & PU Panels']
+    suitableFor: 'Complete residences, stairwells, lobbies, duplexes',
+    popularWoods: ['Natural Veneers', 'Solid Timber Battens', 'Marine Ply']
+  },
+  {
+    id: 'kids-playrooms',
+    number: '11',
+    title: 'Kids\' Play Rooms',
+    titleHi: 'बच्चों के प्लेरूम और स्टडी फर्नीचर',
+    shortDesc: 'Custom wooden playroom furniture and creative wooden spaces designed for children.',
+    shortDescHi: 'बच्चों के लिए सुरक्षित, राउंडेड कोनों वाले प्लेरूम व स्टडी यूनिट्स।',
+    fullDesc: 'Safe, rounded-edge kids beds, multi-compartment toy organizers, study desks, and creative wooden playhouse structures built with non-toxic, child-safe finishes.',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+    features: [
+      'Smooth rounded corners with zero sharp edges',
+      'Multi-level toy & book storage units',
+      'Ergonomic adjustable study workstations',
+      'Child-safe eco-friendly non-toxic finishes'
+    ],
+    suitableFor: 'Children bedrooms, play areas, study corners',
+    popularWoods: ['Solid Pine / Oak', 'Calibrated Hardwood Plywood', 'Soft-touch Laminate']
+  },
+  {
+    id: 'other-custom-work',
+    number: '12',
+    title: 'Other Custom Work',
+    titleHi: 'अन्य विशेष कस्टम कार्य',
+    shortDesc: 'If a customer has a unique furniture idea, Makhan Carpenter can discuss and create a customized solution.',
+    shortDescHi: 'यदि आपके पास कोई विशेष फर्नीचर आइडिया है, तो हम उसे तैयार कर सकते हैं।',
+    fullDesc: 'Have a unique sketch, custom pooja mandir requirement, curved counter, or custom wooden staircase handrail? We discuss the concept, calculate measurements, and bring it to life.',
+    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=900&q=80',
+    features: [
+      'Custom pooja units & carved mandirs',
+      'Unique curved counters & bar cabinets',
+      'Custom staircase wooden cladding & railings',
+      'Bespoke architectural requests'
+    ],
+    suitableFor: 'Unique spaces, specialty requirements, custom home corners',
+    popularWoods: ['Custom as requested']
   }
 ];
 
-export const processSteps: ProcessStep[] = [
+export const furnitureStyles: FurnitureStyle[] = [
   {
-    stepNumber: '01',
-    title: 'Requirement & Consultation',
-    subtitle: 'Listening to Your Vision',
-    description: 'We discuss your lifestyle needs, aesthetic preferences, spatial constraints, and functional requirements in detail over coffee or call.',
-    image: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Design brief & material moodboard alignment'
-  },
-  {
-    stepNumber: '02',
-    title: 'Laser Precision Measurement',
-    subtitle: 'Millimeter-Accurate Site Survey',
-    description: 'Makhan Carpenter conducts a rigorous on-site laser survey to map exact wall angles, plumbing lines, electrical points, and ceiling levels.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'On-site digital measurement in UP / Alwar'
-  },
-  {
-    stepNumber: '03',
-    title: 'Material & Grain Curation',
-    subtitle: 'Selecting Only the Finest Timbers',
-    description: 'We personally inspect and select seasoned teak, walnut, oak, and marine-grade plywood with ideal grain character and moisture balance.',
-    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Curing & hand-selecting prime timber logs'
-  },
-  {
-    stepNumber: '04',
-    title: 'Precision Cutting & Shaping',
-    subtitle: 'Master Woodcraft at the Workshop',
-    description: 'Using high-precision saws and traditional hand planes, raw wood is sized, jointed, and planed to glass-smooth flatness.',
-    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Hand-planing & precision angle milling'
-  },
-  {
-    stepNumber: '05',
-    title: 'Traditional Joinery & Assembly',
-    subtitle: 'Rock-Solid Structural Integrity',
-    description: 'We employ classic mortise-and-tenon, dovetail, and reinforced biscuit joinery so your furniture never sags, wobbles, or creaks.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Interlocking wood joinery without flimsy screws'
-  },
-  {
-    stepNumber: '06',
-    title: 'Multi-Stage Sanding & Finishing',
-    subtitle: 'Tactile Silk-Smooth Touch',
-    description: 'Up to 5 rounds of progressive hand-sanding followed by premium Italian PU, hardwax oil, or natural polish to bring out rich wood grain.',
+    id: 'modern',
+    name: 'Modern',
+    nameHi: 'मॉडर्न (Modern)',
+    description: 'Clean horizontal lines, sleek handleless surfaces, and uncluttered geometry for contemporary homes.',
+    descriptionHi: 'साफ लाइनें और हैंडल-लेस आधुनिक डिज़ाइन।',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Hand-rubbed organic oils & protective topcoats'
+    tags: ['Sleek Lines', 'Flush Panels', 'LED Accents']
   },
   {
-    stepNumber: '07',
-    title: 'White-Glove Site Installation',
-    subtitle: 'Flawless Fit on Location',
-    description: 'Our trusted team carefully transports, aligns, and secures the furniture in your home with zero mess and immaculate clean-up.',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Careful transport & zero-dust installation'
+    id: 'minimal',
+    name: 'Minimal',
+    nameHi: 'मिनिमल (Minimal)',
+    description: 'Quiet elegance that focuses on proportion, functionality, and spaciousness with zero visual clutter.',
+    descriptionHi: 'सरल, शांत और खुला डिज़ाइन।',
+    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
+    tags: ['Pure Forms', 'Natural Tones', 'Hidden Storage']
   },
   {
-    stepNumber: '08',
-    title: 'Final Quality Inspection & Handover',
-    subtitle: 'Delivering Perfection',
-    description: 'Makhan Carpenter personally inspects every hinge, drawer slide, surface finish, and edge before handing over your bespoke piece.',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'Client walkthrough & maintenance guidance'
+    id: 'contemporary',
+    name: 'Contemporary',
+    nameHi: 'कंटेम्परेरी (Contemporary)',
+    description: 'Fluid blend of current design trends with warm wood textures, fluted details, and matte contrasts.',
+    descriptionHi: 'ट्रेंडी डिज़ाइन और लकड़ी की सुंदर फिनिश।',
+    image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80',
+    tags: ['Fluted Profiles', 'Matte Surfaces', 'Smart Fittings']
+  },
+  {
+    id: 'traditional',
+    name: 'Traditional & Classic',
+    nameHi: 'ट्रेडिशनल व क्लासिक (Traditional)',
+    description: 'Timeless solid teak construction with authentic Indian woodcraft details, robust moldings, and rich tones.',
+    descriptionHi: 'पारंपरिक भारतीय शैली, नक्काशी और मजबूत सागवान।',
+    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
+    tags: ['Solid Teak', 'Classic Moldings', 'Heirloom Joinery']
+  },
+  {
+    id: 'luxury',
+    name: 'Luxury & Bespoke',
+    nameHi: 'लक्ज़री (Luxury)',
+    description: 'High-end American walnut, brushed brass trim, extra-clear glass inserts, and hand-rubbed hardwax finishes.',
+    descriptionHi: 'प्रीमियम अखरोट, ब्रास वर्क और बेहतरीन फिनिश।',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+    tags: ['Walnut Veneer', 'Brass Trim', 'Illuminated Niches']
+  },
+  {
+    id: 'space-saving',
+    name: 'Space-Saving',
+    nameHi: 'स्पेस-सेविंग (Space-Saving)',
+    description: 'Intelligent multi-functional storage, hydraulic beds, folding desks, and compact corner solutions.',
+    descriptionHi: 'कम जगह में अधिक स्टोरेज और स्मार्ट फर्नीचर।',
+    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
+    tags: ['Hydraulic Storage', 'Pull-out Desks', 'Corner Units']
+  }
+];
+
+export const roomPossibilities: RoomPossibility[] = [
+  {
+    id: 'bedroom',
+    roomName: 'Bedroom',
+    roomNameHi: 'बेडरूम (Bedroom)',
+    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    description: 'Create a restful sanctuary with made-to-measure beds, wardrobes, and bedside woodwork.',
+    descriptionHi: 'आरामदायक बेडरूम के लिए कस्टम बेड, अलमारियां और साइड टेबल्स।',
+    items: ['Modern & classic beds', 'Storage beds with hydraulics', 'Designer headboards', 'Bedside units & dressers', 'Full bedroom woodwork'],
+    itemsHi: ['मॉडर्न व क्लासिक बेड', 'हाइड्रोलिक स्टोरेज बेड', 'डिज़ाइनर हेडबोर्ड', 'बेडसाइड यूनिट्स व ड्रेसर', 'सम्पूर्ण बेडरूम वुडवर्क']
+  },
+  {
+    id: 'living',
+    roomName: 'Living Room',
+    roomNameHi: 'लिविंग रूम (Living Room)',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+    description: 'Transform your main living area into an inviting, impressive space for family and guests.',
+    descriptionHi: 'परिवार और मेहमानों के लिए शानदार और आरामदायक लिविंग स्पेस।',
+    items: ['TV units & media walls', 'Wooden sofa frameworks', 'Acoustic wall panels', 'Crockery & display units', 'Shoe cabinets with seating'],
+    itemsHi: ['टीवी यूनिट्स व मीडिया वॉल', 'लकड़ी के सोफा फ्रेम', 'वॉल पैनल्स व शेल्फ', 'डिस्प्ले व शोकेस यूनिट्स', 'शू कैबिनेट्स']
+  },
+  {
+    id: 'kitchen',
+    roomName: 'Kitchen',
+    roomNameHi: 'किचन (Kitchen)',
+    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
+    description: 'Efficient, durable modular kitchens designed around your specific cooking habits and storage needs.',
+    descriptionHi: 'टिकाऊ और सुविधाजनक मॉड्यूलर किचन, भारतीय कुकिंग के अनुकूल।',
+    items: ['Complete modular kitchens', 'Storage & pantry cabinets', 'Hydraulic overhead wall units', 'Kitchen breakfast islands', 'Cutlery & spice pull-outs'],
+    itemsHi: ['सम्पूर्ण मॉड्यूलर किचन', 'स्टोरेज व पैंट्री कैबिनेट्स', 'हाइड्रोलिक वॉल यूनिट्स', 'किचन ब्रेकफास्ट आइलैंड', 'स्पाइस व कटलरी पुल-आउट्स']
+  },
+  {
+    id: 'dining',
+    roomName: 'Dining Room',
+    roomNameHi: 'डाइनिंग (Dining)',
+    image: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=900&q=80',
+    description: 'Sturdy solid timber dining tables and seating built for lasting family gatherings.',
+    descriptionHi: 'परिवार के लिए मजबूत और खूबसूरत सॉलिड वुड डाइनिंग टेबल।',
+    items: ['Solid teak dining tables', 'Custom seating benches & chairs', 'Dining crockery storage', 'Bar cabinets & credenzas'],
+    itemsHi: ['सॉलिड सागवान डाइनिंग टेबल', 'कस्टम सिटिंग बेंच व कुर्सियां', 'क्रॉकरी स्टोरेज अलमारी', 'बार कैबिनेट्स']
+  },
+  {
+    id: 'kids',
+    roomName: 'Kids Room',
+    roomNameHi: 'बच्चों का कमरा (Kids)',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+    description: 'Safe, creative, and functional wooden play and study solutions for children.',
+    descriptionHi: 'बच्चों के लिए सुरक्षित, गोल कोनों वाले प्लेरूम व स्टडी फर्नीचर।',
+    items: ['Playroom wooden furniture', 'Toy & book storage units', 'Integrated study workstations', 'Custom bunk beds & single beds'],
+    itemsHi: ['प्लेरूम फर्नीचर', 'खिलौने व किताब स्टोरेज यूनिट्स', 'स्टडी वर्कस्टेशन व टेबल', 'कस्टम बंक बेड']
+  },
+  {
+    id: 'office',
+    roomName: 'Office & Study',
+    roomNameHi: 'ऑफिस व स्टडी (Office)',
+    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
+    description: 'Productive and dignified work environments with customized executive desks and bookshelves.',
+    descriptionHi: 'व्यवस्थित और सुंदर ऑफिस के लिए कस्टम डेस्क व लाइब्रेरी।',
+    items: ['Executive & study desks', 'Floor-to-ceiling bookshelves', 'Filing & lockable storage', 'Conference & meeting tables'],
+    itemsHi: ['एग्जीक्यूटिव व स्टडी डेस्क', 'फुल-हाइट बुकशेल्फ व लाइब्रेरी', 'लॉक वाले स्टोरेज कैबिनेट्स', 'कॉन्फ्रेंस टेबल्स']
+  }
+];
+
+export const featuredProjects: Project[] = [
+  {
+    id: 'walnut-fluted-wardrobe',
+    title: 'Custom Fluted Walnut Wardrobe Wall',
+    titleHi: 'कस्टम फ्लूटेड वॉलनट अलमारी',
+    slug: 'custom-fluted-walnut-wardrobe',
+    category: 'Wardrobes',
+    designStyle: 'Contemporary & Luxury',
+    subtitle: 'Floor-to-ceiling custom storage with integrated soft LED profiles',
+    shortDescription: 'Custom-designed floor-to-ceiling master wardrobe with fluted door fronts and soft-close internal organizers.',
+    shortDescriptionHi: 'सॉफ्ट-क्लोज फिटिंग्स और गर्म एलईडी लाइटिंग के साथ बनाई गई शानदार अलमारी।',
+    coverImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Full front perspective with fluted paneling and ambient linear lighting',
+        tag: 'Full View'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Interior drawer configuration with velvet-lined jewelry trays',
+        tag: 'Internal Storage'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Milled vertical wood battens and concealed soft-close hinges',
+        tag: 'Craftsmanship Detail'
+      }
+    ],
+    projectStory: 'Built according to the customer\'s master suite measurements in Alwar, maximizing vertical storage with clean fluted door detailing.',
+    clientRequirement: 'Full wall wardrobe with his-and-her internal sections, sensor lighting, and custom handle design.',
+    customRequirements: 'Integrated internal drawers with safety locks and sensor-operated profile lighting.',
+    craftsmanshipHighlight: 'Accurate batten alignment and calibrated marine plywood internal carcass.',
+    materials: ['Walnut Veneer', 'BWP Marine Grade Plywood', 'Soft-close German Hinges'],
+    finish: 'Natural Matte Hardwax Oil & Polyurethane Sealant',
+    dimensions: '14 ft (W) × 9.5 ft (H)',
+    location: 'Alwar, Rajasthan',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'solid-teak-dining-table',
+    title: 'Solid Teak Eight-Seater Dining Table',
+    titleHi: 'सॉलिड सागवान 8-सीटर डाइनिंग टेबल',
+    slug: 'solid-teak-dining-table',
+    category: 'Dining',
+    designStyle: 'Traditional & Modern Blend',
+    subtitle: 'Handcrafted solid Sagwan wood table with sturdy interlocking wooden joinery',
+    shortDescription: 'Solid Teak (Sagwan) dining table with smooth chamfered edges and durable protective finish.',
+    shortDescriptionHi: 'सागवान की पक्की लकड़ी से बनी 8-सीटर मजबूत डाइनिंग टेबल।',
+    coverImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1400&q=85',
+        caption: '8-seater centerpiece dining table with natural teak grain',
+        tag: 'Full Table'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Hand-planed top surface highlighting authentic wood grain',
+        tag: 'Grain Detail'
+      }
+    ],
+    projectStory: 'Crafted for a family home in Uttar Pradesh requiring a durable, generational dining table capable of everyday family meals and formal hosting.',
+    clientRequirement: 'Sturdy 8-seater table with stain-resistant top and zero wobbling.',
+    customRequirements: 'Heat and water-resistant protective topcoat for daily hot cookware placement.',
+    craftsmanshipHighlight: 'Classical interlocking mortise and tenon leg joints without loose metal fittings.',
+    materials: ['Seasoned CP Teak (Sagwan)', 'Hardwood Joinery'],
+    finish: 'Satin Heat-Resistant Protective Clear Coat',
+    dimensions: '8.5 ft (L) × 3.8 ft (W) × 30 in (H)',
+    location: 'Uttar Pradesh (UP)',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'oak-platform-storage-bed',
+    title: 'White Oak Platform Bed with Storage',
+    titleHi: 'व्हाइट ओक स्टोरेज प्लेटफॉर्म बेड',
+    slug: 'white-oak-platform-storage-bed',
+    category: 'Bedroom',
+    designStyle: 'Minimal & Contemporary',
+    subtitle: 'King-size wooden bed with integrated floating nightstands and smooth hydraulic storage',
+    shortDescription: 'Custom European Oak platform bed engineered with acoustic slats and hydraulic storage lift.',
+    shortDescriptionHi: 'हाइड्रोलिक स्टोरेज और फ्लोटिंग साइड टेबल्स के साथ किंग साइज बेड।',
+    coverImage: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Low-profile minimalist silhouette with integrated side tables',
+        tag: 'Full View'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Bedside drawer detail with soft-glide runners',
+        tag: 'Nightstand'
+      }
+    ],
+    projectStory: 'Designed for a customer seeking a clean, noise-free wooden bed with effortless under-bed storage access.',
+    clientRequirement: 'King-size bed, hydraulic lift mechanism, and matching back paneling.',
+    customRequirements: 'Integrated charging cable wire slots in both floating side tables.',
+    craftsmanshipHighlight: 'Reinforced wooden skeleton ensuring zero creaks and easy hydraulic operation.',
+    materials: ['White Oak Timber & Veneer', 'Heavy Hydraulic Lift Pistons'],
+    finish: 'Silky Ultra-Matte Clear Finish',
+    dimensions: 'King Size (78 in × 72 in mattress)',
+    location: 'Alwar, Rajasthan',
+    year: '2024',
+    featured: true,
+  },
+  {
+    id: 'charcoal-matte-modular-kitchen',
+    title: 'Custom Matte Charcoal & Oak Modular Kitchen',
+    titleHi: 'मॉड्यूलर किचन (चारकोल व ओक)',
+    slug: 'custom-charcoal-modular-kitchen',
+    category: 'Kitchen',
+    designStyle: 'Modern & Ergonomic',
+    subtitle: '100% boiling-water-proof kitchen cabinetry with soft-close tandem runners',
+    shortDescription: 'High-performance modular kitchen with anti-scratch matte shutters and fluted oak breakfast island.',
+    shortDescriptionHi: '100% वाटरप्रूफ मरीन प्लाई और सॉफ्ट-क्लोज फिटिंग्स के साथ बनी किचन।',
+    coverImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85',
+        caption: 'L-shaped layout with custom center island and fluted breakfast bar',
+        tag: 'Kitchen View'
+      }
+    ],
+    projectStory: 'Custom-fit to the room\'s exact brick dimensions with waterproof marine grade plywood for long durability.',
+    clientRequirement: 'Heavy-duty storage with smooth drawers, tall pantry unit, and spice pullouts.',
+    customRequirements: 'Dedicated corner carousel unit and soft-close cutlery organizers.',
+    craftsmanshipHighlight: '100% BWP IS:710 Marine Grade Plywood carcass with waterproof edge sealing.',
+    materials: ['IS:710 Marine Plywood', 'Matte Acrylic Finish', 'Soft-close Tandem Hardware'],
+    finish: 'Super-Matte Anti-Scratch Finish',
+    dimensions: '15 ft × 11 ft Kitchen Layout',
+    location: 'Alwar, Rajasthan',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'slatted-tv-unit-media-wall',
+    title: 'Acoustic Slatted Wooden TV Media Unit',
+    titleHi: 'स्लेटेड वुडन टीवी मीडिया यूनिट',
+    slug: 'slatted-tv-media-wall',
+    category: 'TV Units',
+    designStyle: 'Contemporary',
+    subtitle: 'Wall-mounted floating media console with floor-to-ceiling slatted back panel',
+    shortDescription: 'Living room centerpiece with vertical slatted wooden battens and hidden wire management.',
+    shortDescriptionHi: 'छिपी हुई वायरिंग और फ्लोटिंग कंसोल के साथ सुंदर टीवी मीडिया वॉल।',
+    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
+        caption: 'Full feature wall with warm ambient back-lighting and floating console',
+        tag: 'TV Unit'
+      }
+    ],
+    projectStory: 'Custom built to conceal all television cords, set-top box wires, and soundbar cables seamlessly.',
+    clientRequirement: 'Clean modern wall accommodating a 65-inch screen with storage for media devices.',
+    customRequirements: 'Routed LED channels behind the wooden slats for soft evening lighting.',
+    craftsmanshipHighlight: 'Evenly spaced precision vertical battens and 45-degree mitered floating cabinet edges.',
+    materials: ['Natural Oak Veneer', 'Solid Hardwood Battens', 'Concealed LED Tracks'],
+    finish: 'Natural Matte Lacquer',
+    dimensions: '12 ft (W) × 9.5 ft (H)',
+    location: 'Uttar Pradesh (UP)',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'teak-pivot-entrance-door',
+    title: 'Solid Teak Pivot Main Entrance Door',
+    titleHi: 'सॉलिड सागवान मुख्य प्रवेश दरवाजा',
+    slug: 'solid-teak-pivot-main-door',
+    category: 'Doors',
+    designStyle: 'Traditional & Monumental',
+    subtitle: '9-foot heavy solid Sagwan entrance door with fluted relief and heavy brass handle',
+    shortDescription: 'Handcrafted solid teak main door with heavy-duty hydraulic pivot mechanism.',
+    shortDescriptionHi: 'सागवान की लकड़ी से बना 9 फीट ऊंचा मजबूत मुख्य दरवाजा।',
+    coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+    galleryImages: [
+      {
+        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
+        caption: '9-foot grand entrance pivot door in solid teak wood',
+        tag: 'Main Door'
+      }
+    ],
+    projectStory: 'Crafted for a residence entrance in Alwar, combining traditional solid wood strength with modern pivot hardware.',
+    clientRequirement: 'Heavy, secure entrance door operating smoothly with fingertip touch.',
+    customRequirements: 'Weather-sealed exterior perimeter to resist sun and rain.',
+    craftsmanshipHighlight: 'Anti-warp seasoned timber construction and precision floor spring alignment.',
+    materials: ['100% Seasoned CP Teak', 'Heavy-Duty Floor Pivot', 'Solid Brass Pull Handle'],
+    finish: 'Exterior UV-Resistant Polyurethane Matt Varnish',
+    dimensions: '9 ft (H) × 4.5 ft (W) × 50 mm',
+    location: 'Alwar, Rajasthan',
+    year: '2024',
+    featured: false,
   }
 ];
 
 export const beforeAfterCases: BeforeAfterItem[] = [
   {
     id: 'wardrobe-transformation',
-    title: 'Empty Bedroom Wall → Bespoke Fluted Wardrobe',
+    title: 'Empty Space → Finished Custom Wardrobe',
+    titleHi: 'खाली जगह → तैयार कस्टम अलमारी',
     category: 'Wardrobes',
-    description: 'From an awkward, bare concrete wall with exposed beams to a majestic floor-to-ceiling fluted walnut wardrobe with warm LED channel illumination.',
+    description: 'Transforming a bare wall with uneven civil plaster into a flush floor-to-ceiling wardrobe with sensor lighting.',
+    descriptionHi: 'साधारण खाली दीवार को खूबसूरत फ्लोर-टू-सीलिंग अलमारी में बदला गया।',
     beforeImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80',
     afterImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1000&q=80',
-    beforeLabel: 'Bare Wall Space',
-    afterLabel: 'Custom Finished Wardrobe',
+    beforeLabel: 'Empty Wall Space',
+    afterLabel: 'Finished Wardrobe',
     location: 'Alwar, Rajasthan',
-    resultSummary: 'Increased storage capacity by 300% with seamless wall integration.'
+    resultSummary: 'Optimized 100% vertical space with seamless flush alignment.'
   },
   {
     id: 'kitchen-transformation',
-    title: 'Bare Civil Shell → Luxury Minimalist Modular Kitchen',
+    title: 'Raw Space → Finished Modular Kitchen',
+    titleHi: 'कच्चा स्पेस → तैयार मॉड्यूलर किचन',
     category: 'Kitchen',
-    description: 'Transforming an unfinished concrete shell into an ultra-modern modular kitchen featuring soft-touch charcoal cabinets and fluted oak breakfast island.',
+    description: 'From an unfinished brick shell to a fully functional, waterproof modular kitchen with soft-close drawers.',
+    descriptionHi: 'कच्ची ईंटों वाले कमरे को आधुनिक वाटरप्रूफ किचन में बदला गया।',
     beforeImage: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
     afterImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80',
     beforeLabel: 'Raw Brick Shell',
-    afterLabel: 'Completed Modular Kitchen',
-    location: 'Noida (NCR / UP)',
-    resultSummary: '100% boiling-water-proof construction with soft-close German fittings.'
+    afterLabel: 'Completed Kitchen',
+    location: 'Uttar Pradesh (UP)',
+    resultSummary: 'Boiling-water-proof construction with German hardware.'
   },
   {
-    id: 'timber-dining-transformation',
-    title: 'Raw Timber Slabs → 10-Seater Heirloom Teak Dining Table',
-    category: 'Dining',
-    description: 'Witnessing rough-sawn raw logs transformed into a silky smooth, hand-planed 10-seater CP Teak dining table with traditional mortise-and-tenon joints.',
-    beforeImage: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=1000&q=80',
-    afterImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1000&q=80',
-    beforeLabel: 'Raw Lumber',
-    afterLabel: 'Finished Hand-Rubbed Table',
-    location: 'Lucknow, Uttar Pradesh',
-    resultSummary: 'Natural grain emphasized with zero synthetic stain; sealed for decades.'
-  },
-  {
-    id: 'living-wall-transformation',
-    title: 'Plain Wall → Slatted Acoustic Wall & Floating Console',
-    category: 'Living Room',
-    description: 'Converting a plain white plaster wall with dangling wires into an acoustically treated slatted oak architectural feature with concealed wiring and ambient back-glow.',
+    id: 'tv-unit-transformation',
+    title: 'Empty Wall → Custom TV Unit',
+    titleHi: 'साधारण दीवार → कस्टम टीवी यूनिट',
+    category: 'TV Units',
+    description: 'Converting a plain white wall with dangling cables into an architectural slatted oak media wall with ambient lighting.',
+    descriptionHi: 'दीवार पर फैले तारों को छुपाकर सुंदर स्लेटेड टीवी यूनिट बनाई गई।',
     beforeImage: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1000&q=80',
     afterImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80',
-    beforeLabel: 'Plain Plaster Wall',
-    afterLabel: 'Architectural Media Wall',
+    beforeLabel: 'Plain Wall with Wires',
+    afterLabel: 'Finished Media Wall',
     location: 'Alwar, Rajasthan',
-    resultSummary: 'Eliminated all messy cords while improving living room acoustics.'
+    resultSummary: 'Completely concealed wiring with ambient back-lighting.'
+  },
+  {
+    id: 'dining-transformation',
+    title: 'Raw Wood → Solid Teak Dining Table',
+    titleHi: 'कच्ची लकड़ी → तैयार सॉलिड सागवान डाइनिंग',
+    category: 'Dining',
+    description: 'Rough-sawn seasoned teak logs hand-planed and assembled into a smooth, generational 8-seater dining table.',
+    descriptionHi: 'कच्ची लकड़ी को तराश कर मजबूत डाइनिंग टेबल तैयार की गई।',
+    beforeImage: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=1000&q=80',
+    afterImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1000&q=80',
+    beforeLabel: 'Raw Timber Slabs',
+    afterLabel: 'Handcrafted Table',
+    location: 'Uttar Pradesh (UP)',
+    resultSummary: 'Traditional interlocking joinery with silky smooth top.'
   }
 ];
 
@@ -553,43 +689,32 @@ export const materialsData: MaterialItem[] = [
     name: 'Seasoned CP Teak (Sagwan)',
     category: 'Natural Solid Wood',
     image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
-    description: 'The golden standard of Indian woodcraft. Naturally rich in protective oils, highly resistant to termites, moisture, and warping across decades.',
+    description: 'The golden standard of Indian woodworking. Naturally resistant to termites, moisture, and warping across decades.',
     grainCharacter: 'Distinct straight to wavy golden-brown grain with rich natural luster',
     durability: 'Generational (50+ years)',
     bestFor: 'Dining tables, entrance doors, solid wood beds, heritage furniture',
-    finishType: 'Hardwax oil, PU clear coat, natural beeswax polish'
+    finishType: 'Hardwax oil, PU clear coat, natural polish'
   },
   {
     id: 'american-walnut',
     name: 'American Black Walnut',
     category: 'Natural Solid Wood',
     image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80',
-    description: 'A prized luxury timber celebrated worldwide for its deep chocolate brown hues, silky hand-feel, and exceptional dimensional stability.',
+    description: 'A prized luxury timber celebrated worldwide for its deep chocolate brown hues and silky hand-feel.',
     grainCharacter: 'Tight, flowing curls and rich dark espresso undertones',
     durability: 'High (40+ years)',
-    bestFor: 'Executive desks, fluted wardrobe shutters, accent chairs, credenzas',
-    finishType: 'Ultra-matte polyurethane, organic Danish oil'
-  },
-  {
-    id: 'european-white-oak',
-    name: 'European White Oak',
-    category: 'Natural Solid Wood',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
-    description: 'Crisp, contemporary, and exceptionally durable. Perfect for Scandinavian, Japandi, and modern minimalist architectural interiors.',
-    grainCharacter: 'Prominent ray fleck patterns with warm sandy-beige undertones',
-    durability: 'Very High (40+ years)',
-    bestFor: 'Floating platform beds, acoustic slatted paneling, dining chairs',
-    finishType: 'Waterborne invisible matte finish, bleached white wash'
+    bestFor: 'Executive desks, fluted wardrobe shutters, accent furniture',
+    finishType: 'Ultra-matte polyurethane, organic oil'
   },
   {
     id: 'marine-plywood-710',
     name: 'IS:710 Marine Grade BWP Plywood',
     category: 'Engineered Wood',
     image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=800&q=80',
-    description: 'Boiling Water Proof calibrated hardwood plywood bonded with phenolic resins. Immune to borer, termite attacks, and severe moisture.',
-    grainCharacter: 'Calibrated ultra-flat cross-laminated hardwood veneers',
+    description: 'Boiling Water Proof calibrated hardwood plywood bonded with phenolic resins. Immune to borer, termite, and severe moisture.',
+    grainCharacter: 'Calibrated ultra-flat cross-laminated hardwood layers',
     durability: 'Lifetime Structural (30+ years)',
-    bestFor: 'Modular kitchen carcasses, bathroom vanities, wardrobe internal carcasses',
+    bestFor: 'Modular kitchen carcasses, bathroom vanities, wardrobe carcasses',
     finishType: 'Laminate pressed, veneer pressed, PU lacquered'
   },
   {
@@ -597,181 +722,219 @@ export const materialsData: MaterialItem[] = [
     name: 'Hand-Matched Natural Wood Veneers',
     category: 'Finishes & Veneer',
     image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
-    description: 'Real sliced tree cross-sections providing authentic grain warmth on large seamless panels without excessive weight or forest depletion.',
+    description: 'Real sliced tree cross-sections providing authentic grain warmth on seamless panels.',
     grainCharacter: 'Book-matched, slip-matched, and crown-cut natural wood patterns',
     durability: 'High (protected by multi-coat lacquer)',
     bestFor: 'Living room wall paneling, wardrobe doors, console tops',
-    finishType: 'Polyester high gloss, open-pore matte, textured wire-brushed'
-  },
-  {
-    id: 'architectural-hardware',
-    name: 'Architectural German & Brass Hardware',
-    category: 'Architectural Hardware',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
-    description: 'Precision-tested soft-close hinges, concealed drawer runners, heavy-duty floor pivots, and solid brushed brass handles.',
-    grainCharacter: 'Brushed matte brass, antiqued bronze, and concealed zinc alloy',
-    durability: '200,000+ cycle tested (25+ years)',
-    bestFor: 'All drawer runners, door hinges, lift-up cabinets, wardrobe sliding gear',
-    finishType: 'PVD Coated Brushed Gold, Matte Charcoal, Antique Bronze'
+    finishType: 'Polyester high gloss, open-pore matte'
   }
 ];
 
 export const testimonialsData: Testimonial[] = [
   {
     id: 't-1',
-    name: 'Rajesh & Meenakshi Sharma',
-    location: 'Alwar, Rajasthan',
-    projectType: 'Complete Villa Woodwork & Modular Kitchen',
-    quote: 'Makhan Carpenter delivered woodwork of exceptional quality for our new residence in Alwar. His attention to joint precision, smooth drawer movement, and wood finish exceeded our expectations. Truly a master craftsman.',
+    name: '[Customer Name - Alwar Residence]',
+    location: 'Rath Nagar, Alwar (Rajasthan)',
+    projectType: 'Custom Wardrobes & Modular Kitchen',
+    quote: '[Customer Review: "Makhan Carpenter completed our complete home woodwork on time with great precision and smooth finishing."]',
+    quoteHi: '[ग्राहक समीक्षा: "माखन कारपेंटर ने हमारे घर का पूरा फर्नीचर समय पर और बहुत ही सुंदर फिनिशिंग के साथ तैयार किया।"]',
     rating: 5,
-    date: 'January 2025'
+    date: 'Verified Client'
   },
   {
     id: 't-2',
-    name: 'Vikramaditya Singhania',
-    location: 'Lucknow, Uttar Pradesh',
-    projectType: 'Custom Teak Dining & Master Wardrobe Suite',
-    quote: 'We commissioned a 10-seater solid CP teak dining table and fluted master wardrobes. The grain matching and silky hand-feel are equivalent to international luxury furniture studios. Makhan is honest, punctual, and remarkably skilled.',
+    name: '[Customer Name - UP Villa]',
+    location: 'Uttar Pradesh (UP)',
+    projectType: 'Solid Teak Dining Table & Master Bed',
+    quote: '[Customer Review: "The quality of solid teak and joinery in our 8-seater dining table is outstanding. Truly skilled craftsmanship."]',
+    quoteHi: '[ग्राहक समीक्षा: "डाइनिंग टेबल और बेड की मजबूती और लकड़ी की क्वालिटी बहुत शानदार है।"]',
     rating: 5,
-    date: 'November 2024'
+    date: 'Verified Client'
   },
   {
     id: 't-3',
-    name: 'Ananya Verma (Architect)',
-    location: 'Noida (UP / NCR)',
-    projectType: 'Scandinavian Platform Bed & Acoustic Media Wall',
-    quote: 'As an architect, I am extremely particular about millimeter clearances and edge finishing. Makhan executed our custom floating bed and slatted media wall with zero errors. He understands drawings effortlessly.',
+    name: '[Customer Name - Alwar]',
+    location: 'Alwar (Rajasthan)',
+    projectType: 'Fluted TV Unit & Kids Play Room',
+    quote: '[Customer Review: "Understood our design requirements clearly and gave practical suggestions for space utilization."]',
+    quoteHi: '[ग्राहक समीक्षा: "हमारी पसंद के अनुसार नाप लेकर एकदम सही टीवी यूनिट और बच्चों का फर्नीचर बनाया।"]',
     rating: 5,
-    date: 'December 2024'
+    date: 'Verified Client'
   },
   {
     id: 't-4',
-    name: 'Col. Harshvardhan Rathore (Retd.)',
-    location: 'Alwar, Rajasthan',
-    projectType: 'Heirloom Teak Entrance Door & Study Library',
-    quote: 'The 9-foot heavy pivot door Makhan built for our home is admired by every single guest. It moves with the gentle touch of a finger. Outstanding craftsmanship and reliable after-service.',
+    name: '[Customer Name - UP Home]',
+    location: 'Uttar Pradesh (UP)',
+    projectType: 'Main Wooden Pivot Door & Wardrobe Suite',
+    quote: '[Customer Review: "Very trustworthy, honest pricing, and personal attention to every single detail."]',
+    quoteHi: '[ग्राहक समीक्षा: "ईमानदार कारीगर, सही दाम और काम में बहुत सफाई।"]',
     rating: 5,
-    date: 'February 2025'
-  }
-];
-
-export const statisticsData: StatItem[] = [
-  {
-    value: '20+',
-    numericValue: 20,
-    suffix: '+',
-    label: 'Years of Woodworking Mastery',
-    description: 'Two decades of dedicated craftsmanship across Uttar Pradesh & Rajasthan.'
-  },
-  {
-    value: '450+',
-    numericValue: 450,
-    suffix: '+',
-    label: 'Bespoke Projects Delivered',
-    description: 'Custom residences, luxury apartments, and boutique commercial spaces.'
-  },
-  {
-    value: '380+',
-    numericValue: 380,
-    suffix: '+',
-    label: 'Delighted Homeowners',
-    description: 'Generational clients who trust Makhan for every wooden addition in their homes.'
-  },
-  {
-    value: '100%',
-    numericValue: 100,
-    suffix: '%',
-    label: 'Made-to-Measure Precision',
-    description: 'Zero generic mass-production. Every piece engineered for your exact space.'
-  }
-];
-
-export const whyChoosePillars = [
-  {
-    icon: 'Hammer',
-    title: '20+ Years Master Craftsmanship',
-    description: 'Hands-on expertise honed over two decades of fine carpentry across UP and Alwar, solving complex architectural challenges with ease.'
-  },
-  {
-    icon: 'Ruler',
-    title: '100% Made-to-Measure',
-    description: 'Every wardrobe, kitchen, and bed is measured and tailored to your unique room contours for seamless, flush integration.'
-  },
-  {
-    icon: 'ShieldCheck',
-    title: 'Authentic Cured Timber',
-    description: 'We strictly work with seasoned CP Teak, authentic American Walnut, White Oak, and certified IS:710 Marine Grade plywood.'
-  },
-  {
-    icon: 'Compass',
-    title: 'Millimeter Precision Joinery',
-    description: 'Classical interlocking mortise-and-tenon and dovetail joinery for structural stability that outlasts cheap fasteners.'
-  },
-  {
-    icon: 'Sparkles',
-    title: 'Hand-Rubbed Luxury Finish',
-    description: 'Multi-stage sanding up to 2000 grit, finished with Italian Polyurethane, Danish oils, and protective organic waxes.'
-  },
-  {
-    icon: 'HeartHandshake',
-    title: 'Transparent Pricing & Trust',
-    description: 'Direct craftsman pricing with clear material breakdown, zero hidden markups, and reliable on-time handover.'
+    date: 'Verified Client'
   }
 ];
 
 export const galleryImages = [
   {
     url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85',
-    title: 'Floor-to-Ceiling Fluted Walnut Wardrobe',
+    title: 'Custom Fluted Walnut Wardrobe',
+    titleHi: 'कस्टम फ्लूटेड अलमारी',
     category: 'Wardrobes',
     location: 'Alwar, Rajasthan'
   },
   {
     url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=85',
-    title: '10-Seater Solid Sagwan Dining Table',
+    title: 'Solid Teak 8-Seater Dining Table',
+    titleHi: 'सागवान 8-सीटर डाइनिंग टेबल',
     category: 'Dining',
-    location: 'Lucknow, UP'
+    location: 'Uttar Pradesh'
   },
   {
     url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
-    title: 'European White Oak Floating Platform Bed',
+    title: 'White Oak Storage Platform Bed',
+    titleHi: 'व्हाइट ओक स्टोरेज बेड',
     category: 'Bedroom',
-    location: 'Noida (UP)'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
-    title: 'Charcoal & Oak Minimalist Modular Kitchen',
-    category: 'Kitchens',
     location: 'Alwar, Rajasthan'
   },
   {
-    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85',
-    title: 'Executive Study Desk & Integrated Bookshelf',
-    category: 'Offices',
-    location: 'Agra, UP'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-    title: 'Carved Teak Grand Pivot Main Door',
-    category: 'Doors',
+    url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
+    title: 'Custom Matte Charcoal Modular Kitchen',
+    titleHi: 'मॉड्यूलर किचन (वाटरप्रूफ)',
+    category: 'Kitchen',
     location: 'Alwar, Rajasthan'
   },
   {
     url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-    title: 'Acoustic Slatted Oak Media Wall Paneling',
-    category: 'Woodwork',
-    location: 'Ghaziabad, UP'
+    title: 'Slatted Oak TV Media Unit',
+    titleHi: 'स्लेटेड टीवी मीडिया यूनिट',
+    category: 'TV Units',
+    location: 'Uttar Pradesh'
   },
   {
-    url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85',
-    title: 'Boutique Dressing Suite & Glass Jewelry Island',
-    category: 'Furniture',
+    url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+    title: 'Solid Teak Pivot Main Door',
+    titleHi: 'सागवान मुख्य प्रवेश द्वार',
+    category: 'Doors',
+    location: 'Alwar, Rajasthan'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85',
+    title: 'Executive Study Desk & Bookshelf',
+    titleHi: 'स्टडी डेस्क व बुकशेल्फ',
+    category: 'Office',
+    location: 'Uttar Pradesh'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85',
+    title: 'Custom Wooden Sofa Structure',
+    titleHi: 'कस्टम लकड़ी का सोफा फ्रेम',
+    category: 'Living Room',
     location: 'Alwar, Rajasthan'
   },
   {
     url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=85',
-    title: 'Master Carpenter Hand-Planing Seasoned Timber',
-    category: 'Details',
-    location: 'Workshop Atelier'
+    title: 'Master Carpenter at the Workshop',
+    titleHi: 'कारीगर लकड़ी पर काम करते हुए',
+    category: 'Custom Furniture',
+    location: 'Rath Nagar, Alwar'
+  }
+];
+
+export const processSteps: ProcessStep[] = [
+  {
+    stepNumber: '01',
+    title: 'Requirement & Space Discussion',
+    subtitle: 'Understanding Your Space & Vision',
+    description: 'We listen to your storage needs, design inspirations, and functional requirements over call or WhatsApp.',
+    image: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Design brief & material alignment'
+  },
+  {
+    stepNumber: '02',
+    title: 'On-Site Laser Measurement',
+    subtitle: 'Millimeter-Accurate Site Survey',
+    description: 'Makhan Carpenter conducts on-site measurements across Alwar & UP to record exact wall angles and levels.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'On-site laser survey in Alwar & UP'
+  },
+  {
+    stepNumber: '03',
+    title: 'Timber & Material Selection',
+    subtitle: 'Selecting Only Cured Hardwoods',
+    description: 'We personally inspect seasoned CP Teak, Walnut, and certified IS:710 Marine Grade calibrated plywood.',
+    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Quality timber selection & moisture check'
+  },
+  {
+    stepNumber: '04',
+    title: 'Precision Sizing & Shaping',
+    subtitle: 'Hand-Planed Accuracy',
+    description: 'Using traditional hand planes and precision saw machines, wood is sized and planed to smooth tolerances.',
+    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Hand-planing & batten milling'
+  },
+  {
+    stepNumber: '05',
+    title: 'Interlocking Joinery Assembly',
+    subtitle: 'Durable Structural Strength',
+    description: 'Classic mortise-and-tenon and reinforced biscuit joinery so furniture never loosens or wobbles.',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Traditional wooden joinery'
+  },
+  {
+    stepNumber: '06',
+    title: 'Multi-Stage Sanding & Finish',
+    subtitle: 'Tactile Silk Finish',
+    description: 'Hand-sanding up to fine grits followed by Italian PU clear coat or natural organic polish.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Protective topcoats & hardwax oils'
+  },
+  {
+    stepNumber: '07',
+    title: 'Careful On-Site Installation',
+    subtitle: 'Flush Fit On Location',
+    description: 'Our team transports and installs the finished woodwork cleanly in your home with zero mess.',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'White-glove alignment & clean-up'
+  },
+  {
+    stepNumber: '08',
+    title: 'Final Quality Inspection',
+    subtitle: 'Handover with Complete Satisfaction',
+    description: 'Makhan personally inspects every drawer slide, hinge, and edge finish before handing over.',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+    keyAction: 'Client walkthrough & maintenance guidance'
+  }
+];
+
+export const whyChoosePillars = [
+  {
+    icon: 'Hammer',
+    title: '20+ Years Experience',
+    description: 'Practical woodcraft mastery honed across two decades of custom carpentry in Alwar and Uttar Pradesh.'
+  },
+  {
+    icon: 'Ruler',
+    title: '100% Made-to-Measure',
+    description: 'Every wardrobe, kitchen, and bed is tailored to your unique room contours for a seamless flush fit.'
+  },
+  {
+    icon: 'ShieldCheck',
+    title: 'Cured Hardwoods & Marine Ply',
+    description: 'We strictly work with seasoned CP Teak (Sagwan), American Walnut, and certified IS:710 Marine Grade plywood.'
+  },
+  {
+    icon: 'Compass',
+    title: 'Precision Joinery',
+    description: 'Classic mortise-and-tenon and interlocking joinery for generational durability without loose fasteners.'
+  },
+  {
+    icon: 'Sparkles',
+    title: 'Hand-Rubbed Finish',
+    description: 'Progressive hand-sanding and premium protective finishes that enhance the natural beauty of real wood.'
+  },
+  {
+    icon: 'HeartHandshake',
+    title: 'Honest Craftsman Trust',
+    description: 'Direct craftsman pricing with transparent material breakdown, 500+ completed projects, and on-time handover.'
   }
 ];

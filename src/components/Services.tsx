@@ -1,38 +1,38 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Check, X } from 'lucide-react';
 import { servicesData } from '../data/siteContent';
-import type { ServiceItem } from '../types';
+import { translations } from '../data/translations';
+import type { Language, ServiceItem } from '../types';
 
 interface ServicesProps {
+  language: Language;
   onOpenQuoteModal: () => void;
 }
 
-export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
+export const Services: React.FC<ServicesProps> = ({ language, onOpenQuoteModal }) => {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const t = translations[language];
 
   return (
-    <section id="services" className="py-28 bg-[#090706] relative">
-      {/* Decorative ambient lighting */}
-      <div className="absolute top-1/4 left-0 w-80 h-80 bg-[#c5a059]/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="services" className="py-24 bg-[#090706] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Title */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-[#c5a059] text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Master Carpentry Offerings</span>
+            <span>{t.services.tag}</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#FBF9F5] font-normal tracking-tight mb-4">
-            Bespoke Woodworking Services
+            {t.services.heading}
           </h2>
           <p className="text-sm sm:text-base text-[#d4cbbf] font-light leading-relaxed">
-            From precision architectural cabinetry to monolithic solid timber tables, Makhan Carpenter provides end-to-end bespoke carpentry tailored to your exact floor plan.
+            {t.services.subheading}
           </p>
         </div>
 
-        {/* 8-Card Luxury Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 12-Card Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {servicesData.map((service) => (
             <div
               key={service.id}
@@ -40,24 +40,31 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
               className="group bg-[#120f0d] border border-[#c5a059]/20 rounded-sm overflow-hidden shadow-lg hover:border-[#c5a059]/60 hover:shadow-[0_15px_35px_rgba(0,0,0,0.8)] transition-all duration-400 flex flex-col justify-between cursor-pointer"
             >
               <div>
-                {/* Visual Image Banner */}
-                <div className="relative h-48 overflow-hidden bg-black">
+                {/* Image & Service Number Badge */}
+                <div className="relative h-44 overflow-hidden bg-black">
                   <img
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#120f0d] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#120f0d] via-transparent to-transparent opacity-85" />
+                  
+                  {/* Number Badge */}
+                  <div className="absolute top-3 left-3 bg-[#0c0a09]/90 border border-[#c5a059]/30 px-2.5 py-0.5 rounded-sm">
+                    <span className="font-serif text-xs font-bold text-[#c5a059]">
+                      {service.number}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Body Content */}
+                {/* Content */}
                 <div className="p-5">
-                  <h3 className="font-serif text-xl text-[#FBF9F5] font-normal group-hover:text-[#c5a059] transition-colors mb-2">
-                    {service.title}
+                  <h3 className="font-serif text-lg text-[#FBF9F5] font-normal group-hover:text-[#c5a059] transition-colors mb-2">
+                    {language === 'en' ? service.title : service.titleHi}
                   </h3>
                   <p className="text-xs text-[#a99c8f] leading-relaxed line-clamp-3 mb-4">
-                    {service.shortDesc}
+                    {language === 'en' ? service.shortDesc : service.shortDescHi}
                   </p>
 
                   <ul className="space-y-1.5 border-t border-[#c5a059]/15 pt-3">
@@ -71,13 +78,13 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
                 </div>
               </div>
 
-              {/* Bottom Action Trigger */}
-              <div className="px-5 pb-5 pt-2">
+              {/* Bottom Action Button */}
+              <div className="px-5 pb-5 pt-1">
                 <button
                   type="button"
                   className="w-full py-2 px-3 rounded-sm bg-[#1a1410] border border-[#c5a059]/25 group-hover:border-[#c5a059] group-hover:bg-[#c5a059] group-hover:text-[#0e0c0a] text-[#dfc185] text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1.5"
                 >
-                  <span>Explore Service</span>
+                  <span>{t.services.explore}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -92,8 +99,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 animate-in fade-in duration-300">
           <div className="relative w-full max-w-3xl bg-[#14100d] border border-[#c5a059]/30 rounded-sm shadow-2xl overflow-hidden my-auto">
             
-            {/* Header */}
-            <div className="relative h-64 sm:h-72 overflow-hidden">
+            {/* Header with Image */}
+            <div className="relative h-60 sm:h-64 overflow-hidden bg-black">
               <img
                 src={selectedService.image}
                 alt={selectedService.title}
@@ -111,10 +118,10 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
 
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#c5a059] block mb-1">
-                  Bespoke Craftsmanship
+                  Service {selectedService.number} • Makhan Carpenter
                 </span>
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal">
-                  {selectedService.title}
+                  {language === 'en' ? selectedService.title : selectedService.titleHi}
                 </h3>
               </div>
             </div>
@@ -122,11 +129,11 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
             {/* Modal Body */}
             <div className="p-6 sm:p-8 space-y-6">
               <p className="text-sm text-[#d4cbbf] leading-relaxed">
-                {selectedService.fullDesc}
+                {language === 'en' ? selectedService.fullDesc : (selectedService.fullDescHi || selectedService.fullDesc)}
               </p>
 
               <div>
-                <h4 className="font-serif text-base text-[#c5a059] mb-3">Key Features & Engineering</h4>
+                <h4 className="font-serif text-base text-[#c5a059] mb-3">Key Features & Joinery</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {selectedService.features.map((f, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-[#ede5d8]">
@@ -155,7 +162,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenQuoteModal }) => {
                 </div>
               </div>
 
-              {/* CTA */}
+              {/* Actions */}
               <div className="pt-4 flex flex-col sm:flex-row gap-3 items-center justify-end">
                 <button
                   onClick={() => setSelectedService(null)}

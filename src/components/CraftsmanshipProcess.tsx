@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, Hammer } from 'lucide-react';
 import { processSteps } from '../data/siteContent';
+import type { ProcessStep } from '../types';
 
 export const CraftsmanshipProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -30,7 +31,7 @@ export const CraftsmanshipProcess: React.FC = () => {
 
         {/* Step Progress Navigation Bar */}
         <div className="flex items-center justify-between gap-1 overflow-x-auto pb-4 mb-10 border-b border-[#c5a059]/20 scrollbar-none">
-          {processSteps.map((step, idx) => (
+          {processSteps.map((step: ProcessStep, idx: number) => (
             <button
               key={step.stepNumber}
               onClick={() => setActiveStep(idx)}

@@ -1,14 +1,21 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import { QuoteWizard } from './QuoteWizard';
+import type { Language } from '../types';
 
 interface QuoteModalProps {
   isOpen: boolean;
+  language?: Language;
   onClose: () => void;
   initialProjectType?: string;
 }
 
-export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initialProjectType }) => {
+export const QuoteModal: React.FC<QuoteModalProps> = ({
+  isOpen,
+  language = 'en',
+  onClose,
+  initialProjectType,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -22,7 +29,11 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, initial
           <X className="w-5 h-5" />
         </button>
 
-        <QuoteWizard initialProjectType={initialProjectType} onClose={onClose} />
+        <QuoteWizard
+          language={language}
+          initialProjectType={initialProjectType}
+          onClose={onClose}
+        />
       </div>
     </div>
   );

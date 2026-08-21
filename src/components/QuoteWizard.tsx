@@ -1,71 +1,50 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, ArrowLeft, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, Send, CheckCircle2, Upload, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { siteConfig } from '../data/siteContent';
+import { translations } from '../data/translations';
+import type { Language } from '../types';
 
-const FURNITURE_TYPES = [
-  { id: 'wardrobe', label: 'Custom Wardrobe / Closet', icon: '🚪' },
-  { id: 'bed', label: 'Wooden Bed & Headboard', icon: '🛏️' },
-  { id: 'kitchen', label: 'Modular Kitchen', icon: '🍳' },
-  { id: 'dining', label: 'Solid Wood Dining Table', icon: '🍽️' },
-  { id: 'door', label: 'Main / Interior Pivot Door', icon: '🚪' },
-  { id: 'office', label: 'Executive Desk & Library', icon: '💼' },
-  { id: 'paneling', label: 'Fluted Wall Paneling / TV Unit', icon: '🪵' },
-  { id: 'complete', label: 'Full Home Woodwork Suite', icon: '🏡' },
-];
-
-const WOOD_PREFERENCES = [
-  'Seasoned CP Teak (Sagwan)',
-  'American Black Walnut',
-  'European White Oak',
-  'IS:710 Marine Grade Plywood + Veneer',
-  'Laminate Finish on Calibrated Plywood',
-  'Craftsman Recommendation Needed'
-];
-
-const BUDGET_TIERS = [
-  '₹50,000 – ₹1,50,000',
-  '₹1,50,000 – ₹3,50,000',
-  '₹3,50,000 – ₹7,00,000',
-  '₹7,00,000+ (Full Luxury Villa Suite)',
-  'Discuss on Consultation'
+const FURNITURE_OPTIONS = [
+  { id: 'Bed', label: 'Bed', labelHi: 'बेड (Bed)' },
+  { id: 'Sofa', label: 'Sofa', labelHi: 'सोफा (Sofa)' },
+  { id: 'Wardrobe', label: 'Wardrobe', labelHi: 'अलमारी (Wardrobe)' },
+  { id: 'Modular Kitchen', label: 'Modular Kitchen', labelHi: 'मॉड्यूलर किचन (Kitchen)' },
+  { id: 'Dining Table', label: 'Dining Table', labelHi: 'डाइनिंग टेबल (Dining Table)' },
+  { id: 'TV Unit', label: 'TV Unit', labelHi: 'टीवी यूनिट (TV Unit)' },
+  { id: 'Office Furniture', label: 'Office Furniture', labelHi: 'ऑफिस फर्नीचर (Office)' },
+  { id: 'Wooden Door', label: 'Wooden Door', labelHi: 'लकड़ी का दरवाजा (Door)' },
+  { id: 'Interior Woodwork', label: 'Interior Woodwork', labelHi: 'इंटीरियर वुडवर्क (Interior)' },
+  { id: 'Kids\' Play Room', label: 'Kids\' Play Room', labelHi: 'बच्चों का प्लेरूम (Kids Room)' },
+  { id: 'Custom Furniture', label: 'Custom Furniture', labelHi: 'कस्टम फर्नीचर (Custom Piece)' },
+  { id: 'Other', label: 'Other Custom Work', labelHi: 'अन्य कस्टम काम (Other)' },
 ];
 
 interface QuoteWizardProps {
+  language?: Language;
   initialProjectType?: string;
   onClose?: () => void;
 }
 
-export const QuoteWizard: React.FC<QuoteWizardProps> = ({ initialProjectType, onClose }) => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [selectedTypes, setSelectedTypes] = useState<string[]>(
-    initialProjectType ? [initialProjectType] : ['wardrobe']
-  );
-  const [roomType, setRoomType] = useState('Master Bedroom');
-  const [dimensions, setDimensions] = useState('');
-  const [woodPreference, setWoodPreference] = useState(WOOD_PREFERENCES[0]);
-  const [budgetTier, setBudgetTier] = useState(BUDGET_TIERS[1]);
-  const [timeframe, setTimeframe] = useState('Within 2 to 4 weeks');
-  const [projectDescription, setProjectDescription] = useState('');
-  
+export const QuoteWizard: React.FC<QuoteWizardProps> = ({
+  language = 'en',
+  initialProjectType,
+  onClose,
+}) => {
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [cityLocation, setCityLocation] = useState('Alwar, Rajasthan');
-  
+  const [selectedFurniture, setSelectedFurniture] = useState(
+    initialProjectType || 'Wardrobe'
+  );
+  const [requirementDetails, setRequirementDetails] = useState('');
+  const [preferredContact, setPreferredContact] = useState<'WhatsApp' | 'Call'>('WhatsApp');
+  const [location, setLocation] = useState('Alwar / UP');
+  const [hasRefImage, setHasRefImage] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const toggleType = (id: string) => {
-    if (selectedTypes.includes(id)) {
-      if (selectedTypes.length > 1) {
-        setSelectedTypes(selectedTypes.filter(t => t !== id));
-      }
-    } else {
-      setSelectedTypes([...selectedTypes, id]);
-    }
-  };
+  const t = translations[language];
 
-  const handleComplete = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
     try {
@@ -80,351 +59,170 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({ initialProjectType, on
   };
 
   const generateWhatsAppMessage = () => {
-    const text = `*Custom Furniture Inquiry - Makhan Carpenter*\n\n` +
+    const text = `*Custom Furniture Enquiry - Makhan Carpenter*\n\n` +
       `*Name:* ${fullName || 'Valued Client'}\n` +
       `*Phone:* ${phone || 'Not provided'}\n` +
-      `*Location:* ${cityLocation}\n` +
-      `*Furniture Needed:* ${selectedTypes.join(', ')}\n` +
-      `*Wood Preference:* ${woodPreference}\n` +
-      `*Estimated Dimensions:* ${dimensions || 'To be measured on-site'}\n` +
-      `*Budget Bracket:* ${budgetTier}\n` +
-      `*Timeline:* ${timeframe}\n` +
-      `*Details:* ${projectDescription || 'Looking for custom quotation.'}`;
+      `*Item Needed:* ${selectedFurniture}\n` +
+      `*Location:* ${location}\n` +
+      `*Preferred Contact:* ${preferredContact}\n` +
+      `*Has Photo/Drawing to Share:* ${hasRefImage ? 'Yes' : 'No'}\n` +
+      `*Details:* ${requirementDetails || 'Looking for quotation and site measurement.'}`;
     return encodeURIComponent(text);
   };
 
   return (
     <div className="bg-[#120f0d] border border-[#c5a059]/30 rounded-sm p-6 sm:p-8 md:p-10 shadow-2xl text-[#ede5d8]">
       
-      {/* Wizard Progress Bar */}
-      {!isSubmitted && (
-        <div className="mb-8">
-          <div className="flex items-center justify-between text-xs text-[#a99c8f] mb-2 font-medium">
-            <span className="uppercase tracking-widest text-[#c5a059]">
-              Step 0{currentStep} of 04
-            </span>
-            <span>
-              {currentStep === 1 && 'Select Furniture Category'}
-              {currentStep === 2 && 'Dimensions & Materials'}
-              {currentStep === 3 && 'Budget & Timeline'}
-              {currentStep === 4 && 'Contact Information'}
-            </span>
-          </div>
+      {!isSubmitted ? (
+        <form onSubmit={handleSubmit} className="space-y-6">
           
-          <div className="w-full bg-[#1e1712] h-1.5 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-[#c5a059] to-[#dfc185] transition-all duration-300"
-              style={{ width: `${(currentStep / 4) * 100}%` }}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Step 1: Furniture Category Selection */}
-      {currentStep === 1 && !isSubmitted && (
-        <div className="space-y-6 animate-in fade-in">
-          <div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal mb-2">
-              What piece would you like us to craft?
+          <div className="border-b border-[#c5a059]/20 pb-4">
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal mb-1">
+              {t.contact.formTitle}
             </h3>
             <p className="text-xs sm:text-sm text-[#a99c8f]">
-              Select one or multiple items for your home, villa, or commercial space.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {FURNITURE_TYPES.map((type) => {
-              const isSelected = selectedTypes.includes(type.id);
-              return (
-                <button
-                  key={type.id}
-                  type="button"
-                  onClick={() => toggleType(type.id)}
-                  className={`p-4 rounded-sm border text-left flex items-center justify-between transition-all duration-200 ${
-                    isSelected
-                      ? 'bg-[#1e1712] border-[#c5a059] shadow-md'
-                      : 'bg-[#171310] border-[#c5a059]/15 hover:border-[#c5a059]/40 text-[#a99c8f]'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{type.icon}</span>
-                    <span className={`text-xs sm:text-sm font-medium ${isSelected ? 'text-[#FBF9F5]' : ''}`}>
-                      {type.label}
-                    </span>
-                  </div>
-                  <div className={`w-5 h-5 rounded-full border flex items-center justify-center ${
-                    isSelected ? 'border-[#c5a059] bg-[#c5a059] text-[#0e0c0a]' : 'border-white/20'
-                  }`}>
-                    {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="pt-4 flex justify-end">
-            <button
-              onClick={() => setCurrentStep(2)}
-              className="px-7 py-3 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-md transition-all active:scale-95"
-            >
-              <span>Next: Specs & Timbers</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Step 2: Dimensions & Wood Preference */}
-      {currentStep === 2 && !isSubmitted && (
-        <div className="space-y-6 animate-in fade-in">
-          <div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal mb-2">
-              Dimensions & Wood Material
-            </h3>
-            <p className="text-xs sm:text-sm text-[#a99c8f]">
-              Help us understand the space and your preferred timber character.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Room / Area
-              </label>
-              <input
-                type="text"
-                value={roomType}
-                onChange={(e) => setRoomType(e.target.value)}
-                placeholder="e.g. Master Suite, Formal Living, Open Kitchen"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Approximate Dimensions (or leave for on-site laser survey)
-              </label>
-              <input
-                type="text"
-                value={dimensions}
-                onChange={(e) => setDimensions(e.target.value)}
-                placeholder="e.g. 12 ft x 9 ft wall, or 8-seater dining table"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Preferred Timber / Wood Material
-              </label>
-              <select
-                value={woodPreference}
-                onChange={(e) => setWoodPreference(e.target.value)}
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              >
-                {WOOD_PREFERENCES.map((wood) => (
-                  <option key={wood} value={wood} className="bg-[#14100d] text-[#ede5d8]">
-                    {wood}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between">
-            <button
-              onClick={() => setCurrentStep(1)}
-              className="px-5 py-3 rounded-sm bg-[#1a1410] text-[#ede5d8] font-medium text-xs uppercase tracking-wider flex items-center gap-1.5 hover:bg-[#251d16] transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 text-[#c5a059]" />
-              <span>Back</span>
-            </button>
-
-            <button
-              onClick={() => setCurrentStep(3)}
-              className="px-7 py-3 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-md transition-all active:scale-95"
-            >
-              <span>Next: Budget & Timeframe</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Step 3: Budget & Project Scope */}
-      {currentStep === 3 && !isSubmitted && (
-        <div className="space-y-6 animate-in fade-in">
-          <div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal mb-2">
-              Budget & Schedule Preferences
-            </h3>
-            <p className="text-xs sm:text-sm text-[#a99c8f]">
-              We work with honest, transparent craftsman estimates.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Approximate Budget Bracket
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {BUDGET_TIERS.map((tier) => (
-                  <button
-                    key={tier}
-                    type="button"
-                    onClick={() => setBudgetTier(tier)}
-                    className={`p-3 rounded-sm text-left text-xs font-medium border transition-all ${
-                      budgetTier === tier
-                        ? 'bg-[#1e1712] border-[#c5a059] text-[#c5a059]'
-                        : 'bg-[#171310] border-[#c5a059]/15 text-[#a99c8f] hover:text-[#ede5d8]'
-                    }`}
-                  >
-                    {tier}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Required Handover Timeframe
-              </label>
-              <input
-                type="text"
-                value={timeframe}
-                onChange={(e) => setTimeframe(e.target.value)}
-                placeholder="e.g. Immediate / Next month / Flexible"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Special Requests or Specific Requirements
-              </label>
-              <textarea
-                rows={3}
-                value={projectDescription}
-                onChange={(e) => setProjectDescription(e.target.value)}
-                placeholder="e.g. Integrated soft LED lighting, fluted battens, concealed lock compartments..."
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
-              />
-            </div>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between">
-            <button
-              onClick={() => setCurrentStep(2)}
-              className="px-5 py-3 rounded-sm bg-[#1a1410] text-[#ede5d8] font-medium text-xs uppercase tracking-wider flex items-center gap-1.5 hover:bg-[#251d16] transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 text-[#c5a059]" />
-              <span>Back</span>
-            </button>
-
-            <button
-              onClick={() => setCurrentStep(4)}
-              className="px-7 py-3 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-md transition-all active:scale-95"
-            >
-              <span>Next: Contact Details</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Step 4: Contact Information & Submission */}
-      {currentStep === 4 && !isSubmitted && (
-        <form onSubmit={handleComplete} className="space-y-6 animate-in fade-in">
-          <div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] font-normal mb-2">
-              Where should we send your estimate?
-            </h3>
-            <p className="text-xs sm:text-sm text-[#a99c8f]">
-              Makhan Carpenter will personally review your specifications and get in touch.
+              Tell us what you would like to make for your space in Alwar or Uttar Pradesh.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Your Full Name *
+                {t.contact.nameLabel}
               </label>
               <input
                 required
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="e.g. Alok Sharma"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                placeholder="e.g. Ramesh Kumar"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               />
             </div>
 
             <div>
               <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Phone / WhatsApp Number *
+                {t.contact.phoneLabel}
               </label>
               <input
                 required
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="e.g. +91 98765 43210"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Email Address
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="e.g. alok@example.com"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
-                Project City / Location *
-              </label>
-              <input
-                required
-                type="text"
-                value={cityLocation}
-                onChange={(e) => setCityLocation(e.target.value)}
-                placeholder="e.g. Alwar, Lucknow, Noida, Agra"
-                className="w-full bg-[#171310] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+                placeholder="e.g. +91 63779 35958"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none font-mono"
               />
             </div>
           </div>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={() => setCurrentStep(3)}
-              className="w-full sm:w-auto px-5 py-3 rounded-sm bg-[#1a1410] text-[#ede5d8] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-[#251d16] transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 text-[#c5a059]" />
-              <span>Back</span>
-            </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
+                {t.contact.furnitureTypeLabel}
+              </label>
+              <select
+                value={selectedFurniture}
+                onChange={(e) => setSelectedFurniture(e.target.value)}
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+              >
+                {FURNITURE_OPTIONS.map((opt) => (
+                  <option key={opt.id} value={opt.id} className="bg-[#14100d] text-[#ede5d8]">
+                    {language === 'en' ? opt.label : opt.labelHi}
+                  </option>
+                ))}
+              </select>
+            </div>
 
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
+                City / Area
+              </label>
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="e.g. Rath Nagar Alwar, Lucknow, Noida"
+                className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
+              {t.contact.detailsLabel}
+            </label>
+            <textarea
+              required
+              rows={3}
+              value={requirementDetails}
+              onChange={(e) => setRequirementDetails(e.target.value)}
+              placeholder="e.g. Need a 4-door wardrobe with fluted finish and soft lighting, or 8-seater dining table..."
+              className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none resize-none"
+            />
+          </div>
+
+          {/* Reference Image Option & Preferred Contact */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+            <div className="flex items-center gap-2 bg-[#181410] p-3 rounded-sm border border-[#c5a059]/20">
+              <input
+                type="checkbox"
+                id="ref-img"
+                checked={hasRefImage}
+                onChange={(e) => setHasRefImage(e.target.checked)}
+                className="w-4 h-4 accent-[#c5a059]"
+              />
+              <label htmlFor="ref-img" className="text-xs text-[#d4cbbf] cursor-pointer flex items-center gap-1.5">
+                <Upload className="w-3.5 h-3.5 text-[#c5a059]" />
+                <span>I have a design photo/sketch to share</span>
+              </label>
+            </div>
+
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-[#a99c8f] mb-1.5 font-medium">
+                {t.contact.preferredContact}
+              </label>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setPreferredContact('WhatsApp')}
+                  className={`flex-1 py-2 rounded-sm text-xs font-semibold uppercase flex items-center justify-center gap-1.5 border transition-all ${
+                    preferredContact === 'WhatsApp'
+                      ? 'bg-[#25D366]/20 border-[#25D366] text-[#25D366]'
+                      : 'bg-[#181410] border-[#c5a059]/20 text-[#a99c8f]'
+                  }`}
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPreferredContact('Call')}
+                  className={`flex-1 py-2 rounded-sm text-xs font-semibold uppercase flex items-center justify-center gap-1.5 border transition-all ${
+                    preferredContact === 'Call'
+                      ? 'bg-[#c5a059]/20 border-[#c5a059] text-[#c5a059]'
+                      : 'bg-[#181410] border-[#c5a059]/20 text-[#a99c8f]'
+                  }`}
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Phone Call</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Submit Action */}
+          <div className="pt-3">
             <button
               type="submit"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl active:scale-95"
+              className="w-full py-4 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl active:scale-98 transition-all"
             >
               <Send className="w-4 h-4" />
-              <span>Request My Custom Quote</span>
+              <span>{t.contact.submitBtn}</span>
             </button>
           </div>
-        </form>
-      )}
 
-      {/* Completion & Instant WhatsApp Action */}
-      {isSubmitted && (
+        </form>
+      ) : (
         <div className="text-center py-8 space-y-6 animate-in zoom-in-95 duration-300">
           <div className="w-16 h-16 rounded-full bg-[#c5a059]/20 border border-[#c5a059] text-[#c5a059] flex items-center justify-center mx-auto shadow-2xl">
             <CheckCircle2 className="w-8 h-8" />
@@ -432,26 +230,26 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({ initialProjectType, on
 
           <div>
             <h3 className="font-serif text-3xl text-[#FBF9F5] font-normal mb-2">
-              Inquiry Received With Thanks
+              {t.contact.successTitle}
             </h3>
             <p className="text-sm text-[#d4cbbf] max-w-md mx-auto leading-relaxed">
-              Makhan Carpenter has received your project details for <strong className="text-[#c5a059]">{cityLocation}</strong>. We will review the timber requirements and contact you within 24 hours.
+              Makhan Carpenter has received your enquiry for <strong>{selectedFurniture}</strong>. We will review the specifications and contact you via <strong>{preferredContact}</strong> shortly.
             </p>
           </div>
 
-          {/* Instant WhatsApp Dispatch Button */}
-          <div className="bg-[#171310] border border-[#c5a059]/30 rounded-sm p-6 max-w-lg mx-auto space-y-3">
+          {/* Instant WhatsApp Option */}
+          <div className="bg-[#181410] border border-[#c5a059]/30 rounded-sm p-6 max-w-lg mx-auto space-y-3">
             <span className="text-xs text-[#a99c8f] block">
-              Want an instant response or have architectural drawings to share?
+              Want to send your reference photo right now on WhatsApp?
             </span>
             <a
-              href={`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${generateWhatsAppMessage()}`}
+              href={`https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${generateWhatsAppMessage()}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 px-6 rounded-sm bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg transition-all"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Send Specifications on WhatsApp</span>
+              <span>Open WhatsApp with Details</span>
             </a>
           </div>
 

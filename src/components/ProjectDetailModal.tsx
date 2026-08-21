@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { X, MapPin, Sparkles, ArrowRight, Hammer } from 'lucide-react';
-import type { Project } from '../types';
+import { X, MapPin, Sparkles, ArrowRight, Hammer, Shield } from 'lucide-react';
+import type { Project, Language } from '../types';
 
 interface ProjectDetailModalProps {
   project: Project | null;
+  language?: Language;
   onClose: () => void;
   onStartCustomProject: (projectTitle: string) => void;
 }
 
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
+  language = 'en',
   onClose,
   onStartCustomProject,
 }) => {
@@ -55,8 +57,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           
           {/* Main Title & Subtitle */}
           <div>
+            <span className="text-[11px] uppercase tracking-wider text-[#c5a059] block font-semibold mb-1">
+              {project.designStyle}
+            </span>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#FBF9F5] font-normal mb-2">
-              {project.title}
+              {language === 'en' ? project.title : (project.titleHi || project.title)}
             </h3>
             <p className="text-sm sm:text-base text-[#d4cbbf] font-light">
               {project.subtitle}
@@ -118,7 +123,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   The Project Story
                 </h4>
                 <p className="text-sm text-[#d4cbbf] leading-relaxed">
-                  {project.projectStory}
+                  {language === 'en' ? project.projectStory : (project.projectStoryHi || project.projectStory)}
                 </p>
               </div>
 
@@ -132,14 +137,17 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 </p>
               </div>
 
-              <div>
-                <h4 className="font-serif text-lg text-[#c5a059] mb-2">
-                  Client Requirement
-                </h4>
-                <p className="text-sm text-[#a99c8f] bg-[#1a1410] p-3.5 rounded-sm border border-[#c5a059]/15 italic">
-                  "{project.clientRequirement}"
-                </p>
-              </div>
+              {project.customRequirements && (
+                <div>
+                  <h4 className="font-serif text-lg text-[#c5a059] mb-2 flex items-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    Custom Requirements Executed
+                  </h4>
+                  <p className="text-sm text-[#a99c8f] bg-[#1a1410] p-3.5 rounded-sm border border-[#c5a059]/15">
+                    {project.customRequirements}
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Specifications Card (Col 3) */}
@@ -151,6 +159,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               <div>
                 <span className="text-[11px] uppercase tracking-wider text-[#a99c8f] block">Category</span>
                 <span className="text-xs text-[#dfc185] font-medium">{project.category}</span>
+              </div>
+
+              <div>
+                <span className="text-[11px] uppercase tracking-wider text-[#a99c8f] block">Design Style</span>
+                <span className="text-xs text-[#ede5d8]">{project.designStyle}</span>
               </div>
 
               <div>
@@ -184,7 +197,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               {/* Inquiry Call to Action */}
               <div className="pt-4 border-t border-[#c5a059]/20">
                 <p className="text-xs text-[#a99c8f] mb-3">
-                  Interested in a bespoke piece tailored to your room?
+                  Interested in a similar custom design?
                 </p>
                 <button
                   onClick={() => {
@@ -193,7 +206,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   }}
                   className="w-full py-3 px-4 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-md active:scale-95"
                 >
-                  <span>Start Your Custom Project</span>
+                  <span>Get a Custom Quote</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

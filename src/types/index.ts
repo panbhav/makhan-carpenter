@@ -1,14 +1,18 @@
+export type Language = 'en' | 'hi';
+
 export type ProjectCategory = 
   | 'All'
-  | 'Living Room'
   | 'Bedroom'
+  | 'Living Room'
   | 'Wardrobes'
-  | 'Dining'
   | 'Kitchen'
-  | 'Office Furniture'
+  | 'Dining'
+  | 'TV Units'
+  | 'Office'
   | 'Doors'
-  | 'Custom Furniture'
-  | 'Wooden Interiors';
+  | 'Interior Woodwork'
+  | 'Kids'
+  | 'Custom Furniture';
 
 export interface ProjectImage {
   url: string;
@@ -19,14 +23,19 @@ export interface ProjectImage {
 export interface Project {
   id: string;
   title: string;
+  titleHi?: string;
   slug: string;
   category: ProjectCategory;
+  designStyle: string;
   subtitle: string;
   shortDescription: string;
+  shortDescriptionHi?: string;
   coverImage: string;
   galleryImages: ProjectImage[];
   projectStory: string;
+  projectStoryHi?: string;
   clientRequirement: string;
+  customRequirements?: string;
   craftsmanshipHighlight: string;
   materials: string[];
   finish: string;
@@ -38,11 +47,16 @@ export interface Project {
 
 export interface ServiceItem {
   id: string;
+  number: string;
   title: string;
+  titleHi: string;
   shortDesc: string;
+  shortDescHi: string;
   fullDesc: string;
+  fullDescHi?: string;
   image: string;
   features: string[];
+  featuresHi?: string[];
   suitableFor: string;
   popularWoods: string[];
 }
@@ -50,8 +64,10 @@ export interface ServiceItem {
 export interface ProcessStep {
   stepNumber: string;
   title: string;
+  titleHi?: string;
   subtitle: string;
   description: string;
+  descriptionHi?: string;
   image: string;
   keyAction: string;
 }
@@ -59,8 +75,10 @@ export interface ProcessStep {
 export interface BeforeAfterItem {
   id: string;
   title: string;
+  titleHi?: string;
   category: string;
   description: string;
+  descriptionHi?: string;
   beforeImage: string;
   afterImage: string;
   beforeLabel?: string;
@@ -87,6 +105,7 @@ export interface Testimonial {
   location: string;
   projectType: string;
   quote: string;
+  quoteHi?: string;
   rating: number;
   date?: string;
 }
@@ -96,20 +115,40 @@ export interface StatItem {
   numericValue: number;
   suffix: string;
   label: string;
+  labelHi: string;
   description: string;
+  descriptionHi: string;
+}
+
+export interface FurnitureStyle {
+  id: string;
+  name: string;
+  nameHi: string;
+  description: string;
+  descriptionHi: string;
+  image: string;
+  tags: string[];
+}
+
+export interface RoomPossibility {
+  id: string;
+  roomName: string;
+  roomNameHi: string;
+  image: string;
+  items: string[];
+  itemsHi: string[];
+  description: string;
+  descriptionHi: string;
 }
 
 export interface QuoteFormData {
-  furnitureType: string[];
-  roomType: string;
+  furnitureType: string;
   dimensions: string;
   woodPreference: string;
-  finishPreference: string;
-  budgetRange: string;
-  timeframe: string;
   projectDescription: string;
   name: string;
   phone: string;
-  email: string;
+  preferredContact: 'Call' | 'WhatsApp';
   location: string;
+  hasReferenceImage?: boolean;
 }

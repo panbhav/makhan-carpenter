@@ -1,8 +1,13 @@
 import React from 'react';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import type { Language } from '../types';
 
-export const BrandStatement: React.FC = () => {
+interface BrandStatementProps {
+  language: Language;
+}
+
+export const BrandStatement: React.FC<BrandStatementProps> = ({ language }) => {
   return (
     <section id="brand-statement" className="py-24 bg-[#0e0c0a] relative overflow-hidden">
       {/* Decorative subtle ambient glows */}
@@ -15,7 +20,7 @@ export const BrandStatement: React.FC = () => {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-2 text-[#c5a059] text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>The Atelier Philosophy</span>
+            <span>{language === 'en' ? 'The Atelier Philosophy' : 'कारीगरी की सोच'}</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#FBF9F5] font-normal tracking-tight max-w-3xl leading-tight">
             “Crafting Furniture That Belongs to Your Space.”
@@ -29,25 +34,47 @@ export const BrandStatement: React.FC = () => {
           {/* Left Column: Handcraft Narrative */}
           <div className="lg:col-span-6 space-y-6 text-[#d4cbbf]">
             <p className="font-serif text-xl sm:text-2xl text-[#f3ece2] font-light leading-relaxed">
-              At <strong className="text-[#c5a059] font-normal">{siteConfig.brandName}</strong>, furniture is never treated as mere woodwork or factory output. It is an enduring piece of architecture sculpted by human hands to bring harmony, warmth, and dignity into your living environment.
+              {language === 'en' ? (
+                <>
+                  At <strong className="text-[#c5a059] font-normal">{siteConfig.brandName}</strong>, furniture is never treated as mere woodwork or factory output. It is an enduring piece of architecture sculpted by human hands to bring harmony, warmth, and dignity into your living environment.
+                </>
+              ) : (
+                <>
+                  <strong className="text-[#c5a059] font-normal">{siteConfig.brandName}</strong> में, हम फर्नीचर को केवल लकड़ी का ढांचा नहीं मानते, बल्कि यह आपके घर की सुंदरता और सुकून का एक अहम हिस्सा है जिसे हाथों के हुनर से संवारा जाता है।
+                </>
+              )}
             </p>
             
             <p className="text-sm sm:text-base leading-relaxed text-[#a99c8f]">
-              For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners, architects, and designers across <strong>Uttar Pradesh</strong> and <strong>Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
+              {language === 'en' ? (
+                <>
+                  For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners and architects across <strong>Uttar Pradesh</strong> and <strong>Rath Nagar, Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
+                </>
+              ) : (
+                <>
+                  पिछले <strong>20+ वर्षों</strong> में <strong>500 से अधिक प्रोजेक्ट्स</strong> के साथ, Makhan Carpenter ने <strong>अलवर (राजस्थान)</strong> और <strong>उत्तर प्रदेश</strong> के कई घरों में मजबूती और विश्वास का रिश्ता कायम किया है।
+                </>
+              )}
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-[#c5a059]/15">
               <div className="space-y-1">
-                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">Craftsmanship</span>
+                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">
+                  {language === 'en' ? 'Craftsmanship' : 'मजबूत जोड़'}
+                </span>
                 <span className="text-xs text-[#a99c8f]">Traditional Joinery</span>
               </div>
               <div className="space-y-1">
-                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">Precision</span>
+                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">
+                  {language === 'en' ? 'Precision' : 'सटीक नाप'}
+                </span>
                 <span className="text-xs text-[#a99c8f]">Laser Measurements</span>
               </div>
               <div className="space-y-1">
-                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">Integrity</span>
-                <span className="text-xs text-[#a99c8f]">Generational Wood</span>
+                <span className="text-xs uppercase tracking-widest text-[#c5a059] font-semibold block">
+                  {language === 'en' ? 'Authentic Wood' : 'पक्की लकड़ी'}
+                </span>
+                <span className="text-xs text-[#a99c8f]">Seasoned Timber</span>
               </div>
             </div>
 
@@ -81,8 +108,8 @@ export const BrandStatement: React.FC = () => {
                 />
               </div>
               <div className="bg-[#1a1410] border border-[#c5a059]/30 rounded-sm p-4 text-center flex flex-col justify-center items-center shadow-lg">
-                <span className="font-serif text-2xl sm:text-3xl text-[#c5a059] font-bold">20+</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#d4cbbf] mt-0.5">Years of Mastery in UP & Alwar</span>
+                <span className="font-serif text-2xl sm:text-3xl text-[#c5a059] font-bold">500+</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#d4cbbf] mt-0.5">Projects Completed in UP & Alwar</span>
               </div>
             </div>
           </div>
