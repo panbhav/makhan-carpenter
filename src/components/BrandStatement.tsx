@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
-import { siteConfig } from '../data/siteContent';
+import { siteConfig, getAssetUrl } from '../data/siteContent';
 import type { Language } from '../types';
 
 interface BrandStatementProps {
@@ -92,18 +92,18 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ language }) => {
 
           {/* Right Column: Editorial Visual Grid */}
           <div className="lg:col-span-6 grid grid-cols-12 gap-4 relative">
-            <div className="col-span-8 overflow-hidden rounded-sm border border-[#c5a059]/20 shadow-2xl group">
+            <div className="col-span-8 overflow-hidden rounded-sm border border-[#c5a059]/20 shadow-2xl group bg-black">
               <img
-                src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=85"
-                alt="Makhan Carpenter hand-planing authentic wood timber"
+                src={getAssetUrl('projects/study-desk-wardrobe.jpg')}
+                alt="Makhan Carpenter custom furniture installation"
                 className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="col-span-4 flex flex-col gap-4">
-              <div className="overflow-hidden rounded-sm border border-[#c5a059]/20 shadow-xl group flex-1">
+              <div className="overflow-hidden rounded-sm border border-[#c5a059]/20 shadow-xl group flex-1 bg-black">
                 <img
-                  src="https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=600&q=85"
-                  alt="Fine joinery tools and wood shavings"
+                  src={getAssetUrl('projects/wooden-bedside-table.jpg')}
+                  alt="Fine joinery wood craftsmanship"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[140px]"
                 />
               </div>

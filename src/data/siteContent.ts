@@ -298,7 +298,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'If a customer has a unique furniture idea, Makhan Carpenter can discuss and create a customized solution.',
     shortDescHi: 'यदि आपके पास कोई विशेष फर्नीचर आइडिया है, तो हम उसे तैयार कर सकते हैं।',
     fullDesc: 'Have a unique sketch, custom pooja mandir requirement, curved counter, or custom wooden staircase handrail? We discuss the concept, calculate measurements, and bring it to life.',
-    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=900&q=80',
+    image: getAssetUrl('projects/wooden-dressing-unit.jpg'),
     features: [
       'Custom pooja units & carved mandirs',
       'Unique curved counters & bar cabinets',
@@ -744,7 +744,7 @@ export const beforeAfterCases: BeforeAfterItem[] = [
     category: 'Dining',
     description: 'Rough-sawn seasoned teak logs hand-planed and assembled into a smooth, generational 8-seater dining table.',
     descriptionHi: 'कच्ची लकड़ी को तराश कर मजबूत डाइनिंग टेबल तैयार की गई।',
-    beforeImage: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=1000&q=80',
+    beforeImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80',
     afterImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1000&q=80',
     beforeLabel: 'Raw Timber Slabs',
     afterLabel: 'Handcrafted Table',
@@ -780,7 +780,7 @@ export const materialsData: MaterialItem[] = [
     id: 'marine-plywood-710',
     name: 'IS:710 Marine Grade BWP Plywood',
     category: 'Engineered Wood',
-    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=80',
     description: 'Boiling Water Proof calibrated hardwood plywood bonded with phenolic resins. Immune to borer, termite, and severe moisture.',
     grainCharacter: 'Calibrated ultra-flat cross-laminated hardwood layers',
     durability: 'Lifetime Structural (30+ years)',
@@ -939,7 +939,7 @@ export const processSteps: ProcessStep[] = [
     title: 'Precision Sizing & Shaping',
     subtitle: 'Hand-Planed Accuracy',
     description: 'Using traditional hand planes and precision saw machines, wood is sized and planed to smooth tolerances.',
-    image: 'https://images.unsplash.com/photo-1502005229762-ee1b2da9c5dd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=80',
     keyAction: 'Hand-planing & batten milling'
   },
   {
