@@ -97,7 +97,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Furniture designed and built according to the customer\'s space and requirements.',
     shortDescHi: 'ग्राहक की जगह, नाप और आवश्यकतानुसार बनाया जाने वाला विशेष फर्नीचर।',
     fullDesc: 'We craft bespoke furniture pieces tailored to your exact floor plan, interior theme, and ergonomic requirements with durable joinery and hand-rubbed finishes.',
-    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/wooden-dressing-unit.jpg',
     features: [
       'Made-to-measure dimensions',
       'Solid wood joinery (Teak, Walnut, Oak)',
@@ -115,7 +115,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Custom wooden beds in modern, classic and contemporary designs.',
     shortDescHi: 'मॉडर्न, क्लासिक और स्टोरेज वाले मजबूत लकड़ी के बेड।',
     fullDesc: 'Handcrafted solid wood beds engineered for zero creaking, featuring custom headboard paneling, hydraulic under-bed storage, and floating platform styles.',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/designer-jali-bed.jpg',
     features: [
       'Heavy-duty hydraulic lift storage options',
       'Acoustic slat understructure',
@@ -133,7 +133,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Custom-designed wooden sofa structures and premium furniture solutions.',
     shortDescHi: 'मजबूत लकड़ी के सोफा फ्रेम और सुंदर लिविंग रूम सिटिंग।',
     fullDesc: 'Custom-built solid timber sofa frameworks, L-shaped sectional sofa bases, and contemporary wooden accent seating made for comfort and generational longevity.',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/custom-sectional-sofa.jpg',
     features: [
       'Heavy-duty solid hardwood inner frame',
       'L-shape sectional and 3+2+1 configurations',
@@ -151,7 +151,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Custom wardrobes designed around available space, storage requirements and preferred style.',
     shortDescHi: 'उपलब्ध जगह और जरूरत के अनुसार बनाई गई फ्लोर-टू-सीलिंग अलमारियां।',
     fullDesc: 'Floor-to-ceiling sliding, hinged, and walk-in wardrobes with customized drawer organizers, sensor lights, and premium acrylic, veneer, or fluted shutters.',
-    image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/walnut-modular-wardrobe.jpg',
     features: [
       'Floor-to-ceiling seamless storage',
       'Smooth soft-close sliding / hinged shutters',
@@ -169,7 +169,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Functional and stylish kitchen woodwork designed for individual spaces.',
     shortDescHi: 'वाटरप्रूफ मरीन प्लाई और आधुनिक फिटिंग्स से बनी मॉड्यूलर किचन।',
     fullDesc: 'Custom modular kitchens engineered for Indian cooking with 100% boiling-water-proof (IS:710) plywood, soft-close baskets, and corner carousel organizers.',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/modular-kitchen-white.jpg',
     features: [
       '100% BWP IS:710 Marine Grade Plywood',
       'Heavy-duty tandem drawer pull-outs',
@@ -310,57 +310,57 @@ export const servicesData: ServiceItem[] = [
 export const furnitureStyles: FurnitureStyle[] = [
   {
     id: 'modern',
-    name: 'Modern',
-    nameHi: 'मॉडर्न (Modern)',
+    name: 'Modern & Minimal',
+    nameHi: 'मॉडर्न व मिनिमल (Modern)',
     description: 'Clean horizontal lines, sleek handleless surfaces, and uncluttered geometry for contemporary homes.',
-    descriptionHi: 'साफ लाइनें और हैंडल-लेस आधुनिक डिज़ाइन।',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    tags: ['Sleek Lines', 'Flush Panels', 'LED Accents']
+    descriptionHi: 'साफ लाइनें और आधुनिक स्टडी व वॉर्डरोब डिज़ाइन।',
+    image: '/projects/study-desk-wardrobe.jpg',
+    tags: ['Sleek Lines', 'Flush Panels', 'Study Unit']
   },
   {
     id: 'minimal',
-    name: 'Minimal',
-    nameHi: 'मिनिमल (Minimal)',
-    description: 'Quiet elegance that focuses on proportion, functionality, and spaciousness with zero visual clutter.',
-    descriptionHi: 'सरल, शांत और खुला डिज़ाइन।',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
-    tags: ['Pure Forms', 'Natural Tones', 'Hidden Storage']
+    name: 'Master Suite Luxury',
+    nameHi: 'मास्टर सुइट लक्ज़री (Master Suite)',
+    description: 'Custom king beds with diamond-tufting or CNC backlit jali panels and matching side units.',
+    descriptionHi: 'डायमंड टफ्टिंग और बैक-लिट जाली हेडबोर्ड बेड।',
+    image: '/projects/designer-jali-bed.jpg',
+    tags: ['Backlit Jali', 'Velvet Padding', 'King Size']
   },
   {
     id: 'contemporary',
-    name: 'Contemporary',
-    nameHi: 'कंटेम्परेरी (Contemporary)',
-    description: 'Fluid blend of current design trends with warm wood textures, fluted details, and matte contrasts.',
-    descriptionHi: 'ट्रेंडी डिज़ाइन और लकड़ी की सुंदर फिनिश।',
-    image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80',
-    tags: ['Fluted Profiles', 'Matte Surfaces', 'Smart Fittings']
+    name: 'Contemporary Living',
+    nameHi: 'कंटेम्परेरी लिविंग (Living)',
+    description: 'Fluid blend of current design trends with vertical channel tufted seating and storage ottomans.',
+    descriptionHi: 'चैनल टफ्टेड एल-शेप सोफा और सेंटर ओटोमन टेबल।',
+    image: '/projects/custom-sectional-sofa.jpg',
+    tags: ['L-Shape Sectional', 'Channel Tufting', 'Center Table']
   },
   {
     id: 'traditional',
     name: 'Traditional & Classic',
     nameHi: 'ट्रेडिशनल व क्लासिक (Traditional)',
-    description: 'Timeless solid teak construction with authentic Indian woodcraft details, robust moldings, and rich tones.',
-    descriptionHi: 'पारंपरिक भारतीय शैली, नक्काशी और मजबूत सागवान।',
-    image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
-    tags: ['Solid Teak', 'Classic Moldings', 'Heirloom Joinery']
+    description: 'Timeless solid teak dressing vanity and heirloom woodwork details with rich natural grain.',
+    descriptionHi: 'पारंपरिक नक्काशी, फुल-हाइट मिरर और मजबूत लकड़ी का ड्रेसर।',
+    image: '/projects/wooden-dressing-unit.jpg',
+    tags: ['Full Mirror', 'Teak Grain', 'Heirloom Finish']
   },
   {
     id: 'luxury',
-    name: 'Luxury & Bespoke',
-    nameHi: 'लक्ज़री (Luxury)',
-    description: 'High-end American walnut, brushed brass trim, extra-clear glass inserts, and hand-rubbed hardwax finishes.',
-    descriptionHi: 'प्रीमियम अखरोट, ब्रास वर्क और बेहतरीन फिनिश।',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
-    tags: ['Walnut Veneer', 'Brass Trim', 'Illuminated Niches']
+    name: 'Luxury Wardrobes',
+    nameHi: 'लक्ज़री वॉर्डरोब (Wardrobes)',
+    description: 'Floor-to-ceiling modular wardrobes with top loft storage, dark walnut veneer, and sleek hardware.',
+    descriptionHi: 'फ्लोर-टू-सीलिंग मॉड्यूलर अलमारी और टॉप लॉफ्ट कैबिनेट्स।',
+    image: '/projects/walnut-modular-wardrobe.jpg',
+    tags: ['Walnut Veneer', 'Top Loft', 'Space Maximized']
   },
   {
     id: 'space-saving',
-    name: 'Space-Saving',
-    nameHi: 'स्पेस-सेविंग (Space-Saving)',
-    description: 'Intelligent multi-functional storage, hydraulic beds, folding desks, and compact corner solutions.',
-    descriptionHi: 'कम जगह में अधिक स्टोरेज और स्मार्ट फर्नीचर।',
-    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
-    tags: ['Hydraulic Storage', 'Pull-out Desks', 'Corner Units']
+    name: 'Space-Saving Kitchens & Desks',
+    nameHi: 'मॉड्यूलर किचन व स्टोरेज (Kitchens)',
+    description: 'High-gloss white acrylic modular kitchens and multi-tier bookshelf storage towers.',
+    descriptionHi: '100% वाटरप्रूफ हाई-ग्लॉस किचन और मल्टी-टियर स्टोरेज टावर।',
+    image: '/projects/modular-kitchen-white.jpg',
+    tags: ['Gloss Acrylic', 'Waterproof Marine Ply', 'Soft Close']
   }
 ];
 
@@ -369,31 +369,31 @@ export const roomPossibilities: RoomPossibility[] = [
     id: 'bedroom',
     roomName: 'Bedroom',
     roomNameHi: 'बेडरूम (Bedroom)',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/designer-jali-bed.jpg',
     description: 'Create a restful sanctuary with made-to-measure beds, wardrobes, and bedside woodwork.',
     descriptionHi: 'आरामदायक बेडरूम के लिए कस्टम बेड, अलमारियां और साइड टेबल्स।',
-    items: ['Modern & classic beds', 'Storage beds with hydraulics', 'Designer headboards', 'Bedside units & dressers', 'Full bedroom woodwork'],
-    itemsHi: ['मॉडर्न व क्लासिक बेड', 'हाइड्रोलिक स्टोरेज बेड', 'डिज़ाइनर हेडबोर्ड', 'बेडसाइड यूनिट्स व ड्रेसर', 'सम्पूर्ण बेडरूम वुडवर्क']
+    items: ['Modern & classic beds', 'Designer backlit jali headboards', 'Diamond-tufted velvet king beds', 'Bedside units & dressers', 'Full bedroom woodwork'],
+    itemsHi: ['मॉडर्न व क्लासिक बेड', 'बैक-लिट जाली हेडबोर्ड बेड', 'डायमंड टफ्टेड किंग बेड', 'बेडसाइड यूनिट्स व ड्रेसर', 'सम्पूर्ण बेडरूम वुडवर्क']
   },
   {
     id: 'living',
     roomName: 'Living Room',
     roomNameHi: 'लिविंग रूम (Living Room)',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/custom-sectional-sofa.jpg',
     description: 'Transform your main living area into an inviting, impressive space for family and guests.',
     descriptionHi: 'परिवार और मेहमानों के लिए शानदार और आरामदायक लिविंग स्पेस।',
-    items: ['TV units & media walls', 'Wooden sofa frameworks', 'Acoustic wall panels', 'Crockery & display units', 'Shoe cabinets with seating'],
-    itemsHi: ['टीवी यूनिट्स व मीडिया वॉल', 'लकड़ी के सोफा फ्रेम', 'वॉल पैनल्स व शेल्फ', 'डिस्प्ले व शोकेस यूनिट्स', 'शू कैबिनेट्स']
+    items: ['L-shaped channel tufted sofas', 'Matching storage ottomans', 'TV units & media walls', 'Display & bookshelf towers', 'Custom coffee tables'],
+    itemsHi: ['एल-शेप्ड चैनल टफ्टेड सोफा', 'मैचिंग सेंटर ओटोमन टेबल', 'टीवी यूनिट्स व मीडिया वॉल', 'डिस्प्ले व बुकशेल्फ टावर', 'कस्टम टेबल']
   },
   {
     id: 'kitchen',
     roomName: 'Kitchen',
     roomNameHi: 'किचन (Kitchen)',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
+    image: '/projects/modular-kitchen-white.jpg',
     description: 'Efficient, durable modular kitchens designed around your specific cooking habits and storage needs.',
     descriptionHi: 'टिकाऊ और सुविधाजनक मॉड्यूलर किचन, भारतीय कुकिंग के अनुकूल।',
-    items: ['Complete modular kitchens', 'Storage & pantry cabinets', 'Hydraulic overhead wall units', 'Kitchen breakfast islands', 'Cutlery & spice pull-outs'],
-    itemsHi: ['सम्पूर्ण मॉड्यूलर किचन', 'स्टोरेज व पैंट्री कैबिनेट्स', 'हाइड्रोलिक वॉल यूनिट्स', 'किचन ब्रेकफास्ट आइलैंड', 'स्पाइस व कटलरी पुल-आउट्स']
+    items: ['Complete modular kitchens', 'High-gloss acrylic shutters', 'Glass-framed display units', 'Storage & pantry cabinets', 'Hydraulic overhead wall units'],
+    itemsHi: ['सम्पूर्ण मॉड्यूलर किचन', 'हाई-ग्लॉस ऐक्रेलिक शटर', 'कांच वाले डिस्प्ले कैबिनेट्स', 'स्टोरेज व पैंट्री अलमारी', 'हाइड्रोलिक वॉल यूनिट्स']
   },
   {
     id: 'dining',
@@ -407,219 +407,286 @@ export const roomPossibilities: RoomPossibility[] = [
   },
   {
     id: 'kids',
-    roomName: 'Kids Room',
-    roomNameHi: 'बच्चों का कमरा (Kids)',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
-    description: 'Safe, creative, and functional wooden play and study solutions for children.',
-    descriptionHi: 'बच्चों के लिए सुरक्षित, गोल कोनों वाले प्लेरूम व स्टडी फर्नीचर।',
-    items: ['Playroom wooden furniture', 'Toy & book storage units', 'Integrated study workstations', 'Custom bunk beds & single beds'],
-    itemsHi: ['प्लेरूम फर्नीचर', 'खिलौने व किताब स्टोरेज यूनिट्स', 'स्टडी वर्कस्टेशन व टेबल', 'कस्टम बंक बेड']
+    roomName: 'Kids Room & Study',
+    roomNameHi: 'बच्चों का कमरा व स्टडी (Kids & Study)',
+    image: '/projects/study-desk-wardrobe.jpg',
+    description: 'Safe, creative, and functional wooden study workstations, wardrobes, and storage solutions.',
+    descriptionHi: 'बच्चों और स्टडी के लिए सुंदर डेस्क, वॉर्डरोब और बुकशेल्फ।',
+    items: ['Integrated study workstations', 'Multi-tier bookshelf towers', 'Built-in wardrobe combinations', 'Study drawers & organizer shelves'],
+    itemsHi: ['स्टडी वर्कस्टेशन व टेबल', 'मल्टी-टियर बुकशेल्फ टावर', 'इनबिल्ट वॉर्डरोब कॉम्बो', 'स्टडी ड्रॉअर्स व शेल्फ']
   },
   {
     id: 'office',
-    roomName: 'Office & Study',
-    roomNameHi: 'ऑफिस व स्टडी (Office)',
-    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
+    roomName: 'Office & Library',
+    roomNameHi: 'ऑफिस व लाइब्रेरी (Office)',
+    image: '/projects/bookshelf-storage-tower.jpg',
     description: 'Productive and dignified work environments with customized executive desks and bookshelves.',
     descriptionHi: 'व्यवस्थित और सुंदर ऑफिस के लिए कस्टम डेस्क व लाइब्रेरी।',
-    items: ['Executive & study desks', 'Floor-to-ceiling bookshelves', 'Filing & lockable storage', 'Conference & meeting tables'],
-    itemsHi: ['एग्जीक्यूटिव व स्टडी डेस्क', 'फुल-हाइट बुकशेल्फ व लाइब्रेरी', 'लॉक वाले स्टोरेज कैबिनेट्स', 'कॉन्फ्रेंस टेबल्स']
+    items: ['Executive & study desks', 'Tall bookshelf storage towers', 'Lockable filing cabinets', 'Custom conference tables'],
+    itemsHi: ['एग्जीक्यूटिव व स्टडी डेस्क', 'टॉल बुकशेल्फ स्टोरेज टावर', 'लॉक वाले स्टोरेज कैबिनेट्स', 'कस्टम टेबल्स']
   }
 ];
 
 export const featuredProjects: Project[] = [
   {
-    id: 'walnut-fluted-wardrobe',
-    title: 'Custom Fluted Walnut Wardrobe Wall',
-    titleHi: 'कस्टम फ्लूटेड वॉलनट अलमारी',
-    slug: 'custom-fluted-walnut-wardrobe',
-    category: 'Wardrobes',
-    designStyle: 'Contemporary & Luxury',
-    subtitle: 'Floor-to-ceiling custom storage with integrated soft LED profiles',
-    shortDescription: 'Custom-designed floor-to-ceiling master wardrobe with fluted door fronts and soft-close internal organizers.',
-    shortDescriptionHi: 'सॉफ्ट-क्लोज फिटिंग्स और गर्म एलईडी लाइटिंग के साथ बनाई गई शानदार अलमारी।',
-    coverImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85',
+    id: 'designer-backlit-jali-bed',
+    title: 'Designer Backlit CNC Floral Jali King Bed',
+    titleHi: 'बैक-लिट सीएनसी जाली किंग बेड',
+    slug: 'designer-backlit-jali-king-bed',
+    category: 'Bedroom',
+    designStyle: 'Luxury & Architectural',
+    subtitle: 'Extra-tall charcoal grey velvet headboard with backlit CNC floral jali side panels and floating walnut drawers',
+    shortDescription: 'Custom architectural master bed with horizontal channel tufted headboard, illuminated floral lattice wings, and floating nightstands.',
+    shortDescriptionHi: 'चारकोल ग्रे वेलवेट हेडबोर्ड, बैक-लिट फ्लोरल जाली और फ्लोटिंग साइड ड्रॉअर्स के साथ मास्टर बेड।',
+    coverImage: '/projects/designer-jali-bed.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Full front perspective with fluted paneling and ambient linear lighting',
-        tag: 'Full View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Interior drawer configuration with velvet-lined jewelry trays',
-        tag: 'Internal Storage'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Milled vertical wood battens and concealed soft-close hinges',
-        tag: 'Craftsmanship Detail'
+        url: '/projects/designer-jali-bed.jpg',
+        caption: 'Full master suite view with illuminated warm floral jali panels and crisp hotel-grade linens',
+        tag: 'Master Bed'
       }
     ],
-    projectStory: 'Built according to the customer\'s master suite measurements in Alwar, maximizing vertical storage with clean fluted door detailing.',
-    clientRequirement: 'Full wall wardrobe with his-and-her internal sections, sensor lighting, and custom handle design.',
-    customRequirements: 'Integrated internal drawers with safety locks and sensor-operated profile lighting.',
-    craftsmanshipHighlight: 'Accurate batten alignment and calibrated marine plywood internal carcass.',
-    materials: ['Walnut Veneer', 'BWP Marine Grade Plywood', 'Soft-close German Hinges'],
-    finish: 'Natural Matte Hardwax Oil & Polyurethane Sealant',
-    dimensions: '14 ft (W) × 9.5 ft (H)',
-    location: 'Alwar, Rajasthan',
+    projectStory: 'Commissioned for a luxury residence in Alwar. The client wanted a signature centerpiece bed combining modern channel upholstery with traditional Indian illuminated lattice artwork.',
+    clientRequirement: 'Extra-tall headboard with integrated nightstands, warm ambient reading lights, and heavy mattress support.',
+    customRequirements: 'CNC precision-routed floral acrylic jali with concealed warm-white LED channel diffusers and separate bedside switches.',
+    craftsmanshipHighlight: 'Flush seamless joinery between padded velvet panels and high-density wooden lattice borders.',
+    materials: ['Charcoal Velvet Upholstery', 'CNC Acrylic Lattice', 'Seasoned Teak Frame', 'Marine Grade Plywood'],
+    finish: 'Natural Matte Walnut Lacquer & Soft Velvet',
+    dimensions: 'King Size (78 in × 72 in)',
+    location: 'Rath Nagar, Alwar',
     year: '2025',
     featured: true,
   },
   {
-    id: 'solid-teak-dining-table',
-    title: 'Solid Teak Eight-Seater Dining Table',
-    titleHi: 'सॉलिड सागवान 8-सीटर डाइनिंग टेबल',
-    slug: 'solid-teak-dining-table',
-    category: 'Dining',
-    designStyle: 'Traditional & Modern Blend',
-    subtitle: 'Handcrafted solid Sagwan wood table with sturdy interlocking wooden joinery',
-    shortDescription: 'Solid Teak (Sagwan) dining table with smooth chamfered edges and durable protective finish.',
-    shortDescriptionHi: 'सागवान की पक्की लकड़ी से बनी 8-सीटर मजबूत डाइनिंग टेबल।',
-    coverImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=85',
+    id: 'diamond-tufted-walnut-bed',
+    title: 'Diamond-Tufted Suede & Walnut King Bed',
+    titleHi: 'डायमंड टफ्टेड वॉलनट किंग बेड',
+    slug: 'diamond-tufted-walnut-bed',
+    category: 'Bedroom',
+    designStyle: 'Classic & Luxury',
+    subtitle: 'Warm champagne suede diamond-tufted headboard & footboard with rich dark walnut wooden frame',
+    shortDescription: 'Luxury king-size bed featuring crystal button diamond tufting on headboard and footboard with solid walnut framing.',
+    shortDescriptionHi: 'क्रिस्टल बटन टफ्टिंग और वॉलनट वुडन बॉर्डर के साथ क्लासिक किंग साइज बेड।',
+    coverImage: '/projects/tufted-wooden-bed.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1400&q=85',
-        caption: '8-seater centerpiece dining table with natural teak grain',
-        tag: 'Full Table'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Hand-planed top surface highlighting authentic wood grain',
-        tag: 'Grain Detail'
+        url: '/projects/tufted-wooden-bed.jpg',
+        caption: 'Front perspective showing diamond button tufting and matching footboard panel',
+        tag: 'Full View'
       }
     ],
-    projectStory: 'Crafted for a family home in Uttar Pradesh requiring a durable, generational dining table capable of everyday family meals and formal hosting.',
-    clientRequirement: 'Sturdy 8-seater table with stain-resistant top and zero wobbling.',
-    customRequirements: 'Heat and water-resistant protective topcoat for daily hot cookware placement.',
-    craftsmanshipHighlight: 'Classical interlocking mortise and tenon leg joints without loose metal fittings.',
-    materials: ['Seasoned CP Teak (Sagwan)', 'Hardwood Joinery'],
-    finish: 'Satin Heat-Resistant Protective Clear Coat',
-    dimensions: '8.5 ft (L) × 3.8 ft (W) × 30 in (H)',
+    projectStory: 'Built for a private villa master bedroom in Uttar Pradesh, focusing on ergonomic back comfort and stately classic proportions.',
+    clientRequirement: 'Heavy solid wood structure with plush padded headboard for comfortable late-night reading.',
+    customRequirements: 'Matching tufted footboard panel and concealed reinforcement beneath the mattress platform.',
+    craftsmanshipHighlight: 'Hand-pulled diamond tufts with reinforced crystal buttons on heavy-density foam backing.',
+    materials: ['Seasoned Hardwood Frame', 'Champagne Suede Upholstery', 'Crystal Buttons', 'IS:710 Marine Plywood'],
+    finish: 'Dark Walnut Rich Polish',
+    dimensions: 'King Size (82 in × 76 in)',
     location: 'Uttar Pradesh (UP)',
     year: '2025',
     featured: true,
   },
   {
-    id: 'oak-platform-storage-bed',
-    title: 'White Oak Platform Bed with Storage',
-    titleHi: 'व्हाइट ओक स्टोरेज प्लेटफॉर्म बेड',
-    slug: 'white-oak-platform-storage-bed',
-    category: 'Bedroom',
-    designStyle: 'Minimal & Contemporary',
-    subtitle: 'King-size wooden bed with integrated floating nightstands and smooth hydraulic storage',
-    shortDescription: 'Custom European Oak platform bed engineered with acoustic slats and hydraulic storage lift.',
-    shortDescriptionHi: 'हाइड्रोलिक स्टोरेज और फ्लोटिंग साइड टेबल्स के साथ किंग साइज बेड।',
-    coverImage: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
+    id: 'custom-sectional-sofa',
+    title: 'Custom Channel-Tufted Sectional Sofa with Storage Ottoman',
+    titleHi: 'चैनल टफ्टेड एल-शेप सोफा व सेंटर टेबल',
+    slug: 'custom-sectional-sofa-storage-ottoman',
+    category: 'Living Room',
+    designStyle: 'Modern Contemporary',
+    subtitle: 'L-shaped mocha velvet sectional sofa with vertical fluted backrest and matching modular center table / pouf set',
+    shortDescription: 'Custom-built L-shaped sectional sofa with vertical channel tufting and space-saving modular center ottoman unit.',
+    shortDescriptionHi: 'मजबूत लकड़ी के फ्रेम और मोका वेलवेट अपहोल्स्ट्री से बना एल-शेप सोफा व ओटोमन टेबल।',
+    coverImage: '/projects/custom-sectional-sofa.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Low-profile minimalist silhouette with integrated side tables',
-        tag: 'Full View'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Bedside drawer detail with soft-glide runners',
-        tag: 'Nightstand'
+        url: '/projects/custom-sectional-sofa.jpg',
+        caption: 'L-shaped configuration with vertical channel tufting and matching nested center table',
+        tag: 'Living Suite'
       }
     ],
-    projectStory: 'Designed for a customer seeking a clean, noise-free wooden bed with effortless under-bed storage access.',
-    clientRequirement: 'King-size bed, hydraulic lift mechanism, and matching back paneling.',
-    customRequirements: 'Integrated charging cable wire slots in both floating side tables.',
-    craftsmanshipHighlight: 'Reinforced wooden skeleton ensuring zero creaks and easy hydraulic operation.',
-    materials: ['White Oak Timber & Veneer', 'Heavy Hydraulic Lift Pistons'],
-    finish: 'Silky Ultra-Matte Clear Finish',
-    dimensions: 'King Size (78 in × 72 in mattress)',
+    projectStory: 'Custom-measured to fit a living room corner in Alwar, maximizing seating capacity while maintaining an open, elegant aesthetic.',
+    clientRequirement: 'Comfortable family corner sofa with firm back support and matching center coffee table.',
+    customRequirements: 'High-density 40D foam cushioning with durable, stain-resistant mocha velvet fabric.',
+    craftsmanshipHighlight: 'Kiln-dried solid hardwood internal structural framework with reinforced cross-members.',
+    materials: ['Solid Hardwood Internal Frame', 'Mocha Velvet Fabric', '40-Density Polyurethane Foam'],
+    finish: 'Tactile Silk Velvet Upholstery',
+    dimensions: '10 ft × 8.5 ft L-Shape Sectional',
     location: 'Alwar, Rajasthan',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'walnut-study-wardrobe-suite',
+    title: 'Integrated Walnut Study Desk & Wardrobe Suite',
+    titleHi: 'स्टडी डेस्क व वॉर्डरोब कॉम्बिनेशन',
+    slug: 'walnut-study-wardrobe-suite',
+    category: 'Wardrobes',
+    designStyle: 'Modern & Minimal',
+    subtitle: 'Multi-functional bedroom unit with study desk, open display shelving, overhead lofts, and wardrobe tower',
+    shortDescription: 'Dual-tone dark walnut and cream modular study station with integrated storage drawers, book display, and wardrobe.',
+    shortDescriptionHi: 'स्टडी डेस्क, बुक शेल्फ, ड्रॉअर्स और अलमारी का शानदार डुअल-टोन कॉम्बो।',
+    coverImage: '/projects/study-desk-wardrobe.jpg',
+    galleryImages: [
+      {
+        url: '/projects/study-desk-wardrobe.jpg',
+        caption: 'Full-wall study suite with organized open shelving and wardrobe cabinetry',
+        tag: 'Study Suite'
+      }
+    ],
+    projectStory: 'Engineered for a student/work-from-home room in Alwar to consolidate study, books, and clothing into a single unified wall.',
+    clientRequirement: 'Full-wall solution with dedicated laptop area, drawers with safety locks, open book niches, and wardrobe.',
+    customRequirements: 'Concealed power conduit channels and dual-tone walnut with ivory edge banding.',
+    craftsmanshipHighlight: 'Precision alignment of horizontal and vertical dividing partitions without sagging.',
+    materials: ['Walnut Grain Textured Laminate', 'Matte Cream Laminate', 'IS:710 Marine Calibrated Plywood'],
+    finish: 'Silky Matte Laminate Finish',
+    dimensions: '13 ft (W) × 9.5 ft (H)',
+    location: 'Rath Nagar, Alwar',
     year: '2024',
     featured: true,
   },
   {
-    id: 'charcoal-matte-modular-kitchen',
-    title: 'Custom Matte Charcoal & Oak Modular Kitchen',
-    titleHi: 'मॉड्यूलर किचन (चारकोल व ओक)',
-    slug: 'custom-charcoal-modular-kitchen',
+    id: 'gloss-white-modular-kitchen',
+    title: 'High-Gloss White Acrylic Modular Kitchen',
+    titleHi: 'हाई-ग्लॉस व्हाइट मॉड्यूलर किचन',
+    slug: 'gloss-white-modular-kitchen',
     category: 'Kitchen',
-    designStyle: 'Modern & Ergonomic',
-    subtitle: '100% boiling-water-proof kitchen cabinetry with soft-close tandem runners',
-    shortDescription: 'High-performance modular kitchen with anti-scratch matte shutters and fluted oak breakfast island.',
-    shortDescriptionHi: '100% वाटरप्रूफ मरीन प्लाई और सॉफ्ट-क्लोज फिटिंग्स के साथ बनी किचन।',
-    coverImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
+    designStyle: 'Modern Ergonomic',
+    subtitle: '100% boiling-water-proof overhead kitchen cabinetry with glass display units and under-cabinet strip lighting',
+    shortDescription: 'Modern modular kitchen upper cabinets with high-gloss white acrylic shutters and illuminated glass crockery display.',
+    shortDescriptionHi: '100% वाटरप्रूफ मरीन प्लाई, हाई-ग्लॉस ऐक्रेलिक शटर और कांच के डिस्प्ले कैबिनेट्स।',
+    coverImage: '/projects/modular-kitchen-white.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85',
-        caption: 'L-shaped layout with custom center island and fluted breakfast bar',
+        url: '/projects/modular-kitchen-white.jpg',
+        caption: 'Overhead kitchen layout with glass display shutters and warm LED task lighting',
         tag: 'Kitchen View'
       }
     ],
-    projectStory: 'Custom-fit to the room\'s exact brick dimensions with waterproof marine grade plywood for long durability.',
-    clientRequirement: 'Heavy-duty storage with smooth drawers, tall pantry unit, and spice pullouts.',
-    customRequirements: 'Dedicated corner carousel unit and soft-close cutlery organizers.',
-    craftsmanshipHighlight: '100% BWP IS:710 Marine Grade Plywood carcass with waterproof edge sealing.',
-    materials: ['IS:710 Marine Plywood', 'Matte Acrylic Finish', 'Soft-close Tandem Hardware'],
-    finish: 'Super-Matte Anti-Scratch Finish',
-    dimensions: '15 ft × 11 ft Kitchen Layout',
-    location: 'Alwar, Rajasthan',
-    year: '2025',
-    featured: true,
-  },
-  {
-    id: 'slatted-tv-unit-media-wall',
-    title: 'Acoustic Slatted Wooden TV Media Unit',
-    titleHi: 'स्लेटेड वुडन टीवी मीडिया यूनिट',
-    slug: 'slatted-tv-media-wall',
-    category: 'TV Units',
-    designStyle: 'Contemporary',
-    subtitle: 'Wall-mounted floating media console with floor-to-ceiling slatted back panel',
-    shortDescription: 'Living room centerpiece with vertical slatted wooden battens and hidden wire management.',
-    shortDescriptionHi: 'छिपी हुई वायरिंग और फ्लोटिंग कंसोल के साथ सुंदर टीवी मीडिया वॉल।',
-    coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-    galleryImages: [
-      {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
-        caption: 'Full feature wall with warm ambient back-lighting and floating console',
-        tag: 'TV Unit'
-      }
-    ],
-    projectStory: 'Custom built to conceal all television cords, set-top box wires, and soundbar cables seamlessly.',
-    clientRequirement: 'Clean modern wall accommodating a 65-inch screen with storage for media devices.',
-    customRequirements: 'Routed LED channels behind the wooden slats for soft evening lighting.',
-    craftsmanshipHighlight: 'Evenly spaced precision vertical battens and 45-degree mitered floating cabinet edges.',
-    materials: ['Natural Oak Veneer', 'Solid Hardwood Battens', 'Concealed LED Tracks'],
-    finish: 'Natural Matte Lacquer',
-    dimensions: '12 ft (W) × 9.5 ft (H)',
+    projectStory: 'Installed in a newly renovated residence in Uttar Pradesh with 100% waterproof Marine Grade calibrated plywood to resist steam and moisture.',
+    clientRequirement: 'Bright, reflective, easy-to-clean kitchen overhead storage with glass display for fine dinnerware.',
+    customRequirements: 'Warm under-cabinet LED profile lighting with concealed electrical drivers.',
+    craftsmanshipHighlight: 'Zero-joint edge banding on acrylic shutters ensuring 100% moisture resistance.',
+    materials: ['IS:710 Marine Plywood', 'High-Gloss Acrylic Shutters', 'Toughened Fluted Glass', 'Soft-Close German Hinges'],
+    finish: 'Ultra-Gloss Scratch-Resistant Acrylic',
+    dimensions: '12 ft × 8 ft Kitchen Layout',
     location: 'Uttar Pradesh (UP)',
     year: '2025',
     featured: true,
   },
   {
-    id: 'teak-pivot-entrance-door',
-    title: 'Solid Teak Pivot Main Entrance Door',
-    titleHi: 'सॉलिड सागवान मुख्य प्रवेश दरवाजा',
-    slug: 'solid-teak-pivot-main-door',
-    category: 'Doors',
-    designStyle: 'Traditional & Monumental',
-    subtitle: '9-foot heavy solid Sagwan entrance door with fluted relief and heavy brass handle',
-    shortDescription: 'Handcrafted solid teak main door with heavy-duty hydraulic pivot mechanism.',
-    shortDescriptionHi: 'सागवान की लकड़ी से बना 9 फीट ऊंचा मजबूत मुख्य दरवाजा।',
-    coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+    id: 'walnut-modular-loft-wardrobe',
+    title: 'Floor-to-Ceiling Walnut Modular Wardrobe with Top Loft',
+    titleHi: 'फ्लोर-टू-सीलिंग वॉलनट मॉड्यूलर अलमारी',
+    slug: 'walnut-modular-loft-wardrobe',
+    category: 'Wardrobes',
+    designStyle: 'Contemporary',
+    subtitle: 'Tall double-door bedroom wardrobe with top overhead loft cabinets and sleek vertical black handles',
+    shortDescription: 'Custom-built vertical wardrobe in dark walnut grain with cream borders and overhead storage to maximize room height.',
+    shortDescriptionHi: 'ऊंचाई तक बनी मॉड्यूलर अलमारी और टॉप लॉफ्ट स्टोरेज।',
+    coverImage: '/projects/walnut-modular-wardrobe.jpg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85',
-        caption: '9-foot grand entrance pivot door in solid teak wood',
-        tag: 'Main Door'
+        url: '/projects/walnut-modular-wardrobe.jpg',
+        caption: 'Full-height view with upper loft storage and modern vertical handles',
+        tag: 'Wardrobe'
       }
     ],
-    projectStory: 'Crafted for a residence entrance in Alwar, combining traditional solid wood strength with modern pivot hardware.',
-    clientRequirement: 'Heavy, secure entrance door operating smoothly with fingertip touch.',
-    customRequirements: 'Weather-sealed exterior perimeter to resist sun and rain.',
-    craftsmanshipHighlight: 'Anti-warp seasoned timber construction and precision floor spring alignment.',
-    materials: ['100% Seasoned CP Teak', 'Heavy-Duty Floor Pivot', 'Solid Brass Pull Handle'],
-    finish: 'Exterior UV-Resistant Polyurethane Matt Varnish',
-    dimensions: '9 ft (H) × 4.5 ft (W) × 50 mm',
+    projectStory: 'Built for a bedroom with 10-foot ceilings in Alwar to store suitcases and seasonal blankets in the upper loft while keeping daily wear accessible.',
+    clientRequirement: 'Full-height vertical storage with smooth hinges, internal hanger rods, and lockable drawers.',
+    customRequirements: 'Integrated security lock on main shutter and bottom drawer.',
+    craftsmanshipHighlight: 'Floor-to-ceiling flush alignment with reinforced structural top-carcass.',
+    materials: ['Dark Walnut Grain Laminate', 'Marine Grade Plywood', 'Matte Black Bar Handles'],
+    finish: 'Textured Natural Wood Grain',
+    dimensions: '4.5 ft (W) × 10 ft (H) × 24 in (D)',
     location: 'Alwar, Rajasthan',
     year: '2024',
+    featured: true,
+  },
+  {
+    id: 'teak-dressing-table-vanity',
+    title: 'Solid Wood Dressing Vanity with Full-Height Mirror',
+    titleHi: 'सॉलिड वुड ड्रेसिंग टेबल व फुल मिरर',
+    slug: 'solid-wood-dressing-table-vanity',
+    category: 'Custom Furniture',
+    designStyle: 'Traditional & Classic',
+    subtitle: 'Handcrafted dressing unit with full-length mirror door, frosted glass vanity cabinet, and smooth drawers',
+    shortDescription: 'Custom wooden dressing table in warm oak/teak finish with full-length mirror, cosmetic storage, and cornice lighting.',
+    shortDescriptionHi: 'फुल-लेंथ ड्रेसिंग मिरर, कॉस्मेटिक स्टोरेज और वॉर्म लाइटिंग के साथ बनी ड्रेसिंग टेबल।',
+    coverImage: '/projects/wooden-dressing-unit.jpg',
+    galleryImages: [
+      {
+        url: '/projects/wooden-dressing-unit.jpg',
+        caption: 'Full-length mirror door and internal vanity cabinet with soft top spotlighting',
+        tag: 'Dressing Table'
+      }
+    ],
+    projectStory: 'Crafted for a master dressing corner in Alwar, integrating full grooming reflection with concealed cosmetic shelves.',
+    clientRequirement: 'Full-length reflection, frosted glass accent door, and pull-out drawers for accessories.',
+    customRequirements: 'Concealed top cornice spotlight for clear facial illumination during dressing.',
+    craftsmanshipHighlight: 'Precision mitered border moldings and smooth magnetic door catches.',
+    materials: ['Seasoned Teak Timber & Veneer', 'Belgian Mirror Glass', 'Frosted Glass Shutter'],
+    finish: 'Warm Teak Satin Lacquer',
+    dimensions: '3.5 ft (W) × 7 ft (H) × 18 in (D)',
+    location: 'Rath Nagar, Alwar',
+    year: '2024',
+    featured: false,
+  },
+  {
+    id: 'bookshelf-storage-tower-unit',
+    title: 'Multi-Tier Bookshelf & Storage Cabinet Tower',
+    titleHi: 'मल्टी-टियर बुकशेल्फ व स्टोरेज टावर',
+    slug: 'bookshelf-storage-tower-unit',
+    category: 'Office',
+    designStyle: 'Modern & Functional',
+    subtitle: 'Vertical storage tower with double-door upper cabinets, deep open book shelves, and cream frame accents',
+    shortDescription: 'Tall wooden storage tower featuring top closed cabinets and heavy-duty open display shelves for books and decor.',
+    shortDescriptionHi: 'किताबों और शोपीस के लिए मजबूत ओपन शेल्व्स और ऊपर बंद स्टोरेज कैबिनेट।',
+    coverImage: '/projects/bookshelf-storage-tower.jpg',
+    galleryImages: [
+      {
+        url: '/projects/bookshelf-storage-tower.jpg',
+        caption: 'Vertical bookshelf tower with dark walnut backing and ivory trim',
+        tag: 'Bookshelf'
+      }
+    ],
+    projectStory: 'Built to utilize vertical wall space in a study corner, providing heavy-duty shelf support for law and medical reference books.',
+    clientRequirement: 'Sturdy shelves that never sag under heavy books, with closed cabinets above for documents.',
+    customRequirements: 'Reinforced 18mm plywood shelf battens with solid wood front lip.',
+    craftsmanshipHighlight: 'Rigid dado joint shelf mortising for zero-sag heavy weight capacity.',
+    materials: ['Dark Walnut Grain Laminate', '18mm Calibrated Hardwood Plywood', 'Soft-Close Hinges'],
+    finish: 'Natural Matte Finish',
+    dimensions: '3 ft (W) × 8.5 ft (H) × 16 in (D)',
+    location: 'Alwar, Rajasthan',
+    year: '2024',
+    featured: false,
+  },
+  {
+    id: 'crafted-wooden-bedside-cabinet',
+    title: 'Crafted Teak Bedside Table Cabinet with Drawer',
+    titleHi: 'सागवान वुडन बेडसाइड टेबल कैबिनेट',
+    slug: 'crafted-teak-bedside-table-cabinet',
+    category: 'Custom Furniture',
+    designStyle: 'Classic & Sturdy',
+    subtitle: 'Compact solid wood nightstand with top pull-out drawer, bottom shutter cabinet, and beaded frame border',
+    shortDescription: 'Handcrafted bedside nightstand in natural teak finish with raised moulding border and satin chrome knobs.',
+    shortDescriptionHi: 'ऊपर ड्रॉर और नीचे कैबिनेट के साथ बनी मजबूत लकड़ी की बेडसाइड टेबल।',
+    coverImage: '/projects/wooden-bedside-table.jpg',
+    galleryImages: [
+      {
+        url: '/projects/wooden-bedside-table.jpg',
+        caption: 'Solid teak bedside nightstand with smooth drawer and cabinet storage',
+        tag: 'Bedside Table'
+      }
+    ],
+    projectStory: 'Custom-crafted to match a master bed suite, providing convenient bedside lamp placement and night storage.',
+    clientRequirement: 'Compact nightstand with both a drawer for remotes and a cabinet for books.',
+    customRequirements: 'Raised solid wood beading perimeter around the front facade.',
+    craftsmanshipHighlight: 'Dovetail drawer joinery with smooth bottom runners.',
+    materials: ['Natural Teak Veneer & Solid Wood Beading', 'Satin Chrome Knobs', 'Calibrated Hardwood Carcass'],
+    finish: 'Silky Hand-Rubbed Teak Finish',
+    dimensions: '18 in (W) × 24 in (H) × 16 in (D)',
+    location: 'Alwar, Rajasthan',
+    year: '2025',
     featured: false,
   }
 ];
@@ -775,65 +842,65 @@ export const testimonialsData: Testimonial[] = [
 
 export const galleryImages = [
   {
-    url: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85',
-    title: 'Custom Fluted Walnut Wardrobe',
-    titleHi: 'कस्टम फ्लूटेड अलमारी',
-    category: 'Wardrobes',
-    location: 'Alwar, Rajasthan'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=85',
-    title: 'Solid Teak 8-Seater Dining Table',
-    titleHi: 'सागवान 8-सीटर डाइनिंग टेबल',
-    category: 'Dining',
-    location: 'Uttar Pradesh'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85',
-    title: 'White Oak Storage Platform Bed',
-    titleHi: 'व्हाइट ओक स्टोरेज बेड',
+    url: '/projects/designer-jali-bed.jpg',
+    title: 'Designer Backlit CNC Jali King Bed',
+    titleHi: 'बैक-लिट सीएनसी जाली किंग बेड',
     category: 'Bedroom',
-    location: 'Alwar, Rajasthan'
+    location: 'Rath Nagar, Alwar'
   },
   {
-    url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
-    title: 'Custom Matte Charcoal Modular Kitchen',
-    titleHi: 'मॉड्यूलर किचन (वाटरप्रूफ)',
-    category: 'Kitchen',
-    location: 'Alwar, Rajasthan'
+    url: '/projects/tufted-wooden-bed.jpg',
+    title: 'Diamond-Tufted Velvet & Walnut King Bed',
+    titleHi: 'डायमंड टफ्टेड वॉलनट किंग बेड',
+    category: 'Bedroom',
+    location: 'Uttar Pradesh (UP)'
   },
   {
-    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-    title: 'Slatted Oak TV Media Unit',
-    titleHi: 'स्लेटेड टीवी मीडिया यूनिट',
-    category: 'TV Units',
-    location: 'Uttar Pradesh'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-    title: 'Solid Teak Pivot Main Door',
-    titleHi: 'सागवान मुख्य प्रवेश द्वार',
-    category: 'Doors',
-    location: 'Alwar, Rajasthan'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85',
-    title: 'Executive Study Desk & Bookshelf',
-    titleHi: 'स्टडी डेस्क व बुकशेल्फ',
-    category: 'Office',
-    location: 'Uttar Pradesh'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85',
-    title: 'Custom Wooden Sofa Structure',
-    titleHi: 'कस्टम लकड़ी का सोफा फ्रेम',
+    url: '/projects/custom-sectional-sofa.jpg',
+    title: 'Channel-Tufted Sectional Sofa & Ottoman',
+    titleHi: 'चैनल टफ्टेड सोफा व सेंटर टेबल',
     category: 'Living Room',
     location: 'Alwar, Rajasthan'
   },
   {
-    url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=85',
-    title: 'Master Carpenter at the Workshop',
-    titleHi: 'कारीगर लकड़ी पर काम करते हुए',
+    url: '/projects/study-desk-wardrobe.jpg',
+    title: 'Integrated Walnut Study Desk & Wardrobe Suite',
+    titleHi: 'स्टडी डेस्क व वॉर्डरोब कॉम्बो',
+    category: 'Wardrobes',
+    location: 'Rath Nagar, Alwar'
+  },
+  {
+    url: '/projects/modular-kitchen-white.jpg',
+    title: 'High-Gloss White Acrylic Modular Kitchen',
+    titleHi: 'हाई-ग्लॉस व्हाइट मॉड्यूलर किचन',
+    category: 'Kitchen',
+    location: 'Uttar Pradesh (UP)'
+  },
+  {
+    url: '/projects/walnut-modular-wardrobe.jpg',
+    title: 'Floor-to-Ceiling Walnut Modular Wardrobe',
+    titleHi: 'फ्लोर-टू-सीलिंग मॉड्यूलर अलमारी',
+    category: 'Wardrobes',
+    location: 'Alwar, Rajasthan'
+  },
+  {
+    url: '/projects/wooden-dressing-unit.jpg',
+    title: 'Solid Wood Dressing Table with Full Mirror',
+    titleHi: 'सॉलिड वुड ड्रेसिंग टेबल व फुल मिरर',
+    category: 'Custom Furniture',
+    location: 'Rath Nagar, Alwar'
+  },
+  {
+    url: '/projects/bookshelf-storage-tower.jpg',
+    title: 'Multi-Tier Bookshelf & Storage Tower',
+    titleHi: 'मल्टी-टियर बुकशेल्फ व स्टोरेज टावर',
+    category: 'Office',
+    location: 'Alwar, Rajasthan'
+  },
+  {
+    url: '/projects/wooden-bedside-table.jpg',
+    title: 'Crafted Teak Bedside Table Cabinet',
+    titleHi: 'सागवान वुडन बेडसाइड टेबल',
     category: 'Custom Furniture',
     location: 'Rath Nagar, Alwar'
   }
