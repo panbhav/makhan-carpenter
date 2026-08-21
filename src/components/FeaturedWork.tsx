@@ -58,7 +58,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
   };
 
   return (
-    <section id="our-work" className="py-24 bg-[#0c0a09] relative">
+    <section id="our-work" className="py-24 bg-[#0c0a09] relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -77,21 +77,23 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
           </p>
         </div>
 
-        {/* 12-Category Filter Pills */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.label}
-              onClick={() => setSelectedCategory(cat.label)}
-              className={`px-3.5 py-1.5 rounded-sm text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-300 ${
-                selectedCategory === cat.label
-                  ? 'bg-[#c5a059] text-[#0e0c0a] shadow-[0_2px_15px_rgba(197,160,89,0.3)]'
-                  : 'bg-[#181410] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15 hover:border-[#c5a059]/40'
-              }`}
-            >
-              {language === 'en' ? cat.label : cat.labelHi}
-            </button>
-          ))}
+        {/* 12-Category Filter Pills (Full horizontal scroll with left margin protection) */}
+        <div className="w-full overflow-x-auto pb-4 mb-12 scrollbar-none">
+          <div className="flex items-center justify-start xl:justify-center gap-2 min-w-max px-2 sm:px-4 mx-auto">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.label}
+                onClick={() => setSelectedCategory(cat.label)}
+                className={`px-3.5 py-1.5 rounded-sm text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-300 ${
+                  selectedCategory === cat.label
+                    ? 'bg-[#c5a059] text-[#0e0c0a] shadow-[0_2px_15px_rgba(197,160,89,0.3)]'
+                    : 'bg-[#181410] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15 hover:border-[#c5a059]/40'
+                }`}
+              >
+                {language === 'en' ? cat.label : cat.labelHi}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Projects Masonry Grid */}

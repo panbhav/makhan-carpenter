@@ -37,7 +37,7 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
   };
 
   return (
-    <section id="design-possibilities" className="py-24 bg-[#090706] relative border-t border-[#c5a059]/10">
+    <section id="design-possibilities" className="py-24 bg-[#090706] relative border-t border-[#c5a059]/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -55,20 +55,22 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
         </div>
 
         {/* Room Tab Selectors */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
-          {roomPossibilities.map((room, idx) => (
-            <button
-              key={room.id}
-              onClick={() => setActiveRoomIndex(idx)}
-              className={`px-5 py-2.5 rounded-sm text-xs uppercase tracking-wider font-semibold transition-all whitespace-nowrap ${
-                activeRoomIndex === idx
-                  ? 'bg-[#c5a059] text-[#0e0c0a] shadow-lg'
-                  : 'bg-[#15110e] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15'
-              }`}
-            >
-              {language === 'en' ? room.roomName : room.roomNameHi}
-            </button>
-          ))}
+        <div className="w-full overflow-x-auto pb-4 mb-10 scrollbar-none">
+          <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max px-2 sm:px-4 mx-auto">
+            {roomPossibilities.map((room, idx) => (
+              <button
+                key={room.id}
+                onClick={() => setActiveRoomIndex(idx)}
+                className={`px-5 py-2.5 rounded-sm text-xs uppercase tracking-wider font-semibold transition-all whitespace-nowrap ${
+                  activeRoomIndex === idx
+                    ? 'bg-[#c5a059] text-[#0e0c0a] shadow-lg'
+                    : 'bg-[#15110e] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15'
+                }`}
+              >
+                {language === 'en' ? room.roomName : room.roomNameHi}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Active Room Showcase Card */}
