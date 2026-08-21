@@ -44,6 +44,20 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
 
   const t = translations[language];
 
+  const generateWhatsAppMessage = () => {
+    const text =
+      `*Custom Furniture Enquiry - Makhan Carpenter*\n\n` +
+      `*Name:* ${fullName || 'Valued Client'}\n` +
+      `*Phone:* ${phone || 'Not provided'}\n` +
+      `*Item Needed:* ${selectedFurniture}\n` +
+      `*Location:* ${location || 'Raath Nagar, Alwar / UP'}\n` +
+      `*Preferred Contact:* ${preferredContact}\n` +
+      `*Has Reference Photo/Drawing:* ${hasRefImage ? 'Yes (will send on WhatsApp)' : 'No'}\n` +
+      `*Specifications & Details:* ${requirementDetails || 'Looking for quotation, timeline, and site measurement.'}\n\n` +
+      `_Sent from Makhan Carpenter Website_`;
+    return encodeURIComponent(text);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
@@ -56,18 +70,10 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
     } catch {
       // ignore
     }
-  };
 
-  const generateWhatsAppMessage = () => {
-    const text = `*Custom Furniture Enquiry - Makhan Carpenter*\n\n` +
-      `*Name:* ${fullName || 'Valued Client'}\n` +
-      `*Phone:* ${phone || 'Not provided'}\n` +
-      `*Item Needed:* ${selectedFurniture}\n` +
-      `*Location:* ${location}\n` +
-      `*Preferred Contact:* ${preferredContact}\n` +
-      `*Has Photo/Drawing to Share:* ${hasRefImage ? 'Yes' : 'No'}\n` +
-      `*Details:* ${requirementDetails || 'Looking for quotation and site measurement.'}`;
-    return encodeURIComponent(text);
+    // Automatically trigger WhatsApp query send
+    const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${generateWhatsAppMessage()}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -224,8 +230,8 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
         </form>
       ) : (
         <div className="text-center py-8 space-y-6 animate-in zoom-in-95 duration-300">
-          <div className="w-16 h-16 rounded-full bg-[#c5a059]/20 border border-[#c5a059] text-[#c5a059] flex items-center justify-center mx-auto shadow-2xl">
-            <CheckCircle2 className="w-8 h-8" />
+          <div className="w-16 h-16 rounded-full bg-[#25D366]/20 border border-[#25D366] text-[#25D366] flex items-center justify-center mx-auto shadow-2xl">
+            <CheckCircle2 className="w-9 h-9" />
           </div>
 
           <div>
@@ -233,14 +239,18 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               {t.contact.successTitle}
             </h3>
             <p className="text-sm text-[#d4cbbf] max-w-md mx-auto leading-relaxed">
-              Makhan Carpenter has received your enquiry for <strong>{selectedFurniture}</strong>. We will review the specifications and contact you via <strong>{preferredContact}</strong> shortly.
+              {language === 'en'
+                ? `Your enquiry for ${selectedFurniture} has been compiled. WhatsApp is opening automatically to connect directly with Makhan Carpenter.`
+                : `${selectedFurniture} के लिए आपका कोटेशन अनुरोध तैयार है। WhatsApp अपने आप खुल रहा है।`}
             </p>
           </div>
 
           {/* Instant WhatsApp Option */}
           <div className="bg-[#181410] border border-[#c5a059]/30 rounded-sm p-6 max-w-lg mx-auto space-y-3">
             <span className="text-xs text-[#a99c8f] block">
-              Want to send your reference photo right now on WhatsApp?
+              {language === 'en'
+                ? 'Did not open automatically? Tap below to open chat directly:'
+                : 'यदि चैट नहीं खुली, तो नीचे दिए गए बटन पर टैप करें:'}
             </span>
             <a
               href={`https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${generateWhatsAppMessage()}`}
@@ -248,8 +258,8 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               rel="noopener noreferrer"
               className="w-full py-3.5 px-6 rounded-sm bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg transition-all"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Open WhatsApp with Details</span>
+              <MessageSquare className="w-4 h-4 fill-white/10" />
+              <span>{language === 'en' ? 'Open WhatsApp Chat' : 'WhatsApp चैट खोलें'}</span>
             </a>
           </div>
 
@@ -258,7 +268,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               onClick={onClose}
               className="text-xs uppercase tracking-wider text-[#a99c8f] hover:text-[#ede5d8] transition-colors underline pt-2 block mx-auto"
             >
-              Close Window
+              {language === 'en' ? 'Close Window' : 'बंद करें'}
             </button>
           )}
         </div>

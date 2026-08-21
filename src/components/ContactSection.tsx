@@ -22,18 +22,34 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
 
   const t = translations[language];
 
+  const generateContactWhatsAppMessage = () => {
+    const text =
+      `*New Furniture Query - Makhan Carpenter*\n\n` +
+      `*Name:* ${formData.name || 'Valued Client'}\n` +
+      `*Phone:* ${formData.phone || 'Not provided'}\n` +
+      `*Item Needed:* ${formData.projectType}\n` +
+      `*Location:* ${formData.location || 'Raath Nagar, Alwar / UP'}\n` +
+      `*Requirement Details:* ${formData.message || 'I would like to discuss a custom furniture project and get an estimate.'}\n\n` +
+      `_Sent from Makhan Carpenter Website_`;
+    return encodeURIComponent(text);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
     try {
       confetti({
-        particleCount: 60,
+        particleCount: 70,
         spread: 60,
         origin: { y: 0.7 }
       });
     } catch {
       // ignore
     }
+
+    // Automatically trigger WhatsApp query send
+    const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${generateContactWhatsAppMessage()}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const whatsappMessage = language === 'en'
@@ -152,16 +168,50 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
           {/* Right Column: Fast Contact Form (Col 7) */}
           <div className="lg:col-span-7 bg-[#14100d] border border-[#c5a059]/30 rounded-sm p-8 sm:p-10 shadow-2xl">
             {isSubmitted ? (
-              <div className="text-center py-10 space-y-4 animate-in fade-in">
-                <div className="w-14 h-14 rounded-full bg-[#c5a059]/20 text-[#c5a059] border border-[#c5a059] flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
+              <div className="text-center py-10 space-y-5 animate-in fade-in">
+                <div className="w-16 h-16 rounded-full bg-[#25D366]/20 text-[#25D366] border border-[#25D366] flex items-center justify-center mx-auto shadow-2xl">
+                  <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#FBF9F5]">
-                  {t.contact.successTitle}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#a99c8f] max-w-md mx-auto">
-                  {t.contact.successDesc}
-                </p>
+                <div>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#FBF9F5] mb-2">
+                    {t.contact.successTitle}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#d4cbbf] max-w-md mx-auto leading-relaxed">
+                    {language === 'en'
+                      ? `Your enquiry for ${formData.projectType} has been prepared. WhatsApp is opening automatically to connect directly with Makhan Carpenter.`
+                      : `${formData.projectType} के लिए आपका संदेश तैयार है। WhatsApp अपने आप खुल रहा है जिससे आप सीधे बात कर सकें।`}
+                  </p>
+                </div>
+
+                <div className="pt-2 max-w-sm mx-auto space-y-3">
+                  <a
+                    href={`https://wa.me/${siteConfig.contact.whatsappPrimaryRaw}?text=${generateContactWhatsAppMessage()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 px-6 rounded-sm bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl transition-all"
+                  >
+                    <MessageSquare className="w-4 h-4 fill-white/10" />
+                    <span>{language === 'en' ? 'Open WhatsApp Chat' : 'WhatsApp चैट खोलें'}</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setFormData({
+                        name: '',
+                        phone: '',
+                        projectType: 'Wardrobe',
+                        location: 'Raath Nagar, Alwar',
+                        message: '',
+                        preferredContact: 'WhatsApp'
+                      });
+                    }}
+                    className="text-xs text-[#a99c8f] hover:text-[#ede5d8] underline block mx-auto pt-1"
+                  >
+                    {language === 'en' ? 'Send another enquiry' : 'अन्य संदेश भेजें'}
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
