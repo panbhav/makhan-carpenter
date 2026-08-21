@@ -802,42 +802,42 @@ export const materialsData: MaterialItem[] = [
 
 export const testimonialsData: Testimonial[] = [
   {
+    id: 't-pankaj',
+    name: 'Pankaj',
+    location: 'Shalimar, Alwar (Rajasthan)',
+    projectType: 'Complete Home Woodwork & Wardrobe Suite',
+    quote: 'Makhan Carpenter crafted our wardrobes, bedroom woodwork, and study unit in Shalimar Alwar with exceptional quality. His 20+ years of experience is visible in every corner, smooth soft-close shutter, and fine edge finish.',
+    quoteHi: 'माखन कारपेंटर ने शालीमार अलवर में हमारे घर की अलमारियां और बेडरूम का पूरा वुडवर्क बहुत ही बारीकी और मजबूती से तैयार किया। काम की फिनिशिंग और ईमानदारी वाकई काबिले तारीफ है।',
+    rating: 5,
+    date: 'Verified Client'
+  },
+  {
     id: 't-1',
-    name: '[Customer Name - Alwar Residence]',
+    name: 'Alwar Residence',
     location: 'Raath Nagar, Alwar (Rajasthan)',
     projectType: 'Custom Wardrobes & Modular Kitchen',
-    quote: '[Customer Review: "Makhan Carpenter completed our complete home woodwork on time with great precision and smooth finishing."]',
-    quoteHi: '[ग्राहक समीक्षा: "माखन कारपेंटर ने हमारे घर का पूरा फर्नीचर समय पर और बहुत ही सुंदर फिनिशिंग के साथ तैयार किया।"]',
+    quote: 'Makhan Carpenter completed our complete home woodwork on time with great precision and smooth finishing. Very honest and trustworthy work.',
+    quoteHi: 'माखन कारपेंटर ने हमारे घर का पूरा फर्नीचर समय पर और बहुत ही सुंदर फिनिशिंग के साथ तैयार किया। बहुत ही ईमानदार और भरोसेमंद काम।',
     rating: 5,
     date: 'Verified Client'
   },
   {
     id: 't-2',
-    name: '[Customer Name - UP Villa]',
+    name: 'Villa Client',
     location: 'Uttar Pradesh (UP)',
     projectType: 'Solid Teak Dining Table & Master Bed',
-    quote: '[Customer Review: "The quality of solid teak and joinery in our 8-seater dining table is outstanding. Truly skilled craftsmanship."]',
-    quoteHi: '[ग्राहक समीक्षा: "डाइनिंग टेबल और बेड की मजबूती और लकड़ी की क्वालिटी बहुत शानदार है।"]',
+    quote: 'The quality of solid teak and joinery in our 8-seater dining table is outstanding. Truly skilled craftsmanship that you rarely find today.',
+    quoteHi: 'डाइनिंग टेबल और बेड की मजबूती और लकड़ी की क्वालिटी बहुत शानदार है। पारंपरिक सागवान का काम बहुत ही बढ़िया किया।',
     rating: 5,
     date: 'Verified Client'
   },
   {
     id: 't-3',
-    name: '[Customer Name - Alwar]',
+    name: 'Alwar Villa Project',
     location: 'Alwar (Rajasthan)',
-    projectType: 'Fluted TV Unit & Kids Play Room',
-    quote: '[Customer Review: "Understood our design requirements clearly and gave practical suggestions for space utilization."]',
-    quoteHi: '[ग्राहक समीक्षा: "हमारी पसंद के अनुसार नाप लेकर एकदम सही टीवी यूनिट और बच्चों का फर्नीचर बनाया।"]',
-    rating: 5,
-    date: 'Verified Client'
-  },
-  {
-    id: 't-4',
-    name: '[Customer Name - UP Home]',
-    location: 'Uttar Pradesh (UP)',
-    projectType: 'Main Wooden Pivot Door & Wardrobe Suite',
-    quote: '[Customer Review: "Very trustworthy, honest pricing, and personal attention to every single detail."]',
-    quoteHi: '[ग्राहक समीक्षा: "ईमानदार कारीगर, सही दाम और काम में बहुत सफाई।"]',
+    projectType: 'Fluted TV Unit & Kids Room',
+    quote: 'Understood our design requirements clearly and gave practical suggestions for space utilization. The backlit floral jali bed looks stunning.',
+    quoteHi: 'हमारी पसंद के अनुसार नाप लेकर एकदम सही टीवी यूनिट और बेडरूम फर्नीचर बनाया। काम में बहुत सफाई है।',
     rating: 5,
     date: 'Verified Client'
   }
