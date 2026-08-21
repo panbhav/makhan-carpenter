@@ -77,23 +77,21 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
           </p>
         </div>
 
-        {/* 12-Category Filter Pills (Full horizontal scroll with left margin protection) */}
-        <div className="w-full overflow-x-auto pb-4 mb-12 scrollbar-none">
-          <div className="flex items-center justify-start xl:justify-center gap-2 min-w-max px-2 sm:px-4 mx-auto">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.label}
-                onClick={() => setSelectedCategory(cat.label)}
-                className={`px-3.5 py-1.5 rounded-sm text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-300 ${
-                  selectedCategory === cat.label
-                    ? 'bg-[#c5a059] text-[#0e0c0a] shadow-[0_2px_15px_rgba(197,160,89,0.3)]'
-                    : 'bg-[#181410] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15 hover:border-[#c5a059]/40'
-                }`}
-              >
-                {language === 'en' ? cat.label : cat.labelHi}
-              </button>
-            ))}
-          </div>
+        {/* 12-Category Filter Pills (Wrapped cleanly into centered rows - zero cutoff) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-5xl mx-auto mb-12 px-2 sm:px-4">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.label}
+              onClick={() => setSelectedCategory(cat.label)}
+              className={`px-3.5 py-1.5 rounded-sm text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-300 ${
+                selectedCategory === cat.label
+                  ? 'bg-[#c5a059] text-[#0e0c0a] shadow-[0_2px_15px_rgba(197,160,89,0.3)] scale-105'
+                  : 'bg-[#181410] text-[#a99c8f] hover:text-[#ede5d8] hover:bg-[#221c17] border border-[#c5a059]/15 hover:border-[#c5a059]/40'
+              }`}
+            >
+              {language === 'en' ? cat.label : cat.labelHi}
+            </button>
+          ))}
         </div>
 
         {/* Projects Masonry Grid */}

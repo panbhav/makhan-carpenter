@@ -54,23 +54,21 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
           </p>
         </div>
 
-        {/* Room Tab Selectors */}
-        <div className="w-full overflow-x-auto pb-4 mb-10 scrollbar-none">
-          <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max px-2 sm:px-4 mx-auto">
-            {roomPossibilities.map((room, idx) => (
-              <button
-                key={room.id}
-                onClick={() => setActiveRoomIndex(idx)}
-                className={`px-5 py-2.5 rounded-sm text-xs uppercase tracking-wider font-semibold transition-all whitespace-nowrap ${
-                  activeRoomIndex === idx
-                    ? 'bg-[#c5a059] text-[#0e0c0a] shadow-lg'
-                    : 'bg-[#15110e] text-[#a99c8f] hover:text-[#ede5d8] border border-[#c5a059]/15'
-                }`}
-              >
-                {language === 'en' ? room.roomName : room.roomNameHi}
-              </button>
-            ))}
-          </div>
+        {/* Room Tab Selectors (Wrapped cleanly into centered rows) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto mb-10 px-2 sm:px-4">
+          {roomPossibilities.map((room, idx) => (
+            <button
+              key={room.id}
+              onClick={() => setActiveRoomIndex(idx)}
+              className={`px-5 py-2.5 rounded-sm text-xs uppercase tracking-wider font-semibold transition-all whitespace-nowrap ${
+                activeRoomIndex === idx
+                  ? 'bg-[#c5a059] text-[#0e0c0a] shadow-lg scale-105'
+                  : 'bg-[#15110e] text-[#a99c8f] hover:text-[#ede5d8] hover:bg-[#1f1914] border border-[#c5a059]/15'
+              }`}
+            >
+              {language === 'en' ? room.roomName : room.roomNameHi}
+            </button>
+          ))}
         </div>
 
         {/* Active Room Showcase Card */}
