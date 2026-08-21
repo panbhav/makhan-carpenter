@@ -1,22 +1,40 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Home } from 'lucide-react';
+import { Check, ArrowRight, Home, Maximize2, Download } from 'lucide-react';
 import { roomPossibilities } from '../data/siteContent';
 import { translations } from '../data/translations';
 import type { Language, RoomPossibility } from '../types';
+import type { ViewerImageItem } from './ImageViewerModal';
 
 interface DesignPossibilitiesProps {
   language: Language;
   onOpenQuoteModal: () => void;
+  onOpenImageViewer?: (images: ViewerImageItem[], index: number) => void;
 }
 
 export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
   language,
   onOpenQuoteModal,
+  onOpenImageViewer,
 }) => {
   const [activeRoomIndex, setActiveRoomIndex] = useState(0);
   const t = translations[language];
 
   const current: RoomPossibility = roomPossibilities[activeRoomIndex];
+
+  const roomViewerImages: ViewerImageItem[] = roomPossibilities.map((r) => ({
+    url: r.image,
+    title: `${r.roomName} Custom Woodwork`,
+    titleHi: `${r.roomNameHi} कस्टम फर्नीचर`,
+    category: r.roomName,
+    caption: r.description,
+    location: 'Rath Nagar, Alwar & UP',
+  }));
+
+  const handleOpenRoomPhoto = () => {
+    if (onOpenImageViewer) {
+      onOpenImageViewer(roomViewerImages, activeRoomIndex);
+    }
+  };
 
   return (
     <section id="design-possibilities" className="py-24 bg-[#090706] relative border-t border-[#c5a059]/10">
@@ -57,7 +75,11 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
         <div className="bg-[#120f0d] border border-[#c5a059]/30 rounded-sm overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-0">
           
           {/* Left Room Visual (Col 7) */}
-          <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[440px] bg-black overflow-hidden group">
+          <div
+            onClick={handleOpenRoomPhoto}
+            className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[440px] bg-black overflow-hidden group cursor-pointer"
+            title="Click to view photo in HD (Zoom & Save)"
+          >
             <img
               src={current.image}
               alt={current.roomName}
@@ -66,11 +88,30 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#120f0d]/90 hidden lg:block" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#120f0d] via-transparent to-transparent lg:hidden" />
             
+            {/* Click to Zoom Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <div className="px-4 py-2 rounded-sm bg-black/90 text-[#dfc185] border border-[#c5a059] text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-2xl backdrop-blur-md">
+                <Maximize2 className="w-4 h-4 text-[#c5a059]" />
+                <span>Click to Zoom & Save HD</span>
+              </div>
+            </div>
+
             <div className="absolute top-6 left-6 bg-[#0c0a09]/90 border border-[#c5a059]/40 px-3.5 py-1 rounded-sm backdrop-blur-md">
               <span className="text-xs font-serif font-bold text-[#c5a059] tracking-wider uppercase">
                 {language === 'en' ? current.roomName : current.roomNameHi} Solutions
               </span>
             </div>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpenRoomPhoto();
+              }}
+              className="absolute bottom-4 right-4 z-10 px-2.5 py-1 rounded-sm bg-[#0c0a09]/90 hover:bg-[#c5a059] text-[#dfc185] hover:text-[#0e0c0a] border border-[#c5a059]/40 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-lg backdrop-blur-md"
+            >
+              <Download className="w-3 h-3" />
+              <span>Save Photo</span>
+            </button>
           </div>
 
           {/* Right Room Checklist & Action (Col 5) */}

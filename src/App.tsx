@@ -22,6 +22,7 @@ import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { MobileQuickBar } from './components/MobileQuickBar';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { QuoteModal } from './components/QuoteModal';
+import { ImageViewerModal, type ViewerImageItem } from './components/ImageViewerModal';
 import type { Project, Language } from './types';
 import { Sparkles } from 'lucide-react';
 
@@ -30,6 +31,21 @@ export function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [initialQuoteProject, setInitialQuoteProject] = useState<string | undefined>(undefined);
+
+  // Smart Image Viewer State
+  const [viewerImages, setViewerImages] = useState<ViewerImageItem[]>([]);
+  const [viewerIndex, setViewerIndex] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const handleOpenImageViewer = (images: ViewerImageItem[], index = 0) => {
+    setViewerImages(images);
+    setViewerIndex(index);
+    setIsViewerOpen(true);
+  };
+
+  const handleCloseImageViewer = () => {
+    setIsViewerOpen(false);
+  };
 
   const handleOpenQuoteModal = (projectName?: string) => {
     setInitialQuoteProject(projectName);
@@ -68,6 +84,7 @@ export function App() {
         language={language}
         onSelectProject={(project) => setSelectedProject(project)}
         onOpenQuoteModal={() => handleOpenQuoteModal()}
+        onOpenImageViewer={handleOpenImageViewer}
       />
 
       {/* 6. 12 Expanded Woodworking Services */}
@@ -92,6 +109,7 @@ export function App() {
       <DesignPossibilities
         language={language}
         onOpenQuoteModal={() => handleOpenQuoteModal()}
+        onOpenImageViewer={handleOpenImageViewer}
       />
 
       {/* 10. Why Choose Makhan Carpenter (6 Pillars) */}
@@ -170,6 +188,7 @@ export function App() {
         language={language}
         onClose={() => setSelectedProject(null)}
         onStartCustomProject={(title) => handleOpenQuoteModal(title)}
+        onOpenImageViewer={handleOpenImageViewer}
       />
 
       {/* Universal Quote Modal */}
@@ -178,6 +197,19 @@ export function App() {
         language={language}
         onClose={handleCloseQuoteModal}
         initialProjectType={initialQuoteProject}
+      />
+
+      {/* Smart HD Image Viewer with Zoom, Save & WhatsApp */}
+      <ImageViewerModal
+        isOpen={isViewerOpen}
+        images={viewerImages}
+        initialIndex={viewerIndex}
+        language={language}
+        onClose={handleCloseImageViewer}
+        onRequestQuote={(title) => {
+          handleCloseImageViewer();
+          handleOpenQuoteModal(title);
+        }}
       />
 
     </div>

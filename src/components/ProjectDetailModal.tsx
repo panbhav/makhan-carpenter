@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { X, MapPin, Sparkles, ArrowRight, Hammer, Shield } from 'lucide-react';
+import { X, MapPin, Sparkles, ArrowRight, Hammer, Shield, Maximize2, Download } from 'lucide-react';
 import type { Project, Language } from '../types';
+import type { ViewerImageItem } from './ImageViewerModal';
 
 interface ProjectDetailModalProps {
   project: Project | null;
   language?: Language;
   onClose: () => void;
   onStartCustomProject: (projectTitle: string) => void;
+  onOpenImageViewer?: (images: ViewerImageItem[], index: number) => void;
 }
 
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
@@ -14,6 +16,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   language = 'en',
   onClose,
   onStartCustomProject,
+  onOpenImageViewer,
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
@@ -23,6 +26,33 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
     url: project.coverImage,
     caption: project.title,
     tag: 'Cover',
+  };
+
+  const projectViewerImages: ViewerImageItem[] = project.galleryImages.map((g) => ({
+    url: g.url,
+    title: project.title,
+    titleHi: project.titleHi,
+    category: project.category,
+    caption: g.caption,
+    location: project.location,
+    materials: project.materials,
+    dimensions: project.dimensions,
+  }));
+
+  const handleLaunchViewer = (idx = activeImageIndex) => {
+    if (onOpenImageViewer) {
+      onOpenImageViewer(
+        projectViewerImages.length > 0 ? projectViewerImages : [{
+          url: project.coverImage,
+          title: project.title,
+          titleHi: project.titleHi,
+          category: project.category,
+          caption: project.shortDescription,
+          location: project.location,
+        }],
+        idx
+      );
+    }
   };
 
   return (
@@ -43,13 +73,26 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </div>
           </div>
 
-          <button
-            onClick={onClose}
-            className="p-2 rounded-sm text-[#a99c8f] hover:text-[#FBF9F5] hover:bg-[#251e18] transition-colors"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            {onOpenImageViewer && (
+              <button
+                onClick={() => handleLaunchViewer()}
+                className="px-3 py-1.5 rounded-sm bg-[#1e1712] hover:bg-[#2c2219] text-[#dfc185] border border-[#c5a059]/30 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+                title="Open photo in fullscreen zoom viewer"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Zoom HD</span>
+              </button>
+            )}
+
+            <button
+              onClick={onClose}
+              className="p-2 rounded-sm text-[#a99c8f] hover:text-[#FBF9F5] hover:bg-[#251e18] transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Content Body */}
@@ -70,14 +113,26 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
           {/* Interactive Multi-Image Gallery Showcase */}
           <div className="space-y-4">
-            <div className="relative rounded-sm overflow-hidden border border-[#c5a059]/25 bg-black h-[320px] sm:h-[440px] md:h-[500px] group">
+            <div
+              onClick={() => handleLaunchViewer()}
+              className="relative rounded-sm overflow-hidden border border-[#c5a059]/25 bg-black h-[320px] sm:h-[440px] md:h-[500px] group cursor-pointer"
+              title="Click to zoom in full HD & save photo"
+            >
               <img
                 src={currentGalleryImage.url}
                 alt={currentGalleryImage.caption}
-                className="w-full h-full object-cover transition-all duration-500"
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               
+              {/* Click to Zoom Pill */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="px-4 py-2 rounded-sm bg-black/90 text-[#dfc185] border border-[#c5a059] text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-2xl backdrop-blur-md">
+                  <Maximize2 className="w-4 h-4 text-[#c5a059]" />
+                  <span>Click to Zoom & Save HD</span>
+                </div>
+              </div>
+
               {/* Image Tag & Caption Overlay */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-[#ede5d8]">
                 <div className="bg-[#120f0d]/90 px-3 py-1.5 rounded-sm border border-[#c5a059]/30 backdrop-blur-md max-w-lg">
@@ -85,6 +140,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     {currentGalleryImage.tag || 'View'}:
                   </span>
                   <span>{currentGalleryImage.caption}</span>
+                </div>
+
+                <div className="hidden sm:flex items-center gap-1 text-[11px] bg-[#0c0a09]/90 text-[#dfc185] border border-[#c5a059]/30 px-2.5 py-1 rounded-sm">
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Click image to Save</span>
                 </div>
               </div>
             </div>
