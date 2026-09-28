@@ -208,7 +208,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Modern and traditional TV units designed to complement the room.',
     shortDescHi: 'कमरे की सुंदरता बढ़ाने वाली मॉडर्न और ट्रेडिशनल टीवी यूनिट्स।',
     fullDesc: 'Floating TV consoles, floor-to-ceiling slatted back paneling, integrated ambient LED channels, and concealed cable routing for a clean living room look.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+    image: getAssetUrl('projects/luxury-fluted-entertainment-wall.jpg'),
     features: [
       'Concealed wire management channels',
       'Floating media storage consoles',
@@ -262,7 +262,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'Complete woodwork solutions for homes, offices and other spaces.',
     shortDescHi: 'घर, ऑफिस और विला के लिए सम्पूर्ण लकड़ी का काम व पैनलिंग।',
     fullDesc: 'End-to-end architectural woodwork including ceiling rafters, decorative partition jaalis, fluted wall paneling, and concealed doorway paneling.',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80',
+    image: getAssetUrl('projects/fluted-marble-tv-unit.jpg'),
     features: [
       'Precision fluted wooden battens',
       'Suspended ceiling beams & rafters',
@@ -298,7 +298,7 @@ export const servicesData: ServiceItem[] = [
     shortDesc: 'If a customer has a unique furniture idea, Makhan Carpenter can discuss and create a customized solution.',
     shortDescHi: 'यदि आपके पास कोई विशेष फर्नीचर आइडिया है, तो हम उसे तैयार कर सकते हैं।',
     fullDesc: 'Have a unique sketch, custom pooja mandir requirement, curved counter, or custom wooden staircase handrail? We discuss the concept, calculate measurements, and bring it to life.',
-    image: getAssetUrl('projects/wooden-dressing-unit.jpg'),
+    image: getAssetUrl('projects/backlit-wall-showcase-niche.jpg'),
     features: [
       'Custom pooja units & carved mandirs',
       'Unique curved counters & bar cabinets',
@@ -691,6 +691,151 @@ export const featuredProjects: Project[] = [
     location: 'Alwar, Rajasthan',
     year: '2025',
     featured: false,
+  },
+  {
+    id: 'fluted-marble-tv-unit',
+    title: 'Modern Fluted Battens & Italian Marble TV Unit',
+    titleHi: 'मॉडर्न फ्लूटेड व इटैलियन मार्बल टीवी यूनिट',
+    slug: 'fluted-marble-tv-unit',
+    category: 'TV Units',
+    designStyle: 'Modern & Minimal',
+    subtitle: 'Sleek charcoal fluted acoustic panel with white Italian marble backdrop, golden halo LED lighting, illuminated glass display tower, and floating console',
+    shortDescription: 'Designer TV wall unit with vertical acoustic fluted panels, polished Italian marble, warm backlighting, and a multi-tier glass display showcase.',
+    shortDescriptionHi: 'चारकोल फ्लूटेड पैनल्स, इटैलियन मार्बल, वॉर्म बैक-लाइटिंग और ग्लास डिस्प्ले टॉवर के साथ निर्मित आधुनिक टीवी यूनिट।',
+    coverImage: getAssetUrl('projects/fluted-marble-tv-unit.jpg'),
+    galleryImages: [
+      {
+        url: getAssetUrl('projects/fluted-marble-tv-unit.jpg'),
+        caption: 'Modern fluted panel TV console with warm golden LED backlighting and illuminated glass shelving',
+        tag: 'TV Unit'
+      }
+    ],
+    projectStory: 'Custom designed for a contemporary apartment living room in Alwar. The homeowner wanted an ultra-clean, wire-free media focal point with integrated mood lighting and space for curated decor.',
+    clientRequirement: 'Floating media unit with hidden wire management, display shelves for crystal decor, and warm ambient illumination.',
+    customRequirements: 'Concealed internal cable raceways, high-CRI warm LED strip diffusers, and push-to-open handleless drawers.',
+    craftsmanshipHighlight: 'Seamless flush joint between fluted timber louvers and polished Italian marble slab.',
+    materials: ['Italian Marble Finish Panel', 'High-Density Acoustic Fluted Battens', 'Toughened Glass Shelves', 'Marine Calibrated Plywood'],
+    finish: 'High-Gloss Marble & Matte Charcoal Fluting',
+    dimensions: '8 ft (W) × 9 ft (H) × 16 in (D)',
+    location: 'Raath Nagar, Alwar',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'grand-teak-tv-entertainment-center',
+    title: 'Grand Teak & Marble Entertainment Center with Display Tower',
+    titleHi: 'भव्य सागवान व मार्बल टीवी एंटरटेनमेंट सेंटर',
+    slug: 'grand-teak-tv-entertainment-center',
+    category: 'TV Units',
+    designStyle: 'Contemporary Luxury',
+    subtitle: 'Full-wall bespoke entertainment unit in rich seasoned teak wood with fluted slat panel, marble TV wall, 4-tier open display tower, and 4 wide marble drawers',
+    shortDescription: 'Grand living room TV entertainment center handcrafted in solid teak wood with book-matched marble backdrop, full-height display tower, and spacious base drawers.',
+    shortDescriptionHi: 'मजबूत सागवान लकड़ी, इटैलियन मार्बल बैकड्रॉप, 4-लेवल ओपन डिस्प्ले टावर और 4 चौड़े ड्रॉअर्स से बना भव्य टीवी यूनिट।',
+    coverImage: getAssetUrl('projects/grand-teak-tv-entertainment-center.jpg'),
+    galleryImages: [
+      {
+        url: getAssetUrl('projects/grand-teak-tv-entertainment-center.jpg'),
+        caption: 'Full living room perspective showcasing seasoned teak wood framing, open plant display tower, and marble drawer fronts',
+        tag: 'Full Suite'
+      }
+    ],
+    projectStory: 'Commissioned for a spacious villa hall in Uttar Pradesh. The client desired a majestic, long-lasting focal wall combining classic solid wood warmth with contemporary marble accents.',
+    clientRequirement: 'Ample open shelving for indoor bonsai and decor, deep drawers for gaming consoles, and heavy solid wood structure.',
+    customRequirements: 'Reinforced heavy-duty drawer slides, matching top display bridge with hand-carved accents, and durable heat-resistant polish.',
+    craftsmanshipHighlight: 'Hand-rubbed natural teak finish with precision mitered corner joints and zero sagging across wide spans.',
+    materials: ['Seasoned Teak Timber & Veneer', 'High-Grade Calibrated Marine Plywood', 'Statuario Marble Panels', 'Heavy-Duty Telescopic Channels'],
+    finish: 'Hand-Rubbed Satin Teak Polish & Gloss Marble',
+    dimensions: '11 ft (W) × 8.5 ft (H) × 18 in (D)',
+    location: 'Uttar Pradesh (UP)',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'backlit-wall-showcase-niche',
+    title: 'Built-In Backlit Architectural Wall Showcase Niche',
+    titleHi: 'बिल्ट-इन बैक-लिट वॉल शोकेस व ट्रॉफी आला',
+    slug: 'backlit-wall-showcase-niche',
+    category: 'Interior Woodwork',
+    designStyle: 'Architectural Elegance',
+    subtitle: 'Recessed illuminated wall display niche with Italian marble back panel, staggered floating dark timber shelves, and warm top spotlights for trophies and heritage decor',
+    shortDescription: 'Custom recessed architectural wall showcase framed with dark espresso moldings, marble back wall, and warm spotlights illuminating staggered floating shelves.',
+    shortDescriptionHi: 'दीवार में बना हुआ खूबसूरत शोकेस, मार्बल बैक, फ्लोटिंग वुडन शेल्व्स और ट्रॉफियों के लिए वॉर्म स्पॉटलाइट्स।',
+    coverImage: getAssetUrl('projects/backlit-wall-showcase-niche.jpg'),
+    galleryImages: [
+      {
+        url: getAssetUrl('projects/backlit-wall-showcase-niche.jpg'),
+        caption: 'Recessed wall showcase with warm spotlighting highlighting trophies and artistic brass artifacts',
+        tag: 'Showcase Niche'
+      }
+    ],
+    projectStory: 'Built into the living room wall of an avid sports and community leader in Alwar to elegantly showcase awards, trophies, and family memorabilia in an illuminated architectural frame.',
+    clientRequirement: 'Dust-free recessed wall niche that highlights achievements and awards with gallery-grade lighting.',
+    customRequirements: 'Concealed micro-spotlight diffusers, staggered cantilevered shelf brackets with hidden wall anchors.',
+    craftsmanshipHighlight: 'Precision floating shelf load engineering with zero visible brackets on the marble backdrop.',
+    materials: ['Dark Walnut Timber Trim', 'Polished Marble Backing', 'Recessed Low-Heat LED Spotlights', 'IS:710 Marine Plywood'],
+    finish: 'Dark Walnut Semi-Gloss & Gilded Beading',
+    dimensions: '5 ft (W) × 5.5 ft (H) × 10 in (D)',
+    location: 'Raath Nagar, Alwar',
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'luxury-fluted-entertainment-wall',
+    title: 'Luxury Fluted Oak & Statuario Marble Entertainment Wall',
+    titleHi: 'लक्ज़री फ्लूटेड ओक व मार्बल एंटरटेनमेंट वॉल',
+    slug: 'luxury-fluted-entertainment-wall',
+    category: 'TV Units',
+    designStyle: 'Modern Contemporary',
+    subtitle: 'Architectural vertical fluted oak louvers with book-matched Statuario marble centerpiece, dual display towers with warm spotlights, and floating console with under-glow',
+    shortDescription: 'Floor-to-ceiling architectural entertainment wall featuring vertical fluted oak battens, Statuario marble TV panel with halo lighting, and twin illuminated display niches.',
+    shortDescriptionHi: 'फ्लोर-टू-सीलिंग फ्लूटेड ओक वुडवर्क, स्टैचूएरी मार्बल टीवी पैनल, बैक-लाइटिंग और फ्लोटिंग फ्लोर-ग्लो कंसोल।',
+    coverImage: getAssetUrl('projects/luxury-fluted-entertainment-wall.jpg'),
+    galleryImages: [
+      {
+        url: getAssetUrl('projects/luxury-fluted-entertainment-wall.jpg'),
+        caption: 'Full architectural view of the fluted entertainment center with dual warm-lit display niches and floating floor-lit credenza',
+        tag: 'Architectural Wall'
+      }
+    ],
+    projectStory: 'Custom engineered for an upscale residence in Alwar. The goal was to produce a premier hotel-suite level feature wall combining acoustics, rich oak textures, and dramatic multi-zone LED lighting.',
+    clientRequirement: 'Statement living room entertainment wall that conceals all wiring, TV boxes, and soundbars while delivering luxury ambient lighting.',
+    customRequirements: 'Dual symmetrical display towers with precision warm spotlights, soft floor kickboard illumination, and acoustic fluting.',
+    craftsmanshipHighlight: 'Continuous grain alignment on the base console drawers and shadow-gap ceiling integration.',
+    materials: ['Natural Oak Veneered Louvers', 'Book-Matched Statuario Marble Slabs', 'High-CRI Ambient LED Channels', 'Marine Plywood Structure'],
+    finish: 'Matte Natural Oak & High-Reflectivity Marble',
+    dimensions: '14 ft (W) × 10 ft (H) × 18 in (D)',
+    location: 'Alwar, Rajasthan',
+    year: '2026',
+    featured: true,
+  },
+  {
+    id: 'contemporary-walnut-tv-console',
+    title: 'Contemporary Dark Walnut & Italian Marble TV Console',
+    titleHi: 'डार्क वॉलनट व इटैलियन मार्बल टीवी कंसोल',
+    slug: 'contemporary-walnut-tv-console',
+    category: 'TV Units',
+    designStyle: 'Modern Minimalist',
+    subtitle: 'Wall-mounted dark walnut TV console with open display shelving tower, glossy gold-veined marble backdrop, and 3-drawer floating credenza',
+    shortDescription: 'Custom wall-mounted media console combining deep chocolate walnut woodwork, glossy Italian marble TV panel, vertical acoustic accents, and 3 wide storage drawers.',
+    shortDescriptionHi: 'डार्क वॉलनट लकड़ी, गोल्डन-वेन मार्बल बैक पैनल, 4-कम्पार्टमेंट डिस्प्ले टावर और 3 फ्लोटिंग ड्रॉअर्स से बनी टीवी कंसोल।',
+    coverImage: getAssetUrl('projects/contemporary-walnut-tv-console.jpg'),
+    galleryImages: [
+      {
+        url: getAssetUrl('projects/contemporary-walnut-tv-console.jpg'),
+        caption: 'Wall-hung dark walnut media console with marble panel and side open shelf tower on wooden parquet flooring',
+        tag: 'Living Console'
+      }
+    ],
+    projectStory: 'Installed in Shalimar, Alwar for a client looking for a sleek, contemporary media setup that leaves the floor open and easy to clean while offering organized storage.',
+    clientRequirement: 'Floating wall-hung media unit with display niche for ceramics and books, and hidden wire management.',
+    customRequirements: 'Heavy-duty wall anchor bracket system capable of supporting heavy loads with zero wall vibration.',
+    craftsmanshipHighlight: 'Precision edge-banded miters and smooth ball-bearing drawer runners.',
+    materials: ['Dark Walnut Grain Laminate & Timber', 'Italian Marble Gloss Cladding', 'Heavy-Duty Wall Mounting Brackets', '18mm BWP Plywood'],
+    finish: 'Deep Walnut Satin Finish & Gloss Marble',
+    dimensions: '7.5 ft (W) × 8 ft (H) × 15 in (D)',
+    location: 'Shalimar, Alwar',
+    year: '2025',
+    featured: false,
   }
 ];
 
@@ -906,6 +1051,41 @@ export const galleryImages = [
     titleHi: 'सागवान वुडन बेडसाइड टेबल',
     category: 'Custom Furniture',
     location: 'Raath Nagar, Alwar'
+  },
+  {
+    url: getAssetUrl('projects/fluted-marble-tv-unit.jpg'),
+    title: 'Modern Fluted Battens & Italian Marble TV Unit',
+    titleHi: 'मॉडर्न फ्लूटेड व इटैलियन मार्बल टीवी यूनिट',
+    category: 'TV Units',
+    location: 'Raath Nagar, Alwar'
+  },
+  {
+    url: getAssetUrl('projects/grand-teak-tv-entertainment-center.jpg'),
+    title: 'Grand Teak & Marble Entertainment Center',
+    titleHi: 'भव्य सागवान व मार्बल टीवी एंटरटेनमेंट सेंटर',
+    category: 'TV Units',
+    location: 'Uttar Pradesh (UP)'
+  },
+  {
+    url: getAssetUrl('projects/backlit-wall-showcase-niche.jpg'),
+    title: 'Built-In Backlit Wall Showcase Niche',
+    titleHi: 'बिल्ट-इन बैक-लिट वॉल शोकेस',
+    category: 'Interior Woodwork',
+    location: 'Raath Nagar, Alwar'
+  },
+  {
+    url: getAssetUrl('projects/luxury-fluted-entertainment-wall.jpg'),
+    title: 'Luxury Fluted Oak Entertainment Wall',
+    titleHi: 'लक्ज़री फ्लूटेड ओक एंटरटेनमेंट वॉल',
+    category: 'TV Units',
+    location: 'Alwar, Rajasthan'
+  },
+  {
+    url: getAssetUrl('projects/contemporary-walnut-tv-console.jpg'),
+    title: 'Contemporary Dark Walnut TV Console',
+    titleHi: 'डार्क वॉलनट टीवी कंसोल',
+    category: 'TV Units',
+    location: 'Shalimar, Alwar'
   }
 ];
 
