@@ -34,7 +34,7 @@ export const translations = {
       projectsLabel: 'Projects Completed',
       projectsDesc: 'Over 500 bespoke residential & commercial works',
       regionsLabel: 'Major Service Regions',
-      regionsDesc: 'Serving Alwar (Rajasthan) & Uttar Pradesh',
+      regionsDesc: 'Serving Raath Nagar & Alwar, Rajasthan',
       customLabel: 'Custom Furniture & Woodwork',
       customDesc: 'Tailored to your exact space & specifications',
     },
@@ -43,7 +43,7 @@ export const translations = {
       heading: 'The Craft Behind Makhan Carpenter',
       story1: 'With more than 20 years of experience and over 500 completed projects, Makhan Carpenter brings traditional woodworking skills together with modern furniture design.',
       story2: 'From individual furniture pieces to complete interior woodwork, every project is approached with attention to measurements, functionality, finishing and the customer\'s vision.',
-      locationNote: 'Based in Raath Nagar, Alwar, Rajasthan, Makhan Carpenter serves customers in Alwar and across Uttar Pradesh.',
+      locationNote: 'Based in Raath Nagar, Alwar, Rajasthan, Makhan Carpenter serves homeowners and commercial projects across Alwar.',
       krishnaStory: 'The name Makhan carries a special connection with Shri Krishna, inspiring a brand that values warmth, craftsmanship and tradition while creating furniture for modern spaces.',
       callMakhan: 'Call Makhan Carpenter',
     },
@@ -79,7 +79,7 @@ export const translations = {
     portfolio: {
       tag: 'Visual Showcase',
       heading: 'Our Craftsmanship Portfolio',
-      subheading: 'Browse custom furniture and woodwork projects executed across Alwar, Rajasthan, and Uttar Pradesh.',
+      subheading: 'Browse custom furniture and woodwork projects executed across Alwar, Rajasthan.',
       viewProject: 'View Project',
     },
     beforeAfter: {
@@ -91,16 +91,16 @@ export const translations = {
     reviews: {
       tag: 'Client Trust',
       heading: 'What Our Customers Say',
-      subheading: 'Honest reviews and experiences from homeowners across Alwar and Uttar Pradesh.',
+      subheading: 'Honest reviews and experiences from homeowners across Alwar, Rajasthan.',
       cta: 'See More Customer Experiences',
     },
     location: {
       tag: 'Our Workshop & Service Areas',
-      heading: 'Serving Alwar & Uttar Pradesh',
+      heading: 'Serving Alwar, Rajasthan',
       addressTitle: 'Workshop & Studio Address',
       address: 'Raath Nagar, Alwar, Rajasthan, India',
       areasTitle: 'Active Service Areas',
-      areas: 'Alwar, Rajasthan and across Uttar Pradesh (UP)',
+      areas: 'Raath Nagar and across Alwar, Rajasthan',
       callPrompt: 'Call directly for on-site measurement & estimation',
     },
     contact: {
@@ -124,7 +124,7 @@ export const translations = {
       tagline: 'Custom Furniture. Crafted with Precision.',
       yearsBadge: '20+ Years of Craftsmanship • 500+ Projects Completed',
       location: 'Raath Nagar, Alwar, Rajasthan',
-      serving: 'Serving Alwar & Uttar Pradesh',
+      serving: 'Serving Raath Nagar & Alwar (Rajasthan)',
       cta: 'Start Your Project →',
       copyright: '© 2026 Makhan Carpenter. All Rights Reserved.',
     }
@@ -165,7 +165,7 @@ export const translations = {
       projectsLabel: 'पूरे किए गए प्रोजेक्ट्स',
       projectsDesc: '500 से अधिक सफल होम और ऑफिस प्रोजेक्ट्स',
       regionsLabel: 'प्रमुख सेवा क्षेत्र',
-      regionsDesc: 'अलवर (राजस्थान) और उत्तर प्रदेश (UP)',
+      regionsDesc: 'राठ नगर और सम्पूर्ण अलवर (राजस्थान)',
       customLabel: 'कस्टम फर्नीचर और वुडवर्क',
       customDesc: 'आपकी जगह और नाप के अनुसार 100% अनुकूलित',
     },
@@ -174,7 +174,7 @@ export const translations = {
       heading: 'The Craft Behind Makhan Carpenter',
       story1: '20+ वर्षों के अनुभव और 500+ पूरे किए गए प्रोजेक्ट्स के साथ, Makhan Carpenter पारंपरिक कारीगरी को आधुनिक फर्नीचर डिजाइन के साथ जोड़ता है।',
       story2: 'हर काम ग्राहक की जरूरत, जगह, डिजाइन और पसंद के अनुसार तैयार किया जाता है।',
-      locationNote: 'राठ नगर, अलवर (राजस्थान) में स्थित, Makhan Carpenter अलवर और पूरे उत्तर प्रदेश में ग्राहकों की सेवा करता है।',
+      locationNote: 'राठ नगर, अलवर (राजस्थान) में स्थित, Makhan Carpenter पूरे अलवर क्षेत्र में ग्राहकों की सेवा करता है।',
       krishnaStory: '“माखन” नाम श्री कृष्ण जी की पावन स्मृति से जुड़ा है, जो हमें प्रेम, शुद्धता, परंपरा और आधुनिकता के साथ काम करने की प्रेरणा देता है।',
       callMakhan: 'माखन कारपेंटर से बात करें',
     },
@@ -210,7 +210,7 @@ export const translations = {
     portfolio: {
       tag: 'कारीगरी का नमूना',
       heading: 'हमारे किए गए काम',
-      subheading: 'अलवर (राजस्थान) और उत्तर प्रदेश में बनाए गए कुछ बेहतरीन फर्नीचर प्रोजेक्ट्स देखें।',
+      subheading: 'अलवर (राजस्थान) में बनाए गए कुछ बेहतरीन फर्नीचर प्रोजेक्ट्स देखें।',
       viewProject: 'प्रोजेक्ट देखें',
     },
     beforeAfter: {
@@ -222,16 +222,16 @@ export const translations = {
     reviews: {
       tag: 'ग्राहकों का भरोसा',
       heading: 'ग्राहकों की राय',
-      subheading: 'अलवर और उत्तर प्रदेश के खुशहाल परिवारों का अनुभव।',
+      subheading: 'अलवर (राजस्थान) के खुशहाल परिवारों का अनुभव।',
       cta: 'अधिक ग्राहकों के अनुभव देखें',
     },
     location: {
       tag: 'कार्यशाला और सेवा क्षेत्र',
-      heading: 'अलवर और उत्तर प्रदेश में सेवाएं',
+      heading: 'अलवर (राजस्थान) में सेवाएं',
       addressTitle: 'कार्यशाला का पता',
       address: 'राठ नगर, अलवर, राजस्थान, भारत',
       areasTitle: 'मुख्य सेवा क्षेत्र',
-      areas: 'अलवर (राजस्थान) और सम्पूर्ण उत्तर प्रदेश (UP)',
+      areas: 'राठ नगर और सम्पूर्ण अलवर (राजस्थान)',
       callPrompt: 'नाप और कोटेशन के लिए सीधे कॉल करें',
     },
     contact: {
@@ -255,7 +255,7 @@ export const translations = {
       tagline: 'कस्टम फर्नीचर। मजबूती और सुंदरता के साथ।',
       yearsBadge: '20+ वर्ष का अनुभव • 500+ पूरे किए गए प्रोजेक्ट्स',
       location: 'राठ नगर, अलवर, राजस्थान',
-      serving: 'अलवर और उत्तर प्रदेश में कार्यरत',
+      serving: 'अलवर (राजस्थान) में कार्यरत',
       cta: 'प्रोजेक्ट शुरू करें →',
       copyright: '© 2026 Makhan Carpenter. सर्वाधिकार सुरक्षित।',
     }

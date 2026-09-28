@@ -194,7 +194,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
               Interested in a custom furniture piece for your space?
             </h3>
             <p className="text-xs sm:text-sm text-[#a99c8f]">
-              We customize dimensions, timbers, and finishes across Raath Nagar, Alwar & Uttar Pradesh.
+              We customize dimensions, timbers, and finishes across Raath Nagar and Alwar (Rajasthan).
             </p>
           </div>
           <button

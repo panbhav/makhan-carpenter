@@ -75,7 +75,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ language }) =>
             </div>
 
             <p className="text-xs sm:text-sm text-[#a99c8f] leading-relaxed">
-              Over the last 20+ years, Makhan Carpenter has completed 500+ projects across Alwar (Rajasthan) and various cities of Uttar Pradesh (UP).
+              Over the last 20+ years, Makhan Carpenter has completed 500+ projects across Raath Nagar and Alwar (Rajasthan).
             </p>
 
             {/* Direct Phone Call Buttons */}

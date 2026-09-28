@@ -132,7 +132,7 @@ export function App() {
         onOpenQuoteModal={() => handleOpenQuoteModal()}
       />
 
-      {/* 16. Serving Alwar & Uttar Pradesh Location Section */}
+      {/* 16. Serving Raath Nagar & Alwar Location Section */}
       <LocationSection language={language} />
 
       {/* 17. Dedicated Quote Request Builder Section */}

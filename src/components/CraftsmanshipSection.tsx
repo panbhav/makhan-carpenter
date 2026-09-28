@@ -67,7 +67,7 @@ export const CraftsmanshipSection: React.FC<CraftsmanshipSectionProps> = ({
 
           <div className="bg-[#14100d]/90 border border-[#c5a059]/25 p-5 rounded-sm backdrop-blur-md">
             <Shield className="w-6 h-6 text-[#c5a059] mx-auto mb-2" />
-            <span className="font-serif text-base text-[#FBF9F5] font-bold block">Alwar & UP</span>
+            <span className="font-serif text-base text-[#FBF9F5] font-bold block">Raath Nagar, Alwar</span>
             <span className="text-[11px] text-[#a99c8f]">Local Craft Trust</span>
           </div>
         </div>

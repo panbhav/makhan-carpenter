@@ -27,7 +27,7 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
     titleHi: `${r.roomNameHi} कस्टम फर्नीचर`,
     category: r.roomName,
     caption: r.description,
-    location: 'Raath Nagar, Alwar & UP',
+    location: 'Raath Nagar, Alwar',
   }));
 
   const handleOpenRoomPhoto = () => {
@@ -142,7 +142,7 @@ export const DesignPossibilities: React.FC<DesignPossibilitiesProps> = ({
 
             <div className="pt-6 border-t border-[#c5a059]/15 flex items-center justify-between">
               <span className="text-xs text-[#a99c8f]">
-                Tailored for Alwar & UP homes
+                Tailored for Alwar homes
               </span>
               <button
                 onClick={onOpenQuoteModal}

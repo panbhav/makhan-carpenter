@@ -38,7 +38,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
   );
   const [requirementDetails, setRequirementDetails] = useState('');
   const [preferredContact, setPreferredContact] = useState<'WhatsApp' | 'Call'>('WhatsApp');
-  const [location, setLocation] = useState('Alwar / UP');
+  const [location, setLocation] = useState('Raath Nagar, Alwar');
   const [hasRefImage, setHasRefImage] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -50,7 +50,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
       `*Name:* ${fullName || 'Valued Client'}\n` +
       `*Phone:* ${phone || 'Not provided'}\n` +
       `*Item Needed:* ${selectedFurniture}\n` +
-      `*Location:* ${location || 'Raath Nagar, Alwar / UP'}\n` +
+      `*Location:* ${location || 'Raath Nagar, Alwar'}\n` +
       `*Preferred Contact:* ${preferredContact}\n` +
       `*Has Reference Photo/Drawing:* ${hasRefImage ? 'Yes (will send on WhatsApp)' : 'No'}\n` +
       `*Specifications & Details:* ${requirementDetails || 'Looking for quotation, timeline, and site measurement.'}\n\n` +
@@ -87,7 +87,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
               {t.contact.formTitle}
             </h3>
             <p className="text-xs sm:text-sm text-[#a99c8f]">
-              Tell us what you would like to make for your space in Alwar or Uttar Pradesh.
+              Tell us what you would like to make for your space in Raath Nagar, Alwar (Rajasthan).
             </p>
           </div>
 
@@ -147,7 +147,7 @@ export const QuoteWizard: React.FC<QuoteWizardProps> = ({
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="e.g. Raath Nagar Alwar, Lucknow, Noida"
+                placeholder="e.g. Raath Nagar, Alwar"
                 className="w-full bg-[#181410] border border-[#c5a059]/25 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
               />
             </div>

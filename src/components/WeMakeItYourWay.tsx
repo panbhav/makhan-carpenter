@@ -51,7 +51,7 @@ export const WeMakeItYourWay: React.FC<WeMakeItYourWayProps> = ({ language, onOp
                 ✓ Hand-Drawn Sketches & Layouts
               </span>
               <span className="flex items-center gap-1.5 bg-[#120f0d] px-3 py-1.5 rounded-sm border border-[#c5a059]/20">
-                ✓ On-Site Laser Survey in Alwar & UP
+                ✓ On-Site Laser Survey in Alwar
               </span>
             </div>
           </div>

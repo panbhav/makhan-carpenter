@@ -26,7 +26,7 @@ export const siteConfig = {
     city: 'Alwar',
     state: 'Rajasthan',
     country: 'India',
-    serviceAreas: 'Alwar, Rajasthan and Uttar Pradesh (UP)',
+    serviceAreas: 'Raath Nagar & Alwar, Rajasthan',
   },
 
   contact: {
@@ -59,8 +59,8 @@ export const statisticsData: StatItem[] = [
     suffix: '+',
     label: 'Years of Experience',
     labelHi: 'वर्षों का अनुभव',
-    description: 'Two decades of hands-on woodworking mastery in Alwar & UP.',
-    descriptionHi: 'अलवर और उत्तर प्रदेश में दो दशकों से अधिक का लकड़ी कारीगरी का अनुभव।'
+    description: 'Two decades of hands-on woodworking mastery in Alwar, Rajasthan.',
+    descriptionHi: 'अलवर (राजस्थान) में दो दशकों से अधिक का लकड़ी कारीगरी का अनुभव।'
   },
   {
     value: '500+',
@@ -72,13 +72,13 @@ export const statisticsData: StatItem[] = [
     descriptionHi: '500 से अधिक सफल होम, विला और ऑफिस फर्नीचर प्रोजेक्ट्स।'
   },
   {
-    value: '2',
-    numericValue: 2,
+    value: 'Alwar',
+    numericValue: 1,
     suffix: '',
-    label: 'Major Service Regions',
-    labelHi: 'प्रमुख सेवा क्षेत्र',
-    description: 'Alwar, Rajasthan and across Uttar Pradesh (UP).',
-    descriptionHi: 'अलवर (राजस्थान) और सम्पूर्ण उत्तर प्रदेश (UP)।'
+    label: 'Primary Service Region',
+    labelHi: 'मुख्य सेवा क्षेत्र',
+    description: 'Raath Nagar and across Alwar (Rajasthan).',
+    descriptionHi: 'राठ नगर और सम्पूर्ण अलवर (राजस्थान)।'
   },
   {
     value: 'Custom',
@@ -478,14 +478,14 @@ export const featuredProjects: Project[] = [
         tag: 'Full View'
       }
     ],
-    projectStory: 'Built for a private villa master bedroom in Uttar Pradesh, focusing on ergonomic back comfort and stately classic proportions.',
+    projectStory: 'Built for a private villa master bedroom in Alwar, focusing on ergonomic back comfort and stately classic proportions.',
     clientRequirement: 'Heavy solid wood structure with plush padded headboard for comfortable late-night reading.',
     customRequirements: 'Matching tufted footboard panel and concealed reinforcement beneath the mattress platform.',
     craftsmanshipHighlight: 'Hand-pulled diamond tufts with reinforced crystal buttons on heavy-density foam backing.',
     materials: ['Seasoned Hardwood Frame', 'Champagne Suede Upholstery', 'Crystal Buttons', 'IS:710 Marine Plywood'],
     finish: 'Dark Walnut Rich Polish',
     dimensions: 'King Size (82 in × 76 in)',
-    location: 'Uttar Pradesh (UP)',
+    location: 'Alwar, Rajasthan',
     year: '2025',
     featured: true,
   },
@@ -565,14 +565,14 @@ export const featuredProjects: Project[] = [
         tag: 'Kitchen View'
       }
     ],
-    projectStory: 'Installed in a newly renovated residence in Uttar Pradesh with 100% waterproof Marine Grade calibrated plywood to resist steam and moisture.',
+    projectStory: 'Installed in a newly renovated residence in Alwar with 100% waterproof Marine Grade calibrated plywood to resist steam and moisture.',
     clientRequirement: 'Bright, reflective, easy-to-clean kitchen overhead storage with glass display for fine dinnerware.',
     customRequirements: 'Warm under-cabinet LED profile lighting with concealed electrical drivers.',
     craftsmanshipHighlight: 'Zero-joint edge banding on acrylic shutters ensuring 100% moisture resistance.',
     materials: ['IS:710 Marine Plywood', 'High-Gloss Acrylic Shutters', 'Toughened Fluted Glass', 'Soft-Close German Hinges'],
     finish: 'Ultra-Gloss Scratch-Resistant Acrylic',
     dimensions: '12 ft × 8 ft Kitchen Layout',
-    location: 'Uttar Pradesh (UP)',
+    location: 'Alwar, Rajasthan',
     year: '2025',
     featured: true,
   },
@@ -739,14 +739,14 @@ export const featuredProjects: Project[] = [
         tag: 'Full Suite'
       }
     ],
-    projectStory: 'Commissioned for a spacious villa hall in Uttar Pradesh. The client desired a majestic, long-lasting focal wall combining classic solid wood warmth with contemporary marble accents.',
+    projectStory: 'Commissioned for a spacious villa hall in Alwar. The client desired a majestic, long-lasting focal wall combining classic solid wood warmth with contemporary marble accents.',
     clientRequirement: 'Ample open shelving for indoor bonsai and decor, deep drawers for gaming consoles, and heavy solid wood structure.',
     customRequirements: 'Reinforced heavy-duty drawer slides, matching top display bridge with hand-carved accents, and durable heat-resistant polish.',
     craftsmanshipHighlight: 'Hand-rubbed natural teak finish with precision mitered corner joints and zero sagging across wide spans.',
     materials: ['Seasoned Teak Timber & Veneer', 'High-Grade Calibrated Marine Plywood', 'Statuario Marble Panels', 'Heavy-Duty Telescopic Channels'],
     finish: 'Hand-Rubbed Satin Teak Polish & Gloss Marble',
     dimensions: '11 ft (W) × 8.5 ft (H) × 18 in (D)',
-    location: 'Uttar Pradesh (UP)',
+    location: 'Alwar, Rajasthan',
     year: '2025',
     featured: true,
   },
@@ -865,7 +865,7 @@ export const beforeAfterCases: BeforeAfterItem[] = [
     afterImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80',
     beforeLabel: 'Raw Brick Shell',
     afterLabel: 'Completed Kitchen',
-    location: 'Uttar Pradesh (UP)',
+    location: 'Alwar, Rajasthan',
     resultSummary: 'Boiling-water-proof construction with German hardware.'
   },
   {
@@ -893,7 +893,7 @@ export const beforeAfterCases: BeforeAfterItem[] = [
     afterImage: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1000&q=80',
     beforeLabel: 'Raw Timber Slabs',
     afterLabel: 'Handcrafted Table',
-    location: 'Uttar Pradesh (UP)',
+    location: 'Alwar, Rajasthan',
     resultSummary: 'Traditional interlocking joinery with silky smooth top.'
   }
 ];
@@ -968,8 +968,8 @@ export const testimonialsData: Testimonial[] = [
   },
   {
     id: 't-2',
-    name: 'Villa Client',
-    location: 'Uttar Pradesh (UP)',
+    name: 'Alwar Villa Client',
+    location: 'Alwar (Rajasthan)',
     projectType: 'Solid Teak Dining Table & Master Bed',
     quote: 'The quality of solid teak and joinery in our 8-seater dining table is outstanding. Truly skilled craftsmanship that you rarely find today.',
     quoteHi: 'डाइनिंग टेबल और बेड की मजबूती और लकड़ी की क्वालिटी बहुत शानदार है। पारंपरिक सागवान का काम बहुत ही बढ़िया किया।',
@@ -1001,7 +1001,7 @@ export const galleryImages = [
     title: 'Diamond-Tufted Velvet & Walnut King Bed',
     titleHi: 'डायमंड टफ्टेड वॉलनट किंग बेड',
     category: 'Bedroom',
-    location: 'Uttar Pradesh (UP)'
+    location: 'Alwar, Rajasthan'
   },
   {
     url: getAssetUrl('projects/custom-sectional-sofa.jpg'),
@@ -1022,7 +1022,7 @@ export const galleryImages = [
     title: 'High-Gloss White Acrylic Modular Kitchen',
     titleHi: 'हाई-ग्लॉस व्हाइट मॉड्यूलर किचन',
     category: 'Kitchen',
-    location: 'Uttar Pradesh (UP)'
+    location: 'Alwar, Rajasthan'
   },
   {
     url: getAssetUrl('projects/walnut-modular-wardrobe.jpg'),
@@ -1064,7 +1064,7 @@ export const galleryImages = [
     title: 'Grand Teak & Marble Entertainment Center',
     titleHi: 'भव्य सागवान व मार्बल टीवी एंटरटेनमेंट सेंटर',
     category: 'TV Units',
-    location: 'Uttar Pradesh (UP)'
+    location: 'Alwar, Rajasthan'
   },
   {
     url: getAssetUrl('projects/backlit-wall-showcase-niche.jpg'),
@@ -1102,9 +1102,9 @@ export const processSteps: ProcessStep[] = [
     stepNumber: '02',
     title: 'On-Site Laser Measurement',
     subtitle: 'Millimeter-Accurate Site Survey',
-    description: 'Makhan Carpenter conducts on-site measurements across Alwar & UP to record exact wall angles and levels.',
+    description: 'Makhan Carpenter conducts on-site measurements across Alwar to record exact wall angles and levels.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
-    keyAction: 'On-site laser survey in Alwar & UP'
+    keyAction: 'On-site laser survey across Alwar'
   },
   {
     stepNumber: '03',
@@ -1160,7 +1160,7 @@ export const whyChoosePillars = [
   {
     icon: 'Hammer',
     title: '20+ Years Experience',
-    description: 'Practical woodcraft mastery honed across two decades of custom carpentry in Alwar and Uttar Pradesh.'
+    description: 'Practical woodcraft mastery honed across two decades of custom carpentry in Raath Nagar and Alwar.'
   },
   {
     icon: 'Ruler',

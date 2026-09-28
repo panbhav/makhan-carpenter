@@ -28,7 +28,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
       `*Name:* ${formData.name || 'Valued Client'}\n` +
       `*Phone:* ${formData.phone || 'Not provided'}\n` +
       `*Item Needed:* ${formData.projectType}\n` +
-      `*Location:* ${formData.location || 'Raath Nagar, Alwar / UP'}\n` +
+      `*Location:* ${formData.location || 'Raath Nagar, Alwar'}\n` +
       `*Requirement Details:* ${formData.message || 'I would like to discuss a custom furniture project and get an estimate.'}\n\n` +
       `_Sent from Makhan Carpenter Website_`;
     return encodeURIComponent(text);
@@ -284,7 +284,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                       type="text"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="e.g. Alwar, UP"
+                      placeholder="e.g. Raath Nagar, Alwar"
                       className="w-full bg-[#181410] border border-[#c5a059]/20 rounded-sm p-3 text-base sm:text-sm text-[#ede5d8] focus:border-[#c5a059] outline-none"
                     />
                   </div>

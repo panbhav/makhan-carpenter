@@ -48,11 +48,11 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ language }) => {
             <p className="text-sm sm:text-base leading-relaxed text-[#a99c8f]">
               {language === 'en' ? (
                 <>
-                  For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners and architects across <strong>Uttar Pradesh</strong> and <strong>Raath Nagar, Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
+                  For over <strong>20 years</strong>, Makhan Carpenter has been the trusted craftsman for homeowners and architects across <strong>Raath Nagar, Alwar (Rajasthan)</strong>. Whether selecting seasoned CP Teak for an heirloom dining table or engineering a seamless floor-to-ceiling fluted wardrobe, every joint is calculated, hand-planed, and finished with meticulous devotion.
                 </>
               ) : (
                 <>
-                  पिछले <strong>20+ वर्षों</strong> में <strong>500 से अधिक प्रोजेक्ट्स</strong> के साथ, Makhan Carpenter ने <strong>अलवर (राजस्थान)</strong> और <strong>उत्तर प्रदेश</strong> के कई घरों में मजबूती और विश्वास का रिश्ता कायम किया है।
+                  पिछले <strong>20+ वर्षों</strong> में <strong>500 से अधिक प्रोजेक्ट्स</strong> के साथ, Makhan Carpenter ने <strong>राठ नगर, अलवर (राजस्थान)</strong> के कई घरों में मजबूती और विश्वास का रिश्ता कायम किया है।
                 </>
               )}
             </p>
@@ -109,7 +109,7 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ language }) => {
               </div>
               <div className="bg-[#1a1410] border border-[#c5a059]/30 rounded-sm p-4 text-center flex flex-col justify-center items-center shadow-lg">
                 <span className="font-serif text-2xl sm:text-3xl text-[#c5a059] font-bold">500+</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#d4cbbf] mt-0.5">Projects Completed in UP & Alwar</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#d4cbbf] mt-0.5">Projects Completed in Alwar</span>
               </div>
             </div>
           </div>
