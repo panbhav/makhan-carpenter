@@ -33,8 +33,8 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage, onOp
   const desktopNavLinks = [
     { name: t.nav.home, href: '#home' },
     { name: t.nav.ourWork, href: '#our-work' },
-    { name: t.nav.services, href: '#services' },
     { name: t.nav.weMakeIt, href: '#we-make-it-your-way' },
+    { name: t.nav.possibilities, href: '#design-possibilities' },
     { name: t.nav.about, href: '#about' },
     { name: t.nav.contact, href: '#contact' },
   ];
@@ -43,7 +43,6 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage, onOp
   const allNavLinks = [
     { name: t.nav.home, href: '#home' },
     { name: t.nav.ourWork, href: '#our-work' },
-    { name: t.nav.services, href: '#services' },
     { name: t.nav.weMakeIt, href: '#we-make-it-your-way' },
     { name: t.nav.possibilities, href: '#design-possibilities' },
     { name: t.nav.craftsmanship, href: '#experience' },

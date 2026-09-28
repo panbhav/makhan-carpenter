@@ -87,8 +87,8 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenQuoteModal }) =>
             <ul className="space-y-2 text-xs">
               <li><a href="#home" className="hover:text-[#c5a059] transition-colors">{t.nav.home}</a></li>
               <li><a href="#our-work" className="hover:text-[#c5a059] transition-colors">{t.nav.ourWork}</a></li>
-              <li><a href="#services" className="hover:text-[#c5a059] transition-colors">{t.nav.services}</a></li>
               <li><a href="#we-make-it-your-way" className="hover:text-[#c5a059] transition-colors">{t.nav.weMakeIt}</a></li>
+              <li><a href="#design-possibilities" className="hover:text-[#c5a059] transition-colors">{t.nav.possibilities}</a></li>
               <li><a href="#about" className="hover:text-[#c5a059] transition-colors">{t.nav.about}</a></li>
               <li><a href="#experience" className="hover:text-[#c5a059] transition-colors">{t.nav.craftsmanship}</a></li>
               <li><a href="#gallery" className="hover:text-[#c5a059] transition-colors">Gallery</a></li>

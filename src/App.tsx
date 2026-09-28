@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { BrandStatement } from './components/BrandStatement';
 import { FeaturedWork } from './components/FeaturedWork';
-import { Services } from './components/Services';
 import { WeMakeItYourWay } from './components/WeMakeItYourWay';
 import { FurnitureStyles } from './components/FurnitureStyles';
 import { DesignPossibilities } from './components/DesignPossibilities';
@@ -87,13 +86,7 @@ export function App() {
         onOpenImageViewer={handleOpenImageViewer}
       />
 
-      {/* 6. 12 Expanded Woodworking Services */}
-      <Services
-        language={language}
-        onOpenQuoteModal={() => handleOpenQuoteModal()}
-      />
-
-      {/* 7. "We Make It Your Way" Custom Lead-Gen Section */}
+      {/* 6. "We Make It Your Way" Custom Lead-Gen Section */}
       <WeMakeItYourWay
         language={language}
         onOpenQuoteModal={() => handleOpenQuoteModal()}
