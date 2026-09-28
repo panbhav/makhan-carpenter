@@ -3,6 +3,7 @@ import { Menu, X, Phone, Sparkles } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
 import { BrandLogo } from './BrandLogo';
 import { translations } from '../data/translations';
+import { scrollToSection } from '../utils/scroll';
 import type { Language } from '../types';
 
 interface NavbarProps {
@@ -31,24 +32,24 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage, onOp
 
   // Primary clean desktop navigation (6 key items to eliminate crowding)
   const desktopNavLinks = [
-    { name: t.nav.home, href: '#home' },
-    { name: t.nav.ourWork, href: '#our-work' },
-    { name: t.nav.weMakeIt, href: '#we-make-it-your-way' },
-    { name: t.nav.possibilities, href: '#design-possibilities' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.contact, href: '#contact' },
+    { name: t.nav.home, targetId: 'home' },
+    { name: t.nav.ourWork, targetId: 'our-work' },
+    { name: t.nav.weMakeIt, targetId: 'we-make-it-your-way' },
+    { name: t.nav.possibilities, targetId: 'design-possibilities' },
+    { name: t.nav.about, targetId: 'about' },
+    { name: t.nav.contact, targetId: 'contact' },
   ];
 
   // Full comprehensive drawer links for mobile menu
   const allNavLinks = [
-    { name: t.nav.home, href: '#home' },
-    { name: t.nav.ourWork, href: '#our-work' },
-    { name: t.nav.weMakeIt, href: '#we-make-it-your-way' },
-    { name: t.nav.possibilities, href: '#design-possibilities' },
-    { name: t.nav.craftsmanship, href: '#experience' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.location, href: '#location' },
-    { name: t.nav.contact, href: '#contact' },
+    { name: t.nav.home, targetId: 'home' },
+    { name: t.nav.ourWork, targetId: 'our-work' },
+    { name: t.nav.weMakeIt, targetId: 'we-make-it-your-way' },
+    { name: t.nav.possibilities, targetId: 'design-possibilities' },
+    { name: t.nav.craftsmanship, targetId: 'experience' },
+    { name: t.nav.about, targetId: 'about' },
+    { name: t.nav.location, targetId: 'location' },
+    { name: t.nav.contact, targetId: 'contact' },
   ];
 
   return (
@@ -63,21 +64,27 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage, onOp
         <div className="flex items-center justify-between gap-2 lg:gap-4">
           
           {/* Brand Logo with Krishna-inspired Monogram */}
-          <a href="#home" className="flex items-center shrink-0">
+          <button
+            type="button"
+            onClick={() => scrollToSection('top')}
+            className="flex items-center shrink-0 cursor-pointer bg-transparent border-none p-0"
+            aria-label="Makhan Carpenter Home"
+          >
             <BrandLogo size="md" />
-          </a>
+          </button>
 
           {/* Desktop Navigation Links (Clean 6 items with generous spacing) */}
           <nav className="hidden xl:flex items-center space-x-1 2xl:space-x-2">
             {desktopNavLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="px-3 py-1.5 text-xs uppercase tracking-wider text-[#d4cbbf] hover:text-[#c5a059] font-medium transition-all duration-200 relative group whitespace-nowrap"
+                type="button"
+                onClick={() => scrollToSection(link.targetId)}
+                className="px-3 py-1.5 text-xs uppercase tracking-wider text-[#d4cbbf] hover:text-[#c5a059] font-medium transition-all duration-200 relative group whitespace-nowrap cursor-pointer bg-transparent border-none"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-[#c5a059] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -180,15 +187,18 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage, onOp
         <div className="xl:hidden fixed inset-x-0 top-[58px] bg-[#120f0d]/98 backdrop-blur-xl border-b border-[#c5a059]/20 px-6 py-6 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-top-4 max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col space-y-3">
             {allNavLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-serif tracking-wider text-[#ede5d8] hover:text-[#c5a059] border-b border-white/5 pb-2 transition-colors flex items-center justify-between"
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  scrollToSection(link.targetId);
+                }}
+                className="w-full text-left text-sm font-serif tracking-wider text-[#ede5d8] hover:text-[#c5a059] border-b border-white/5 pb-2 transition-colors flex items-center justify-between cursor-pointer bg-transparent"
               >
                 <span>{link.name}</span>
                 <span className="text-xs text-[#c5a059]">→</span>
-              </a>
+              </button>
             ))}
 
             {/* Mobile Direct Phone Numbers (Both clickable) */}

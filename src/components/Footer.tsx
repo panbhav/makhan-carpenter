@@ -3,6 +3,7 @@ import { Phone, MessageSquare, MapPin, ArrowUp, ArrowRight } from 'lucide-react'
 import { siteConfig } from '../data/siteContent';
 import { BrandLogo } from './BrandLogo';
 import { translations } from '../data/translations';
+import { scrollToSection } from '../utils/scroll';
 import type { Language } from '../types';
 
 interface FooterProps {
@@ -85,14 +86,14 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenQuoteModal }) =>
               Navigation
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#home" className="hover:text-[#c5a059] transition-colors">{t.nav.home}</a></li>
-              <li><a href="#our-work" className="hover:text-[#c5a059] transition-colors">{t.nav.ourWork}</a></li>
-              <li><a href="#we-make-it-your-way" className="hover:text-[#c5a059] transition-colors">{t.nav.weMakeIt}</a></li>
-              <li><a href="#design-possibilities" className="hover:text-[#c5a059] transition-colors">{t.nav.possibilities}</a></li>
-              <li><a href="#about" className="hover:text-[#c5a059] transition-colors">{t.nav.about}</a></li>
-              <li><a href="#experience" className="hover:text-[#c5a059] transition-colors">{t.nav.craftsmanship}</a></li>
-              <li><a href="#gallery" className="hover:text-[#c5a059] transition-colors">Gallery</a></li>
-              <li><a href="#contact" className="hover:text-[#c5a059] transition-colors">{t.nav.contact}</a></li>
+              <li><button type="button" onClick={() => scrollToSection('home')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.home}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('our-work')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.ourWork}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('we-make-it-your-way')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.weMakeIt}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('design-possibilities')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.possibilities}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('about')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.about}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('experience')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.craftsmanship}</button></li>
+              <li><button type="button" onClick={() => scrollToSection('gallery')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">Gallery</button></li>
+              <li><button type="button" onClick={() => scrollToSection('contact')} className="hover:text-[#c5a059] transition-colors cursor-pointer text-left bg-transparent border-none p-0 text-[#a99c8f]">{t.nav.contact}</button></li>
             </ul>
           </div>
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
@@ -22,11 +22,51 @@ import { MobileQuickBar } from './components/MobileQuickBar';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { QuoteModal } from './components/QuoteModal';
 import { ImageViewerModal, type ViewerImageItem } from './components/ImageViewerModal';
+import { scrollToSection } from './utils/scroll';
 import type { Project, Language } from './types';
 import { Sparkles } from 'lucide-react';
 
 export function App() {
   const [language, setLanguage] = useState<Language>('en');
+
+  // Keep single-page URL pristine (eliminate #about, #work, etc. from browser address bar)
+  useEffect(() => {
+    // If user arrived with a #hash in URL, scroll to target section and strip hash
+    if (window.location.hash) {
+      const targetId = window.location.hash.replace(/^#/, '');
+      setTimeout(() => {
+        scrollToSection(targetId);
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }, 100);
+    }
+
+    // Keep address bar clean on any hash changes
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    };
+
+    // Intercept clicks on any internal #anchor elements
+    const handleGlobalClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.replace(/^#/, '');
+        scrollToSection(targetId);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    document.addEventListener('click', handleGlobalClick);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      document.removeEventListener('click', handleGlobalClick);
+    };
+  }, []);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [initialQuoteProject, setInitialQuoteProject] = useState<string | undefined>(undefined);

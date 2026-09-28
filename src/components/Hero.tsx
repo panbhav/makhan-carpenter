@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { translations } from '../data/translations';
+import { scrollToSection } from '../utils/scroll';
 import type { Language } from '../types';
 
 interface HeroProps {
@@ -55,13 +56,14 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenQuoteModal }) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md">
-          <a
-            href="#our-work"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 shadow-[0_4px_25px_rgba(197,160,89,0.35)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
+          <button
+            type="button"
+            onClick={() => scrollToSection('our-work')}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-[#c5a059] hover:bg-[#d6b26b] text-[#0e0c0a] font-bold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 shadow-[0_4px_25px_rgba(197,160,89,0.35)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>{t.hero.exploreWork}</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
 
           <button
             onClick={onOpenQuoteModal}
@@ -83,16 +85,17 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenQuoteModal }) => {
       </div>
 
       {/* Animated Bottom Scroll Indicator */}
-      <a
-        href="#experience-bar"
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-[#c5a059]/70 hover:text-[#c5a059] transition-colors group cursor-pointer"
+      <button
+        type="button"
+        onClick={() => scrollToSection('experience-bar')}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-[#c5a059]/70 hover:text-[#c5a059] transition-colors group cursor-pointer bg-transparent border-none"
         aria-label="Scroll to experience"
       >
         <span className="text-[10px] tracking-[0.25em] uppercase font-medium mb-1">
           Explore
         </span>
         <ChevronDown className="w-4 h-4 animate-bounce" />
-      </a>
+      </button>
     </section>
   );
 };
